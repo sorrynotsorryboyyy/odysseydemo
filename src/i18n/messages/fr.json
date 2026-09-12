@@ -1,0 +1,815 @@
+{
+  "common": {
+    "brand": "Taletto",
+    "skipToContent": "Aller au contenu",
+    "nav": {
+      "home": "Accueil",
+      "pricing": "Tarifs",
+      "pack": "Le Pack",
+      "faq": "FAQ",
+      "contact": "Contact",
+      "login": "Connexion",
+      "library": "Ma bibliothèque",
+      "primary": "Navigation principale",
+      "openMenu": "Ouvrir le menu",
+      "closeMenu": "Fermer le menu"
+    },
+    "footer": {
+      "tagline": "Des histoires où votre enfant est le héros.",
+      "legal": "Informations légales",
+      "cgv": "Conditions générales de vente",
+      "privacy": "Confidentialité",
+      "refunds": "Remboursements",
+      "language": "Langue",
+      "rights": "Tous droits réservés.",
+      "discover": "Découvrir",
+      "account": "Mon espace"
+    },
+    "cta": {
+      "start": "Créer notre histoire",
+      "seePricing": "Voir les offres",
+      "choosePlan": "Choisir cette offre",
+      "discoverPack": "Découvrir le Pack"
+    },
+    "actions": {
+      "next": "Continuer",
+      "back": "Retour",
+      "submit": "Valider",
+      "cancel": "Annuler",
+      "download": "Télécharger",
+      "retry": "Réessayer",
+      "save": "Enregistrer"
+    },
+    "errors": {
+      "generic": "Une erreur est survenue. Merci de réessayer dans un instant.",
+      "unreachable": "Le service est momentanément indisponible. Réessayez dans quelques minutes.",
+      "notFound": "Le lien est peut-être incorrect ou la page a été déplacée.",
+      "unauthorized": "Vous devez être connecté pour accéder à cette page.",
+      "title": "Une erreur est survenue",
+      "notFoundTitle": "Cette page n'existe pas",
+      "backHome": "Retour à l'accueil"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Une histoire personnalisée où votre enfant est le héros",
+      "subtitle": "24 pages illustrées, écrites autour de son prénom, de son âge et de ses passions. En PDF en quelques minutes, ou imprimées et livrées chez vous.",
+      "note": "Prix final affiché, paiement unique, remboursé sous 14 jours.",
+      "badge": "Livre personnalisé 24 pages",
+      "mockupLabel": "Aperçu du livre"
+    },
+    "proof": {
+      "title": "Ce que comprend chaque commande",
+      "items": [
+        "24 pages illustrées, uniques à votre enfant",
+        "PDF disponible en quelques minutes",
+        "Accès permanent : retéléchargements illimités",
+        "Remboursement sous 14 jours"
+      ]
+    },
+    "steps": {
+      "title": "Comment ça marche",
+      "items": {
+        "one": {
+          "title": "Vous racontez votre enfant",
+          "body": "Prénom, âge, passions, univers préféré et style d'illustration : quelques minutes suffisent."
+        },
+        "two": {
+          "title": "Nous créons l'histoire",
+          "body": "Le récit et les illustrations sont composés autour de lui, avec un personnage cohérent d'une page à l'autre."
+        },
+        "three": {
+          "title": "Vous recevez le livre",
+          "body": "Le PDF arrive dans votre espace parent. Sur les formules imprimées, le livre part ensuite en livraison suivie."
+        }
+      },
+      "eyebrow": "En 3 étapes"
+    },
+    "formats": {
+      "title": "Deux formats, combinables",
+      "pdf": {
+        "title": "PDF instantané",
+        "body": "Disponible en quelques minutes dans votre espace parent, retéléchargeable à volonté."
+      },
+      "print": {
+        "title": "Livre imprimé",
+        "body": "24 pages couleur sur papier épais, expédiées en livraison suivie. Le PDF reste inclus."
+      },
+      "cahier": {
+        "title": "Cahier d'activités",
+        "body": "50 pages d'activités avec leurs corrigés, à ajouter au livre."
+      }
+    },
+    "ages": {
+      "title": "Adapté à son âge",
+      "intro": "Le ton, le vocabulaire et la longueur s'adaptent à la tranche d'âge choisie.",
+      "items": {
+        "3-5": {
+          "label": "3–5 ans",
+          "title": "Premières histoires",
+          "body": "Phrases courtes, beaucoup d'images, à lire à deux."
+        },
+        "6-8": {
+          "label": "6–8 ans",
+          "title": "Lecteurs débutants",
+          "body": "Une vraie aventure, avec des mots lisibles seul."
+        },
+        "9-11": {
+          "label": "9–11 ans",
+          "title": "Lecteurs confirmés",
+          "body": "Intrigue plus riche, personnages qui évoluent."
+        },
+        "12+": {
+          "label": "12 ans et +",
+          "title": "Grands lecteurs",
+          "body": "Thèmes plus profonds, récit qui prend son temps."
+        }
+      },
+      "eyebrow": "Tranches d'âge"
+    },
+    "styles": {
+      "title": "Six styles d'illustration",
+      "intro": "Choisissez l'univers visuel qui lui ressemble.",
+      "items": {
+        "aquarelle": "Aquarelle douce",
+        "ligne-claire": "Ligne claire",
+        "papier-decoupe": "Papier découpé",
+        "peinture-huile": "Peinture à l'huile",
+        "fusain-pastel": "Fusain et pastel",
+        "vitrail": "Vitrail magique"
+      },
+      "eyebrow": "Styles"
+    },
+    "benefits": {
+      "title": "Pourquoi Taletto",
+      "items": {
+        "price": {
+          "title": "Le prix affiché est le prix final",
+          "body": "Aucun frais caché. La livraison est comprise sur les formules imprimées."
+        },
+        "once": {
+          "title": "Paiement unique",
+          "body": "Aucun abonnement, aucun prélèvement automatique."
+        },
+        "forever": {
+          "title": "Accès permanent",
+          "body": "Votre bibliothèque reste ouverte, avec des retéléchargements illimités."
+        },
+        "refund": {
+          "title": "Remboursement sous 14 jours",
+          "body": "Si le livre ne convient pas, nous vous remboursons."
+        }
+      }
+    },
+    "testimonials": {
+      "title": "Ce qu'en disent les parents",
+      "items": [
+        {
+          "quote": "Elle a reconnu son prénom dès la première page et a voulu qu'on le relise trois fois le soir même.",
+          "author": "Camille, maman de Jade (5 ans)"
+        },
+        {
+          "quote": "Le cahier d'activités a occupé tout un trajet en train. Les corrigés à la fin nous ont bien aidés.",
+          "author": "Nicolas, papa de Tom (8 ans)"
+        },
+        {
+          "quote": "J'ai eu le PDF avant la fin de la sieste, et le livre imprimé est arrivé pour l'anniversaire.",
+          "author": "Sarah, maman d'Elias (6 ans)"
+        }
+      ]
+    },
+    "scope": {
+      "title": "Ce que nous personnalisons, ce que nous ne promettons pas",
+      "included": {
+        "title": "Ce que nous personnalisons",
+        "items": [
+          "Le prénom et l'âge de votre enfant, héros du récit",
+          "Ses centres d'intérêt et ses passions",
+          "L'univers narratif et les thèmes abordés",
+          "Le style d'illustration et la langue du livre"
+        ]
+      },
+      "excluded": {
+        "title": "Ce que nous ne promettons pas",
+        "items": [
+          "Les illustrations sont artistiques, pas photoréalistes",
+          "La photo sert de référence d'illustration : elle n'est jamais reproduite à l'identique",
+          "Chaque histoire est générée : deux commandes proches donneront des récits différents",
+          "Les délais d'impression varient selon la destination"
+        ]
+      }
+    },
+    "pricing": {
+      "title": "Nos offres",
+      "intro": "Trois formules, un paiement unique.",
+      "eyebrow": "Nos formules"
+    },
+    "faq": {
+      "title": "Questions fréquentes",
+      "seeAll": "Voir toutes les questions"
+    },
+    "finalCta": {
+      "title": "Prêt à écrire son histoire ?",
+      "body": "Quelques minutes suffisent pour créer un livre qui lui ressemble.",
+      "action": "Commencer maintenant"
+    },
+    "inside": {
+      "eyebrow": "Dans le livre",
+      "title": "Ce que votre enfant trouvera en ouvrant son livre",
+      "intro": "Chaque exemplaire est composé pour un seul enfant. Voici ce qui le compose, page après page.",
+      "items": {
+        "cover": {
+          "title": "Une couverture à son nom",
+          "body": "Son prénom apparaît sur la couverture et dès la première page. Le héros lui ressemble : âge, univers, style d'illustration choisi par vous."
+        },
+        "pages": {
+          "title": "24 pages illustrées",
+          "body": "Une illustration pleine page accompagne chaque moment du récit. Le personnage garde les mêmes traits, les mêmes couleurs et la même silhouette du début à la fin."
+        },
+        "story": {
+          "title": "Une histoire construite, pas une suite de scènes",
+          "body": "Un début qui pose le décor, une difficulté à traverser, une résolution qui lui appartient. Ses passions nourrissent l'intrigue au lieu d'être simplement citées."
+        },
+        "ending": {
+          "title": "Une fin qui lui parle",
+          "body": "Le récit se referme sur ce que le héros a appris ou surmonté. Les thèmes que vous avez indiqués — le courage, un déménagement, l'arrivée d'un petit frère — trouvent leur place sans jamais devenir une leçon."
+        }
+      }
+    },
+    "compare": {
+      "eyebrow": "Comparer",
+      "title": "Quelle formule pour quel usage",
+      "intro": "Les trois offres partagent la même histoire personnalisée. Elles diffèrent par ce que vous recevez.",
+      "columns": {
+        "feature": "Ce que vous recevez",
+        "pdf": "PDF Livre",
+        "relie": "Livre Relié",
+        "pack": "Pack Complet"
+      },
+      "rows": [
+        {
+          "feature": "Histoire personnalisée de 24 pages",
+          "pdf": true,
+          "relie": true,
+          "pack": true
+        },
+        {
+          "feature": "PDF téléchargeable immédiatement",
+          "pdf": true,
+          "relie": true,
+          "pack": true
+        },
+        {
+          "feature": "Accès permanent à la bibliothèque",
+          "pdf": true,
+          "relie": true,
+          "pack": true
+        },
+        {
+          "feature": "Livre imprimé sur papier épais",
+          "pdf": false,
+          "relie": true,
+          "pack": true
+        },
+        {
+          "feature": "Livraison suivie comprise",
+          "pdf": false,
+          "relie": true,
+          "pack": true
+        },
+        {
+          "feature": "Cahier d'activités de 50 pages",
+          "pdf": false,
+          "relie": false,
+          "pack": true
+        },
+        {
+          "feature": "Corrigés des activités",
+          "pdf": false,
+          "relie": false,
+          "pack": true
+        }
+      ],
+      "yes": "Inclus",
+      "no": "Non inclus"
+    }
+  },
+  "pricing": {
+    "title": "Tarifs",
+    "intro": "Le prix affiché est le prix final : aucun frais caché, aucun abonnement.",
+    "featuredLabel": "Le plus complet",
+    "currency": "€ TTC",
+    "plans": {
+      "pdf": {
+        "name": "PDF Livre",
+        "features": [
+          "Histoire personnalisée 24 pages",
+          "Téléchargement immédiat",
+          "Accès permanent"
+        ]
+      },
+      "relie": {
+        "name": "Livre Relié",
+        "features": [
+          "Livre imprimé 24 pages",
+          "PDF inclus",
+          "Impression premium",
+          "Livraison suivie"
+        ]
+      },
+      "pack": {
+        "name": "Pack Complet",
+        "features": [
+          "Livre 24 pages",
+          "Cahier d'activités 50 pages",
+          "Corrigés",
+          "PDF des deux",
+          "Livraison suivie"
+        ]
+      }
+    },
+    "note": "Livraison comprise sur les formules imprimées. Remboursement sous 14 jours.",
+    "eyebrow": "Tarifs",
+    "guarantees": {
+      "title": "Ce qui vaut pour les trois formules",
+      "items": [
+        {
+          "title": "Le prix affiché est le prix final",
+          "body": "Pas de frais de dossier, pas de supplément à la validation. Sur les formules imprimées, la livraison est déjà comprise dans le montant annoncé."
+        },
+        {
+          "title": "Un paiement, pas un abonnement",
+          "body": "Vous payez une fois, pour un livre. Aucun prélèvement récurrent, aucune reconduction automatique, rien à résilier."
+        },
+        {
+          "title": "Votre bibliothèque reste ouverte",
+          "body": "Les PDF achetés restent téléchargeables sans limite de temps ni de nombre. Un disque dur qui lâche ne vous fait pas perdre le livre."
+        },
+        {
+          "title": "14 jours pour changer d'avis",
+          "body": "Si le livre ne correspond pas à ce que vous attendiez, nous remboursons. Écrivez-nous depuis la page contact, sans justification à fournir."
+        }
+      ]
+    },
+    "help": {
+      "title": "Vous hésitez entre deux formules ?",
+      "body": "Le PDF suffit pour lire sur tablette ou imprimer chez soi. Le Livre Relié a du sens pour un cadeau ou pour un enfant qui manipule ses livres. Le Pack ajoute le cahier d'activités, qui prolonge l'histoire après la lecture.",
+      "action": "Poser une question"
+    }
+  },
+  "pack": {
+    "title": "Le Pack Complet",
+    "intro": "Le livre personnalisé, le cahier d'activités et ses corrigés, en une seule commande.",
+    "contents": {
+      "title": "Ce que contient le Pack",
+      "items": [
+        "Le livre personnalisé de 24 pages, imprimé sur papier épais",
+        "Un cahier d'activités de 50 pages, construit autour de l'histoire",
+        "Les corrigés de toutes les activités",
+        "Les versions PDF du livre et du cahier",
+        "La livraison suivie"
+      ]
+    },
+    "cahier": {
+      "title": "Le cahier d'activités",
+      "body": "50 pages d'activités adaptées à la tranche d'âge choisie, qui prolongent l'histoire du livre. Les corrigés sont fournis à la fin."
+    },
+    "price": {
+      "title": "39 € TTC, livraison comprise",
+      "body": "Paiement unique, remboursé sous 14 jours."
+    },
+    "eyebrow": "Le plus complet",
+    "why": {
+      "title": "Pourquoi le cahier change quelque chose",
+      "items": [
+        {
+          "title": "L'histoire continue après la dernière page",
+          "body": "Les activités reprennent les personnages, les lieux et les péripéties du livre. L'enfant retrouve son univers au lieu de passer à un exercice générique."
+        },
+        {
+          "title": "Adapté à la même tranche d'âge",
+          "body": "Coloriages et jeux d'observation pour les plus jeunes, labyrinthes, énigmes et jeux de mots à mesure que l'âge augmente. Le niveau suit celui du récit."
+        },
+        {
+          "title": "Des corrigés pour les parents",
+          "body": "Toutes les réponses figurent en fin de cahier. Utile quand l'enfant bloque et que vous n'avez pas envie de chercher."
+        },
+        {
+          "title": "50 pages, de quoi occuper plusieurs séances",
+          "body": "Le cahier n'est pas un bonus de quelques feuillets. Il tient un trajet, un après-midi de pluie, ou plusieurs soirées à petites doses."
+        }
+      ]
+    }
+  },
+  "faq": {
+    "title": "Questions fréquentes",
+    "items": [
+      {
+        "question": "Le prix affiché est-il le prix final ?",
+        "answer": "Oui, livraison comprise sur les formules imprimées."
+      },
+      {
+        "question": "Quand vais-je recevoir le PDF ?",
+        "answer": "Disponible dans la bibliothèque dès la création terminée, en général quelques minutes."
+      },
+      {
+        "question": "Et l'impression, combien de temps ?",
+        "answer": "Les délais varient selon la destination ; le PDF reste disponible immédiatement."
+      },
+      {
+        "question": "À quoi ressemble la personnalisation ?",
+        "answer": "Prénom, âge, passions et univers nourrissent le récit. Illustrations artistiques, pas photoréalistes."
+      },
+      {
+        "question": "Est-ce adapté à l'âge de mon enfant ?",
+        "answer": "Le ton, le vocabulaire et les activités suivent la tranche d'âge choisie."
+      },
+      {
+        "question": "Besoin d'aide ou d'un remboursement ?",
+        "answer": "Remboursé sous 14 jours si le livre ne convient pas."
+      },
+      {
+        "question": "Comment fonctionne la personnalisation exactement ?",
+        "answer": "Vous remplissez un formulaire : prénom, âge, centres d'intérêt, univers souhaité, thèmes à aborder et style d'illustration. Ces éléments nourrissent l'écriture du récit et la composition des images. Le personnage principal porte le prénom de votre enfant et garde une apparence cohérente sur les 24 pages."
+      },
+      {
+        "question": "La photo de mon enfant est-elle obligatoire ?",
+        "answer": "Non, elle est facultative. Lorsqu'elle est fournie, elle sert uniquement de référence pour orienter l'illustration — couleur des cheveux, teint, allure générale. Elle n'est jamais reproduite à l'identique : les illustrations restent artistiques. Vous pouvez commander sans photo, en décrivant simplement votre enfant."
+      },
+      {
+        "question": "Que devenez-vous des données de mon enfant ?",
+        "answer": "Elles servent exclusivement à créer l'histoire et à traiter la commande. Elles ne sont ni revendues, ni utilisées à des fins publicitaires. Vous pouvez demander leur suppression à tout moment depuis vos paramètres de compte, ce qui efface le compte, les commandes et les informations transmises."
+      },
+      {
+        "question": "Puis-je offrir le livre ?",
+        "answer": "Oui. Le livre imprimé est expédié à l'adresse de votre choix, ce qui permet de l'envoyer directement au destinataire. Le PDF reste disponible dans votre espace, vous pouvez donc l'imprimer ou le transmettre séparément."
+      },
+      {
+        "question": "En quelle langue le livre est-il écrit ?",
+        "answer": "Vous choisissez la langue principale au moment de la personnalisation. Une langue secondaire optionnelle permet une édition bilingue, utile dans les familles où l'on parle deux langues au quotidien."
+      },
+      {
+        "question": "Puis-je modifier l'histoire après l'avoir reçue ?",
+        "answer": "L'histoire est générée en une fois à partir des informations transmises ; elle n'est pas modifiable après création. Si le résultat ne vous convient pas, le remboursement sous 14 jours s'applique. Prenez le temps de vérifier le récapitulatif avant de payer : c'est là que tout se joue."
+      },
+      {
+        "question": "Que se passe-t-il si la création échoue ?",
+        "answer": "Si la génération rencontre un problème, la commande apparaît en échec dans votre bibliothèque et notre équipe en est avertie. Aucune démarche n'est nécessaire de votre part pour être remboursé : contactez-nous et nous réglons la situation."
+      },
+      {
+        "question": "Le livre convient-il à un enfant qui ne lit pas encore ?",
+        "answer": "Oui. La tranche 3–5 ans est conçue pour la lecture à deux : phrases courtes, vocabulaire simple, une illustration par page qui porte le récit. C'est un livre à lire avec un adulte, pas un exercice de lecture autonome."
+      }
+    ],
+    "intro": "Tout ce qu'il faut savoir avant de commander : délais, personnalisation, impression, données et remboursement."
+  },
+  "contact": {
+    "title": "Contact",
+    "intro": "Une question, un souci avec une commande ? Écrivez-nous, nous répondons sous 48 heures ouvrées.",
+    "fields": {
+      "name": "Votre nom",
+      "email": "Votre adresse e-mail",
+      "orderId": "Numéro de commande (facultatif)",
+      "subject": "Sujet",
+      "message": "Votre message"
+    },
+    "submit": "Envoyer le message",
+    "success": "Message envoyé. Nous vous répondons sous 48 heures ouvrées.",
+    "error": "L'envoi a échoué. Réessayez ou écrivez-nous directement."
+  },
+  "legal": {
+    "cgv": {
+      "title": "Conditions générales de vente",
+      "intro": "Les présentes conditions régissent la vente de livres personnalisés Taletto aux consommateurs. Elles sont acceptées au moment de la commande.",
+      "sections": [
+        {
+          "title": "1. Identification du vendeur",
+          "body": "Le site Taletto est édité par [raison sociale], [forme juridique] au capital de [montant], immatriculée au RCS de [ville] sous le numéro [SIREN], dont le siège social est situé [adresse]. Numéro de TVA intracommunautaire : [numéro]. Contact : depuis la page contact du site."
+        },
+        {
+          "title": "2. Produits",
+          "body": "Taletto propose des livres d'histoires personnalisés de 24 pages illustrées, en version numérique (PDF) et/ou imprimée, ainsi qu'un cahier d'activités de 50 pages accompagné de ses corrigés. Chaque livre est créé à partir des informations fournies par le client lors de la commande. Les illustrations sont artistiques et ne constituent pas une reproduction photoréaliste. Une photographie éventuellement transmise sert de simple référence visuelle."
+        },
+        {
+          "title": "3. Prix",
+          "body": "Les prix sont indiqués en euros toutes taxes comprises. Le prix affiché est le prix final : il comprend la livraison pour les formules incluant un exemplaire imprimé. Aucun frais supplémentaire n'est ajouté au moment du paiement. Taletto se réserve le droit de modifier ses prix à tout moment, le prix applicable étant celui affiché au moment de la commande."
+        },
+        {
+          "title": "4. Commande et paiement",
+          "body": "La commande est validée après renseignement du formulaire de personnalisation, vérification du récapitulatif et paiement. Le paiement est traité par Stripe ; Taletto ne conserve aucune donnée de carte bancaire. Il s'agit d'un paiement unique, sans abonnement ni reconduction."
+        },
+        {
+          "title": "5. Création et livraison",
+          "body": "La création du livre débute après confirmation du paiement. Le PDF est mis à disposition dans l'espace client dès que la création est terminée, en général en quelques minutes. Pour les formules imprimées, la fabrication et l'expédition sont assurées par un prestataire d'impression ; les délais varient selon la destination et sont communiqués à titre indicatif. Le PDF reste disponible immédiatement, indépendamment du délai d'impression."
+        },
+        {
+          "title": "6. Droit de rétractation",
+          "body": "Conformément à l'article L221-28 du code de la consommation, le droit de rétractation ne s'applique pas aux biens confectionnés selon les spécifications du consommateur ou nettement personnalisés, ni aux contenus numériques fournis sur support immatériel dont l'exécution a commencé avec l'accord du consommateur. Taletto accorde néanmoins volontairement une garantie de remboursement de 14 jours, décrite dans sa politique de remboursement."
+        },
+        {
+          "title": "7. Garantie de satisfaction",
+          "body": "Si le livre reçu ne correspond pas à vos attentes, une demande de remboursement peut être adressée dans les 14 jours suivant la mise à disposition, depuis la page contact. Les modalités figurent dans la politique de remboursement."
+        },
+        {
+          "title": "8. Propriété intellectuelle",
+          "body": "Le client dispose d'un droit d'usage personnel et familial du livre créé, incluant l'impression pour son usage privé. Toute exploitation commerciale, revente ou diffusion publique est interdite. Les éléments du site (marque, textes, interface) restent la propriété de [raison sociale]."
+        },
+        {
+          "title": "9. Responsabilité",
+          "body": "Taletto s'engage à mettre en œuvre les moyens nécessaires à la bonne exécution du service. Sa responsabilité ne saurait être engagée en cas d'informations erronées fournies par le client lors de la personnalisation, ni en cas de retard imputable au transporteur ou à l'imprimeur."
+        },
+        {
+          "title": "10. Droit applicable et litiges",
+          "body": "Les présentes conditions sont soumises au droit [français]. En cas de litige, une solution amiable sera recherchée en priorité. Le consommateur peut recourir gratuitement à un médiateur de la consommation ou à la plateforme européenne de règlement en ligne des litiges. À défaut d'accord, les tribunaux compétents seront saisis."
+        }
+      ]
+    },
+    "privacy": {
+      "title": "Politique de confidentialité",
+      "intro": "Cette politique explique quelles données Taletto collecte, pourquoi, combien de temps elles sont conservées et comment exercer vos droits. Elle concerne aussi les informations relatives à votre enfant.",
+      "sections": [
+        {
+          "title": "1. Responsable du traitement",
+          "body": "Le responsable du traitement est [raison sociale], [adresse]. Pour toute question relative à vos données, écrivez-nous depuis la page contact."
+        },
+        {
+          "title": "2. Données collectées",
+          "body": "Compte : adresse e-mail et mot de passe chiffré. Commande : formule choisie, adresse de livraison pour les formules imprimées, identifiant de transaction. Personnalisation : prénom et âge de l'enfant, centres d'intérêt, univers, thèmes, style d'illustration, langues, options de représentation, et le cas échéant une photographie facultative. Aucune donnée de carte bancaire ne transite par nos serveurs ni n'est conservée par nous."
+        },
+        {
+          "title": "3. Finalités et bases légales",
+          "body": "Les données de personnalisation servent exclusivement à créer l'histoire et à exécuter le contrat de vente (article 6.1.b du RGPD). La photographie, lorsqu'elle est fournie, est traitée sur la base de votre consentement explicite (article 6.1.a), recueilli au moment de la commande et révocable à tout moment. Les données de compte permettent l'accès à la bibliothèque et le service après-vente."
+        },
+        {
+          "title": "4. Données concernant un enfant",
+          "body": "Les informations relatives à votre enfant sont transmises par vous, en votre qualité de titulaire de l'autorité parentale. Elles ne sont utilisées que pour composer le livre commandé. Elles ne font l'objet d'aucun profilage, d'aucune publicité ciblée et ne sont jamais revendues."
+        },
+        {
+          "title": "5. Photographie",
+          "body": "La photographie éventuellement transmise sert de référence visuelle pour orienter le style de l'illustration. Elle n'est jamais reproduite à l'identique et n'est pas utilisée pour de la reconnaissance faciale. Elle est supprimée [délai à définir] après la livraison de la commande."
+        },
+        {
+          "title": "6. Durée de conservation",
+          "body": "Compte et commandes : conservés tant que le compte est actif, afin de préserver l'accès permanent à la bibliothèque. Données de personnalisation : conservées avec la commande. Documents comptables : conservés [10 ans] conformément aux obligations légales. En cas de suppression du compte, l'ensemble est effacé, à l'exception des pièces comptables légalement obligatoires."
+        },
+        {
+          "title": "7. Destinataires",
+          "body": "Les données sont transmises uniquement aux prestataires nécessaires à l'exécution du service : Stripe pour le paiement, un prestataire d'impression et de livraison pour les formules imprimées, un service d'envoi d'e-mails transactionnels, et l'hébergeur du site. Chacun n'accède qu'aux données strictement nécessaires à sa mission."
+        },
+        {
+          "title": "8. Vos droits",
+          "body": "Vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité. La suppression du compte est accessible directement depuis vos paramètres et efface le compte, les commandes et les informations transmises. Pour toute autre demande, écrivez-nous depuis la page contact. Vous pouvez également introduire une réclamation auprès de la [CNIL]."
+        },
+        {
+          "title": "9. Cookies",
+          "body": "Le site utilise un cookie de préférence de langue et un cookie de session nécessaires à son fonctionnement. Ils ne servent ni au suivi publicitaire, ni à la mesure d'audience tierce."
+        }
+      ]
+    },
+    "refunds": {
+      "title": "Politique de remboursement",
+      "intro": "Si le livre ne correspond pas à ce que vous attendiez, nous le remboursons dans les 14 jours. Voici comment cela fonctionne concrètement.",
+      "sections": [
+        {
+          "title": "Le principe",
+          "body": "Vous disposez de 14 jours à compter de la mise à disposition du PDF, ou de la réception du livre imprimé, pour demander un remboursement. Aucune justification n'est exigée : il suffit que le résultat ne vous convienne pas."
+        },
+        {
+          "title": "Pourquoi cette garantie existe",
+          "body": "Chaque livre est créé sur mesure. La loi n'impose pas de droit de rétractation sur un produit personnalisé, mais commander sans avoir vu le résultat demande de la confiance. Cette garantie est notre manière de la mériter."
+        },
+        {
+          "title": "Comment en faire la demande",
+          "body": "Écrivez-nous depuis la page contact en indiquant votre numéro de commande et, si vous le souhaitez, ce qui n'a pas fonctionné. Ce retour nous aide à progresser, mais il n'est pas obligatoire pour obtenir le remboursement."
+        },
+        {
+          "title": "Délais de traitement",
+          "body": "La demande est traitée sous [délai à définir] jours ouvrés. Le remboursement est effectué sur le moyen de paiement utilisé lors de la commande ; le délai d'apparition sur votre compte dépend ensuite de votre banque."
+        },
+        {
+          "title": "Cas des formules imprimées",
+          "body": "Pour un livre imprimé, le remboursement porte sur l'intégralité du montant payé, livraison comprise. Nous ne demandons pas le renvoi de l'exemplaire : il a été fabriqué pour votre enfant et n'a de valeur pour personne d'autre."
+        },
+        {
+          "title": "En cas d’échec de création",
+          "body": "Si la génération échoue de notre fait, le remboursement est automatique et intégral. Vous n'avez aucune démarche à faire au-delà de nous signaler la situation."
+        }
+      ]
+    },
+    "disclaimer": "Modèle à faire relire par un professionnel du droit avant toute exploitation commerciale. Les mentions entre crochets doivent être complétées avec les informations de votre société.",
+    "lastUpdated": "Dernière mise à jour"
+  },
+  "form": {
+    "title": "Personnalisons son histoire",
+    "intro": "Quelques questions sur votre enfant, et nous écrivons son livre.",
+    "steps": {
+      "child": "L'enfant",
+      "story": "L'histoire",
+      "style": "Le style",
+      "languages": "Les langues",
+      "consent": "Consentement",
+      "summary": "Récapitulatif"
+    },
+    "fields": {
+      "firstName": "Prénom de l'enfant",
+      "age": "Âge",
+      "photo": "Photo (facultative)",
+      "interests": "Centres d'intérêt et passions",
+      "universe": "Univers narratif souhaité",
+      "themes": "Émotions et thèmes à aborder",
+      "style": "Style d'illustration",
+      "primaryLanguage": "Langue principale",
+      "secondaryLanguage": "Langue secondaire (facultative)",
+      "inclusion": "Options d'inclusion et de représentation"
+    },
+    "hints": {
+      "firstName": "Il apparaîtra tout au long du récit.",
+      "age": "Le ton et le vocabulaire s'adaptent à l'âge indiqué.",
+      "photo": "La photo sert de référence d'illustration. Elle n'est jamais reproduite à l'identique et les illustrations restent artistiques.",
+      "interests": "Dinosaures, football, espace, cuisine… tout ce qui le passionne.",
+      "universe": "Forêt enchantée, station spatiale, fond des océans…",
+      "themes": "Le courage, l'amitié, un déménagement, l'arrivée d'un petit frère…",
+      "secondaryLanguage": "Pour une édition bilingue.",
+      "inclusion": "Précisez ce qui compte pour représenter votre enfant avec justesse."
+    },
+    "validation": {
+      "firstNameRequired": "Merci d'indiquer le prénom de l'enfant.",
+      "firstNameTooLong": "Ce prénom est trop long.",
+      "ageRequired": "Merci d'indiquer un âge.",
+      "ageRange": "L'âge doit être compris entre 1 et 17 ans.",
+      "interestsRequired": "Décrivez au moins un centre d'intérêt.",
+      "universeRequired": "Décrivez l'univers souhaité.",
+      "styleRequired": "Choisissez un style d'illustration.",
+      "languageRequired": "Choisissez la langue principale du livre.",
+      "consentRequired": "Votre consentement est nécessaire pour créer l'histoire.",
+      "photoTooLarge": "La photo dépasse la taille maximale de 5 Mo.",
+      "photoType": "Formats acceptés : JPEG, PNG ou WebP."
+    },
+    "consent": {
+      "title": "Consentement",
+      "body": "Les informations transmises servent uniquement à créer l'histoire de votre enfant et à traiter votre commande.",
+      "checkbox": "J'autorise Taletto à utiliser ces informations pour créer l'histoire personnalisée et traiter ma commande.",
+      "photoCheckbox": "J'autorise l'utilisation de la photo comme référence d'illustration.",
+      "rights": "Vous pouvez demander la suppression de ces données à tout moment depuis vos paramètres."
+    },
+    "summary": {
+      "title": "Récapitulatif",
+      "intro": "Vérifiez les informations avant le paiement.",
+      "plan": "Formule choisie",
+      "child": "Enfant",
+      "story": "Histoire",
+      "style": "Style",
+      "languages": "Langues",
+      "edit": "Modifier",
+      "total": "Total à payer",
+      "submit": "Passer au paiement"
+    },
+    "saved": "Brouillon enregistré.",
+    "photoUploaded": "Photo enregistrée.",
+    "progress": "Étape",
+    "photoPrompt": "Choisir une photo"
+  },
+  "checkout": {
+    "payment": {
+      "title": "Paiement",
+      "body": "Le paiement s'ouvre depuis le récapitulatif de votre personnalisation. Reprenez votre commande pour finaliser.",
+      "action": "Reprendre ma commande"
+    },
+    "confirmation": {
+      "title": "Merci, votre commande est enregistrée",
+      "body": "La création de l'histoire a commencé. Le PDF apparaîtra dans votre bibliothèque dès qu'il sera prêt, en général en quelques minutes.",
+      "printNote": "Sur les formules imprimées, le livre part ensuite en livraison suivie.",
+      "action": "Voir ma bibliothèque"
+    },
+    "cancel": {
+      "title": "Paiement annulé",
+      "body": "Aucun montant n'a été prélevé. Votre personnalisation est conservée : vous pouvez reprendre où vous en étiez.",
+      "action": "Reprendre ma commande"
+    }
+  },
+  "account": {
+    "login": {
+      "title": "Connexion",
+      "email": "Adresse e-mail",
+      "password": "Mot de passe",
+      "submit": "Se connecter",
+      "noAccount": "Pas encore de compte ?",
+      "registerLink": "Créer un compte",
+      "error": "La connexion a échoué. Réessayez dans un instant.",
+      "googleIntro": "Connectez-vous pour retrouver vos livres et vos commandes.",
+      "googleButton": "Continuer avec Google",
+      "googleNote": "Aucun mot de passe à retenir : la connexion passe par votre compte Google."
+    },
+    "register": {
+      "title": "Créer un compte",
+      "email": "Adresse e-mail",
+      "password": "Mot de passe",
+      "passwordHint": "Au moins 8 caractères.",
+      "submit": "Créer mon compte",
+      "hasAccount": "Vous avez déjà un compte ?",
+      "loginLink": "Se connecter",
+      "error": "La création du compte a échoué. Réessayez dans un instant.",
+      "googleIntro": "Créez votre compte pour commander et retrouver vos livres.",
+      "googleButton": "Continuer avec Google",
+      "googleNote": "Votre compte est créé à la première connexion. Aucun mot de passe à choisir."
+    },
+    "library": {
+      "title": "Ma bibliothèque",
+      "intro": "Vos commandes et vos téléchargements, accessibles en permanence.",
+      "empty": "Aucune commande pour le moment.",
+      "emptyAction": "Créer une première histoire",
+      "orderedOn": "Commandé le",
+      "viewOrder": "Voir la commande"
+    },
+    "order": {
+      "title": "Commande",
+      "statusLabel": "Statut",
+      "status": {
+        "pending": "En attente",
+        "generating": "Création en cours",
+        "ready": "Prête",
+        "printing": "En impression",
+        "shipped": "Expédiée",
+        "failed": "Échec"
+      },
+      "generating": "L'histoire est en cours de création. Cette page se met à jour automatiquement.",
+      "failed": "La création a échoué. Notre équipe a été prévenue — contactez-nous si le problème persiste.",
+      "downloads": "Téléchargements",
+      "kinds": {
+        "book": "Le livre (PDF)",
+        "cahier": "Le cahier d'activités (PDF)",
+        "corriges": "Les corrigés (PDF)"
+      },
+      "noDownloads": "Aucun fichier disponible pour l'instant.",
+      "tracking": "Suivre le colis"
+    },
+    "settings": {
+      "title": "Paramètres",
+      "account": "Compte",
+      "logout": "Se déconnecter",
+      "deletion": {
+        "title": "Supprimer mon compte",
+        "body": "La suppression efface votre compte, vos commandes et les informations transmises sur votre enfant. Cette action est définitive et vos livres ne seront plus téléchargeables.",
+        "confirmLabel": "Saisissez SUPPRIMER pour confirmer",
+        "confirmWord": "SUPPRIMER",
+        "submit": "Supprimer définitivement mon compte",
+        "error": "La suppression a échoué. Réessayez ou contactez-nous."
+      }
+    },
+    "claim": {
+      "title": "Accéder à ma commande",
+      "body": "Nous vérifions votre lien d'accès…",
+      "success": "Accès ouvert. Voici votre bibliothèque.",
+      "invalid": "Ce lien d'accès est invalide ou a expiré.",
+      "missingToken": "Ce lien est incomplet. Utilisez celui reçu par e-mail.",
+      "help": "Besoin d'aide ? Écrivez-nous depuis la page contact."
+    }
+  },
+  "meta": {
+    "home": {
+      "title": "Taletto — Le livre personnalisé où votre enfant est le héros",
+      "description": "24 pages illustrées, écrites autour du prénom, de l'âge et des passions de votre enfant. PDF en quelques minutes ou livre imprimé, à partir de 9 €."
+    },
+    "pricing": {
+      "title": "Tarifs",
+      "description": "Trois offres à partir de 9 € : PDF, livre relié ou pack complet avec cahier d'activités. Prix final, paiement unique, remboursé sous 14 jours."
+    },
+    "pack": {
+      "title": "Le Pack Complet",
+      "description": "Le livre personnalisé de 24 pages, le cahier d'activités de 50 pages et ses corrigés, livrés chez vous pour 39 €."
+    },
+    "faq": {
+      "title": "Questions fréquentes",
+      "description": "Délais, personnalisation, impression, remboursement : les réponses aux questions les plus posées."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Une question sur une commande ? Notre équipe répond sous 48 heures ouvrées."
+    },
+    "form": {
+      "title": "Personnaliser l'histoire",
+      "description": "Décrivez votre enfant : prénom, âge, passions, univers et style d'illustration."
+    },
+    "library": {
+      "title": "Ma bibliothèque",
+      "description": "Vos commandes et vos téléchargements Taletto."
+    },
+    "legal": {
+      "cgv": {
+        "title": "Conditions générales de vente",
+        "description": "Les conditions de vente des livres personnalisés Taletto."
+      },
+      "privacy": {
+        "title": "Confidentialité",
+        "description": "Comment Taletto protège vos données et celles de votre enfant."
+      },
+      "refunds": {
+        "title": "Remboursements",
+        "description": "Remboursement sous 14 jours si le livre ne convient pas."
+      }
+    }
+  },
+  "product": {
+    "schemaName": "Livre d'histoire personnalisé pour enfant — 24 pages illustrées"
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "_locale": "de",
+  "_note": "Structure identique a fr.json. Toute cle absente ou vide retombe sur le francais via deepMerge (voir getDictionary.ts). A traduire dans un second temps."
+}
