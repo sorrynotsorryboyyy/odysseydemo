@@ -1,0 +1,23 @@
+{
+  "indexes": [
+    {
+      "_comment": "Bibliotheque : commandes d'un utilisateur, les plus recentes d'abord. Requis par la requete where(userId) + orderBy(createdAt desc).",
+      "collectionGroup": "orders",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "userId", "order": "ASCENDING" },
+        { "fieldPath": "createdAt", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "_comment": "Admin : commandes par statut, pour le suivi d'exploitation.",
+      "collectionGroup": "orders",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "status", "order": "ASCENDING" },
+        { "fieldPath": "createdAt", "order": "DESCENDING" }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

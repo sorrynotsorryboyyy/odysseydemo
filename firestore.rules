@@ -1,0 +1,29 @@
+rules_version = '2';
+
+/**
+ * Regles de securite Firestore — Taletto.
+ *
+ * PRINCIPE : aucun acces direct depuis un navigateur. Toutes les lectures et
+ * ecritures passent par les route handlers Next.js, qui utilisent le SDK
+ * Admin — et le SDK Admin contourne ces regles par conception.
+ *
+ * Ces regles sont donc un FILET DE SECURITE : si une cle Web fuite, ou si
+ * quelqu'un tente d'interroger la base directement avec le SDK client, tout
+ * est refuse. C'est volontaire.
+ *
+ * Pourquoi ce choix plutot que des regles fines par collection :
+ *  - le prix d'une commande est calcule cote serveur ; laisser un client
+ *    ecrire dans `orders` permettrait de le contourner ;
+ *  - les donnees d'enfants ne doivent etre lisibles que via une session
+ *    verifiee, ce qu'une regle Firestore ne sait pas faire aussi finement ;
+ *  - une seule porte d'entree, c'est un seul endroit a auditer.
+ */
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Tout est refuse par defaut, y compris les collections creees plus tard.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
