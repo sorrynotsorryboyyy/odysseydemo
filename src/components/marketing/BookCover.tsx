@@ -1,4 +1,4 @@
-import { Icon } from '@/components/ui';
+import Image from 'next/image';
 
 /**
  * Livre en perspective, qui s'ouvre au survol.
@@ -13,15 +13,14 @@ import { Icon } from '@/components/ui';
  * `prefers-reduced-motion` est déjà neutralisé globalement dans
  * `globals.css` : le livre s'affiche alors immobile, sans disparaître.
  */
-export function BookCover({
-  title,
-  childName,
-  pagesLabel,
-}: {
-  title: string;
-  childName: string;
-  pagesLabel: string;
-}) {
+
+/**
+ * Couverture réelle d'un livre produit. Le dos rouge y est déjà peint, d'où
+ * l'absence de tranche CSS : en ajouter une donnerait deux reliures.
+ */
+const COVER_SRC = '/images/coverhero.png';
+
+export function BookCover({ pagesLabel }: { pagesLabel: string }) {
   return (
     <div className="relative mx-auto w-full max-w-[22rem]">
       {/* Le groupe pilote l'ouverture ; la perspective donne la profondeur. */}
@@ -33,7 +32,7 @@ export function BookCover({
       >
         <div className="relative aspect-[3/4] [transform-style:preserve-3d] transition-transform duration-700 ease-out [transform:rotateY(-14deg)_rotateX(4deg)] group-hover:[transform:rotateY(-22deg)_rotateX(2deg)]">
           {/* --- Pages intérieures, révélées à l'ouverture --- */}
-          <div className="absolute inset-0 border border-ink/20 bg-cream-50 p-6">
+          <div className="absolute inset-0 border-2 border-ink bg-cream-50 p-6">
             <div className="flex h-full flex-col justify-between">
               <div className="space-y-2.5">
                 {/* Lignes de texte simulées : le rythme d'une page, sans
@@ -47,7 +46,7 @@ export function BookCover({
                 ))}
               </div>
 
-              <div className="border border-dashed border-ink/20 p-4 text-center">
+              <div className="border-2 border-dashed border-ink/40 p-4 text-center">
                 <span className="font-display text-sm font-bold text-ink-muted">
                   {pagesLabel}
                 </span>
@@ -55,50 +54,27 @@ export function BookCover({
             </div>
           </div>
 
-          {/* --- Couverture, pivotant sur la reliure --- */}
-          <div className="absolute inset-0 origin-left [transform-style:preserve-3d] transition-transform duration-700 ease-out [transform:rotateY(0deg)] group-hover:[transform:rotateY(-34deg)]">
-            <div className="relative h-full w-full overflow-hidden border border-ink bg-accent-500 shadow-ink [backface-visibility:hidden]">
-              {/* Trame imprimée, en aplat franc. */}
-              <span
-                className="absolute inset-0 opacity-20"
-                style={{
-                  backgroundImage:
-                    'url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2718%27 height=%2718%27%3E%3Ccircle cx=%279%27 cy=%279%27 r=%272%27 fill=%27%231a1a1a%27/%3E%3C/svg%3E")',
-                }}
+          {/* --- Couverture, pivotant sur la reliure ---
+              Le pivot est placé sur le dos peint dans l'image (~4 % de sa
+              largeur), pas sur le bord : c'est là qu'est la charnière. */}
+          <div className="absolute inset-0 [transform-origin:4%_50%] [transform-style:preserve-3d] transition-transform duration-700 ease-out [transform:rotateY(0deg)] group-hover:[transform:rotateY(-34deg)]">
+            <div className="relative h-full w-full overflow-hidden border-2 border-ink shadow-ink [backface-visibility:hidden]">
+              <Image
+                src={COVER_SRC}
+                alt=""
+                fill
+                sizes="(max-width: 768px) 80vw, 22rem"
+                className="object-cover"
+                priority
               />
-
-              {/* Filet de composition, code de couverture d'édition. */}
-              <span className="absolute inset-4 border border-ink/30" />
-
-              <div className="relative flex h-full flex-col justify-between p-7">
-                <p className="flex items-center gap-2 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-ink/70">
-                  <Icon name="sparkle" filled className="h-3.5 w-3.5" />
-                  Taletto
-                </p>
-
-                <div>
-                  <p className="font-display text-3xl font-bold leading-[1.05] text-ink">
-                    {title}
-                  </p>
-                  <span className="mt-4 block h-px w-16 bg-ink/40" />
-                  <p className="mt-3 text-sm font-semibold uppercase tracking-[0.15em] text-ink/70">
-                    {childName}
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
-
-          {/* --- Tranche : donne l'épaisseur, visible en perspective --- */}
-          <div className="absolute left-0 top-0 h-full w-3 origin-left border-y border-l border-ink bg-accent-700 [transform:rotateY(-90deg)_translateX(-0.375rem)]" />
         </div>
-      </div>
 
-      {/* Ombre portée au sol : ancre l'objet, sans flou. */}
-      <span
-        aria-hidden="true"
-        className="mx-auto mt-6 block h-1 w-3/4 bg-ink/10 transition-all duration-700 group-hover:w-4/5"
-      />
+        {/* Ombre portée au sol : ancre l'objet, sans flou. À l'intérieur du
+            groupe, sans quoi le survol ne l'atteindrait pas. */}
+        <span className="mx-auto mt-6 block h-1 w-3/4 bg-ink/10 transition-[width] duration-700 group-hover:w-4/5" />
+      </div>
     </div>
   );
 }

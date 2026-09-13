@@ -80,11 +80,7 @@ export function Hero({ dictionary }: SectionProps) {
             </p>
           </div>
 
-          <BookCover
-            title={t('home.hero.bookTitle')}
-            childName={t('home.hero.bookChild')}
-            pagesLabel={t('home.hero.mockupLabel')}
-          />
+          <BookCover pagesLabel={t('home.hero.mockupLabel')} />
         </div>
       </div>
     </section>
