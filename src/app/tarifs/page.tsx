@@ -16,18 +16,9 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-interface Guarantee {
-  title: string;
-  body: string;
-}
-
 export default async function PricingPage() {
   const dictionary = await getDictionary();
   const t = (key: string) => translate(dictionary, key);
-
-  const pricing = dictionary.pricing as Record<string, unknown> | undefined;
-  const guarantees =
-    ((pricing?.guarantees as { items?: Guarantee[] } | undefined)?.items ?? []);
 
   return (
     <>
@@ -51,24 +42,6 @@ export default async function PricingPage() {
         <PricingTable dictionary={dictionary} />
 
         <p className="mt-8 text-center text-sm text-ink-soft">{t('pricing.note')}</p>
-      </Section>
-
-      <Section labelledBy="guarantees-title" tone="white">
-        <SectionHeading id="guarantees-title" title={t('pricing.guarantees.title')} />
-
-        <div className="grid gap-6 sm:grid-cols-2">
-          {guarantees.map((guarantee) => (
-            <article key={guarantee.title} className="flex gap-4">
-              <Icon name="check" className="mt-1 h-5 w-5 shrink-0 text-warm-700" />
-              <div>
-                <h3 className="font-display text-lg font-bold text-ink">
-                  {guarantee.title}
-                </h3>
-                <p className="mt-1 text-ink-muted text-pretty">{guarantee.body}</p>
-              </div>
-            </article>
-          ))}
-        </div>
       </Section>
 
       <Section labelledBy="pricing-help-title" size="narrow">
