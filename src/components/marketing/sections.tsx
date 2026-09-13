@@ -111,7 +111,7 @@ export function Guarantees({ dictionary }: SectionProps) {
   return (
     <section
       aria-labelledby="guarantees-title"
-      className="border-b border-ink/10 bg-white"
+      className="border-b-2 border-ink bg-white"
     >
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <h2 id="guarantees-title" className="sr-only">
@@ -220,11 +220,12 @@ export function Steps({ dictionary }: SectionProps) {
   const steps = ['one', 'two', 'three'] as const;
 
   return (
-    <Section labelledBy="steps-title" tone="paper">
+    <Section labelledBy="steps-title" tone="teal">
       <SectionHeading
         id="steps-title"
         eyebrow={t('home.steps.eyebrow')}
         title={t('home.steps.title')}
+        onColor
       />
 
       <ol className="relative grid gap-10 md:grid-cols-3 md:gap-8">
@@ -236,7 +237,7 @@ export function Steps({ dictionary }: SectionProps) {
 
         {steps.map((step, index) => (
           <li key={step} className="relative">
-            <span className="relative flex h-10 w-10 items-center justify-center rounded-lg border-2 border-ink bg-white font-display text-base font-bold text-ink">
+            <span className="relative flex h-11 w-11 items-center justify-center rounded-lg border-2 border-ink bg-white font-display text-lg font-bold text-ink shadow-ink-sm">
               {index + 1}
             </span>
             <h3 className="mt-5 font-display text-xl font-bold text-ink">
@@ -301,20 +302,21 @@ export function StyleGallery({ dictionary }: SectionProps) {
   const t = (key: string) => translate(dictionary, key);
 
   return (
-    <Section labelledBy="styles-title" tone="white" size="wide">
+    <Section labelledBy="styles-title" tone="coral" size="wide">
       <SectionHeading
         id="styles-title"
         eyebrow={t('home.styles.eyebrow')}
         title={t('home.styles.title')}
         intro={t('home.styles.intro')}
+        onColor
       />
 
-      <ul className="grid grid-cols-2 gap-px border border-ink/15 bg-ink/15 md:grid-cols-3">
+      <ul className="grid grid-cols-2 gap-5 md:grid-cols-3">
         {illustrationStyles.map((style) => (
-          <li key={style} className="bg-white">
+          <li key={style}>
             <figure>
               <StyleImage style={style} label={t(`home.styles.items.${style}`)} />
-              <figcaption className="border-t border-ink/10 px-4 py-3 text-center text-sm font-medium text-ink">
+              <figcaption className="mt-3 text-center text-sm font-bold text-ink">
                 {t(`home.styles.items.${style}`)}
               </figcaption>
             </figure>
@@ -334,11 +336,11 @@ export function Scope({ dictionary }: SectionProps) {
   const excluded = translateList(dictionary, 'home.scope.excluded.items');
 
   return (
-    <Section labelledBy="scope-title" tone="white">
+    <Section labelledBy="scope-title" tone="paper">
       <SectionHeading id="scope-title" title={t('home.scope.title')} />
 
-      <div className="grid gap-px border border-ink/15 bg-ink/15 md:grid-cols-2">
-        <div className="bg-white p-7">
+      <div className="grid gap-5 md:grid-cols-2">
+        <div className="rounded-xl border-2 border-ink bg-white p-7 shadow-ink-sm">
           <h3 className="font-display text-lg font-bold text-ink">
             {t('home.scope.included.title')}
           </h3>
@@ -356,7 +358,7 @@ export function Scope({ dictionary }: SectionProps) {
 
         {/* Dire ce qu'on ne promet pas est un argument de confiance, pas un
             aveu : même traitement visuel que la colonne de gauche. */}
-        <div className="bg-cream-50 p-7">
+        <div className="rounded-xl border-2 border-ink bg-cream-100 p-7 shadow-ink-sm">
           <h3 className="font-display text-lg font-bold text-ink">
             {t('home.scope.excluded.title')}
           </h3>
@@ -398,7 +400,7 @@ export function AfterOrder({ dictionary }: SectionProps) {
   const steps = readList<AfterStep>(dictionary, 'home.after.steps');
 
   return (
-    <Section labelledBy="after-title" tone="paper" size="narrow">
+    <Section labelledBy="after-title" tone="white" size="narrow">
       <SectionHeading
         id="after-title"
         eyebrow={t('home.after.eyebrow')}

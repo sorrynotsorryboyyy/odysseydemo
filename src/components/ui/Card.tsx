@@ -42,15 +42,15 @@ export function Badge({
   className?: string;
 }) {
   const tones = {
-    accent: 'bg-accent-100 text-accent-800 border-accent-800/25',
-    warm: 'bg-warm-100 text-warm-800 border-warm-800/25',
-    neutral: 'bg-ink/5 text-ink-muted border-ink/20',
+    accent: 'bg-accent-200 text-ink border-ink',
+    warm: 'bg-warm-200 text-ink border-ink',
+    neutral: 'bg-cream-200 text-ink border-ink',
   } as const;
 
   return (
     <span
       className={cn(
-        'inline-flex items-center border px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.12em]',
+        'inline-flex items-center rounded-md border-2 px-2.5 py-1 text-xs font-bold uppercase tracking-[0.1em]',
         tones[tone],
         className,
       )}

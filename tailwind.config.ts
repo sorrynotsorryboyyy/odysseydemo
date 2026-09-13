@@ -108,28 +108,43 @@ const config: Config = {
        * de 24px un bloc devient une pastille, ce qui est le marqueur
        * générique qu'on cherche à éviter.
        */
+      /**
+       * Le trait dessine la forme ; l'arrondi l'adoucit juste assez pour
+       * que le registre reste celui d'un album, pas d'un formulaire.
+       */
       borderRadius: {
         none: '0',
-        sm: '3px',
-        DEFAULT: '6px',
-        md: '8px',
-        lg: '10px',
-        xl: '14px',
-        '2xl': '18px',
-        '3xl': '24px',
+        sm: '2px',
+        DEFAULT: '4px',
+        md: '6px',
+        lg: '8px',
+        xl: '12px',
+        '2xl': '16px',
+        '3xl': '20px',
       },
       /**
        * Ombres teintées de l'aplat voisin plutôt que grises : une ombre
        * neutre sur un fond coloré se lit comme de la saleté.
        */
+      /**
+       * Registre ligne claire : le cerne noir porte la forme, l'ombre ne
+       * fait que décoller l'élément du fond. Décalée et sans flou, elle
+       * reste dans le langage du dessin au trait.
+       */
       boxShadow: {
         edge: '0 1px 0 0 rgb(26 26 26 / 0.08)',
-        print: '4px 4px 0 0 rgb(26 26 26 / 0.12)',
-        lifted: '7px 7px 0 0 rgb(26 26 26 / 0.16)',
         ink: '4px 4px 0 0 rgb(26 26 26)',
+        'ink-sm': '2px 2px 0 0 rgb(26 26 26)',
+        'ink-lg': '7px 7px 0 0 rgb(26 26 26)',
         teal: '4px 4px 0 0 rgb(15 118 110)',
         coral: '4px 4px 0 0 rgb(178 58 28)',
-        night: '4px 4px 0 0 rgb(30 58 138)',
+      },
+      borderWidth: {
+        // Le cerne de la ligne claire : assez présent pour se lire, assez
+        // fin pour ne pas écraser une page de texte.
+        DEFAULT: '1px',
+        2: '2px',
+        3: '3px',
       },
       maxWidth: {
         prose: '68ch',

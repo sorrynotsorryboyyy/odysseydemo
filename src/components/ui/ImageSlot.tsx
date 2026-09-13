@@ -33,7 +33,7 @@ export function ImageSlot({
     <div
       role="presentation"
       className={cn(
-        'flex items-center justify-center border border-dashed border-ink/20 bg-cream-50',
+        'flex items-center justify-center rounded-lg border-2 border-dashed border-ink/40 bg-cream-100',
         ratios[ratio],
         className,
       )}

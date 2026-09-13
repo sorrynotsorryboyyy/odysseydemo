@@ -17,7 +17,7 @@ export function Section({
   containerClassName?: string;
   size?: 'default' | 'narrow' | 'wide';
   labelledBy?: string;
-  tone?: 'transparent' | 'white' | 'paper' | 'sun' | 'teal' | 'coral' | 'ink' | 'night';
+  tone?: 'transparent' | 'white' | 'paper' | 'sun' | 'teal' | 'coral' | 'ink';
 }) {
   // Les sections se distinguent par un aplat et un filet, pas par un
   // degrade : la rupture doit etre nette, comme un changement de cahier.
@@ -28,15 +28,22 @@ export function Section({
    * Contrastes vérifiés avec le texte qu'ils portent — encre sur les fonds
    * clairs, crème sur le bleu nuit.
    */
+  /**
+   * Aplats moyens plutôt que teintes pâles : la couleur doit se lire comme
+   * un choix, pas comme un lavis. Le texte reste encre sur tous les fonds
+   * clairs, ce qui garde les contrastes très au-dessus du seuil AA.
+   *
+   * Les sections colorées sont séparées par un trait franc : c'est la
+   * rupture nette du dessin au trait, pas un dégradé.
+   */
   const tones = {
     transparent: '',
     white: 'bg-white',
-    paper: 'bg-paper',
-    sun: 'bg-sun-100',
-    teal: 'bg-accent-50',
-    coral: 'bg-warm-50',
-    ink: 'bg-ink text-cream',
-    night: 'bg-night-900 text-cream',
+    paper: 'bg-cream-100',
+    teal: 'border-y-2 border-ink bg-accent-200',
+    coral: 'border-y-2 border-ink bg-warm-200',
+    sun: 'border-y-2 border-ink bg-sun-200',
+    ink: 'border-y-2 border-ink bg-ink text-cream',
   } as const;
 
   return (
@@ -60,6 +67,7 @@ export function SectionHeading({
   centered = true,
   as: Heading = 'h2',
   onDark = false,
+  onColor = false,
 }: {
   id?: string;
   eyebrow?: string;
@@ -69,6 +77,11 @@ export function SectionHeading({
   as?: 'h1' | 'h2' | 'h3';
   /** Inverse les couleurs de texte pour les sections à fond sombre. */
   onDark?: boolean;
+  /**
+   * Sur un aplat coloré moyen, le sur-titre passe en encre : la sarcelle
+   * y tombe sous le seuil AA (3.64 sur corail, 4.34 sur sarcelle clair).
+   */
+  onColor?: boolean;
 }) {
   return (
     <div className={cn('mb-10 sm:mb-14', centered && 'text-center')}>
@@ -76,20 +89,26 @@ export function SectionHeading({
         <p
           className={cn(
             'mb-4 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em]',
-            onDark ? 'text-sun-300' : 'text-accent-700',
+            onDark ? 'text-sun-300' : onColor ? 'text-ink' : 'text-accent-700',
             centered ? 'justify-center' : 'justify-start',
           )}
         >
           {centered ? (
             <span
               aria-hidden="true"
-              className={cn('h-px w-8', onDark ? 'bg-sun-300/50' : 'bg-accent-700/40')}
+              className={cn(
+                'h-0.5 w-8',
+                onDark ? 'bg-sun-300/50' : onColor ? 'bg-ink' : 'bg-accent-700/40',
+              )}
             />
           ) : null}
           {eyebrow}
           <span
             aria-hidden="true"
-            className={cn('h-px w-8', onDark ? 'bg-sun-300/50' : 'bg-accent-700/40')}
+            className={cn(
+              'h-0.5 w-8',
+              onDark ? 'bg-sun-300/50' : onColor ? 'bg-ink' : 'bg-accent-700/40',
+            )}
           />
         </p>
       ) : null}

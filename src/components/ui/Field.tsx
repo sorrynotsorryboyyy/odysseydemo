@@ -11,7 +11,7 @@ import { cn } from '@/lib/cn';
  * registre imprime.
  */
 export const controlClass =
-  'block w-full border border-ink/25 border-b-2 border-b-ink/40 bg-white px-3 py-2.5 text-ink placeholder:text-ink-soft/70 transition-colors focus:border-accent-700 focus:border-b-accent-700 focus:outline-none disabled:opacity-60';
+  'block w-full rounded-lg border-2 border-ink bg-white px-3 py-2.5 text-ink placeholder:text-ink-soft/70 transition-colors focus:border-accent-600 focus:outline-none disabled:opacity-60';
 
 /**
  * Enveloppe label + aide + erreur.
@@ -72,15 +72,15 @@ export function Notice({
   // L'erreur utilise `danger` (rouge) et non une couleur de marque : le
   // rouge est le seul signal d'alerte compris sans apprentissage.
   const tones = {
-    info: 'border-accent-700/30 bg-accent-50 text-accent-900',
-    error: 'border-danger-700/30 bg-danger-50 text-danger-900',
-    success: 'border-accent-700/30 bg-accent-50 text-accent-900',
+    info: 'border-ink bg-accent-100 text-ink',
+    error: 'border-ink bg-danger-100 text-ink',
+    success: 'border-ink bg-accent-100 text-ink',
   } as const;
 
   return (
     <p
       role={role}
-      className={cn('border-l-4 px-4 py-3 text-sm font-medium', tones[tone])}
+      className={cn('rounded-lg border-2 px-4 py-3 text-sm font-medium', tones[tone])}
     >
       {children}
     </p>

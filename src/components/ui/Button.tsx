@@ -14,14 +14,15 @@ type Size = 'sm' | 'md' | 'lg';
  */
 const variants: Record<Variant, string> = {
   primary:
-    'bg-accent-500 text-ink border border-ink shadow-ink hover:-translate-x-px hover:-translate-y-px hover:shadow-[4px_4px_0_0_rgb(26_26_26)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none',
+    'bg-accent-500 text-ink border-2 border-ink shadow-ink hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-ink-lg active:translate-x-0.5 active:translate-y-0.5 active:shadow-none',
   secondary:
-    'bg-white text-ink border border-ink/25 shadow-print hover:border-ink hover:shadow-lifteded active:translate-x-0.5 active:translate-y-0.5 active:shadow-none',
-  ghost: 'text-accent-700 border border-transparent hover:border-ink/20 hover:bg-accent-50',
-  inverse: 'bg-cream text-ink border border-ink/20 hover:bg-white',
+    'bg-white text-ink border-2 border-ink shadow-ink-sm hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-ink active:translate-x-0.5 active:translate-y-0.5 active:shadow-none',
+  ghost:
+    'text-ink border-2 border-transparent underline decoration-accent-600 decoration-2 underline-offset-4 hover:decoration-ink',
+  inverse: 'bg-cream text-ink border-2 border-ink hover:bg-white',
   // Action destructive : crème sur rouge foncé (contraste 6.08).
   danger:
-    'bg-danger-700 text-cream border border-danger-900 shadow-print hover:bg-danger-800 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none',
+    'bg-danger-700 text-cream border-2 border-ink shadow-ink-sm hover:bg-danger-800 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none',
 };
 
 // Cibles tactiles d'au moins 44 px de haut.
@@ -37,7 +38,7 @@ const sizes: Record<Size, string> = {
  * proprietes les moins couteuses a animer.
  */
 const base =
-  'inline-flex items-center justify-center gap-2 font-semibold tracking-tight transition-[transform,box-shadow,background-color,border-color] duration-150 disabled:cursor-not-allowed disabled:opacity-60 disabled:shadow-none';
+  'inline-flex items-center justify-center gap-2 rounded-lg font-bold tracking-tight transition-[transform,box-shadow,background-color,border-color] duration-150 disabled:cursor-not-allowed disabled:opacity-60 disabled:shadow-none';
 
 export function Button({
   variant = 'primary',

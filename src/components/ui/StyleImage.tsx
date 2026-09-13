@@ -25,7 +25,7 @@ export function StyleImage({ style, label }: { style: string; label: string }) {
   if (!source) return <ImageSlot ratio="wide" label={label} />;
 
   return (
-    <div className="relative aspect-[3/2] overflow-hidden">
+    <div className="relative aspect-[3/2] overflow-hidden rounded-lg border-2 border-ink">
       <Image
         src={source}
         // Décoratif : la légende voisine porte déjà le nom du style.
