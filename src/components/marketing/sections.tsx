@@ -89,7 +89,11 @@ export function Hero({ dictionary }: SectionProps) {
               l'enfant. */}
           <Reveal delay={140}>
             <div className="animate-float">
-              <BookCover pagesLabel={t('home.hero.mockupLabel')} />
+              <BookCover
+                pagesLabel={t('home.hero.mockupLabel')}
+                insideTitle={t('home.hero.bookInsideTitle')}
+                insideBody={t('home.hero.bookInsideBody')}
+              />
             </div>
           </Reveal>
         </div>
