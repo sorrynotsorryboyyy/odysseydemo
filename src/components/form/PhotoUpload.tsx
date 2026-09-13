@@ -70,7 +70,7 @@ export function PhotoUpload({
       <label
         htmlFor="photo"
         className={cn(
-          'flex cursor-pointer flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-ink/15 bg-cream-50 px-6 py-8 text-center transition-colors hover:border-accent-400 hover:bg-accent-50',
+          'flex cursor-pointer flex-col items-center justify-center gap-2 border-2 border-dashed border-ink/15 bg-cream-50 px-6 py-8 text-center transition-colors hover:border-accent-400 hover:bg-accent-50',
           isUploading && 'opacity-60',
         )}
       >

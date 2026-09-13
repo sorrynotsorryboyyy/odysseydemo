@@ -101,7 +101,7 @@ export function AccountMenu({
       {isOpen ? (
         <div
           role="menu"
-          className="absolute right-0 top-full z-50 mt-2 w-64 overflow-hidden rounded-2xl bg-white shadow-lifted ring-1 ring-ink/10"
+          className="absolute right-0 top-full z-50 mt-2 w-64 overflow-hidden bg-white shadow-lifted border border-ink/20"
         >
           <p className="border-b border-ink/5 px-4 py-3 text-sm text-ink-soft">
             <span className="block truncate font-medium text-ink">{email}</span>

@@ -90,7 +90,7 @@ export function MobileMenu({
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="block rounded-xl px-4 py-3 text-lg font-medium text-ink transition-colors hover:bg-white"
+                    className="block px-4 py-3 text-lg font-medium text-ink transition-colors hover:bg-white"
                   >
                     {link.label}
                   </Link>
@@ -101,7 +101,7 @@ export function MobileMenu({
                   <li>
                     <Link
                       href="/compte/bibliotheque"
-                      className="block rounded-xl px-4 py-3 text-lg font-medium text-ink transition-colors hover:bg-white"
+                      className="block px-4 py-3 text-lg font-medium text-ink transition-colors hover:bg-white"
                     >
                       {labels.library}
                     </Link>
@@ -109,7 +109,7 @@ export function MobileMenu({
                   <li>
                     <Link
                       href="/compte/parametres"
-                      className="block rounded-xl px-4 py-3 text-lg font-medium text-ink transition-colors hover:bg-white"
+                      className="block px-4 py-3 text-lg font-medium text-ink transition-colors hover:bg-white"
                     >
                       {labels.settings}
                     </Link>
@@ -119,7 +119,7 @@ export function MobileMenu({
                 <li>
                   <Link
                     href="/compte/connexion"
-                    className="block rounded-xl px-4 py-3 text-lg font-medium text-ink transition-colors hover:bg-white"
+                    className="block px-4 py-3 text-lg font-medium text-ink transition-colors hover:bg-white"
                   >
                     {labels.login}
                   </Link>
@@ -134,7 +134,7 @@ export function MobileMenu({
             </ButtonLink>
 
             {email ? (
-              <div className="flex items-center justify-between gap-3 rounded-xl bg-white px-4 py-3">
+              <div className="flex items-center justify-between gap-3 bg-white px-4 py-3">
                 <span className="truncate text-sm text-ink-muted">{email}</span>
                 <button
                   type="button"

@@ -112,7 +112,7 @@ function Downloads({ orderId, kinds }: { orderId: string; kinds: ArtifactKind[] 
               {/* Téléchargement direct : le proxy relaie le PDF en flux. */}
               <a
                 href={`/api/orders/${orderId}/download/${kind}`}
-                className="flex items-center justify-between gap-3 rounded-xl bg-cream-50 px-4 py-3 font-medium text-ink ring-1 ring-ink/5 transition-colors hover:bg-accent-50"
+                className="flex items-center justify-between gap-3 bg-cream-50 px-4 py-3 font-medium text-ink border border-ink/15 transition-colors hover:bg-accent-50"
               >
                 {t(`kinds.${kind}`)}
                 <Icon name="download" className="h-5 w-5 text-accent-700" />

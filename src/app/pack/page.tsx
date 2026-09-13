@@ -85,7 +85,7 @@ export default async function PackPage() {
           {translateList(dictionary, 'pack.contents.items').map((item) => (
             <li
               key={item}
-              className="flex gap-3 rounded-2xl bg-cream-50 p-4 ring-1 ring-ink/5"
+              className="flex gap-3 rounded-2xl bg-cream-50 p-4 border border-ink/15"
             >
               <Icon name="check" className="mt-0.5 h-5 w-5 text-accent-700" />
               <span className="text-ink text-pretty">{item}</span>

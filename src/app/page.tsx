@@ -2,19 +2,17 @@ import type { Metadata } from 'next';
 
 import { FaqList, getFaqItems } from '@/components/marketing/Faq';
 import {
+  AfterOrder,
   AgePicker,
-  Benefits,
   Compare,
   FinalCta,
-  Formats,
+  Guarantees,
   Hero,
   HomePricing,
-  Inside,
-  Proof,
   Scope,
   Steps,
   StyleGallery,
-  Testimonials,
+  WhatYouGet,
 } from '@/components/marketing/sections';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { ButtonLink, Icon, Section, SectionHeading } from '@/components/ui';
@@ -48,15 +46,13 @@ export default async function HomePage() {
       <JsonLd schema={faqSchema(dictionary, 6)} />
 
       <Hero dictionary={dictionary} />
-      <Proof dictionary={dictionary} />
+      <Guarantees dictionary={dictionary} />
+      <WhatYouGet dictionary={dictionary} />
       <Steps dictionary={dictionary} />
-      <Inside dictionary={dictionary} />
-      <Formats dictionary={dictionary} />
       <AgePicker dictionary={dictionary} />
       <StyleGallery dictionary={dictionary} />
-      <Benefits dictionary={dictionary} />
-      <Testimonials dictionary={dictionary} />
       <Scope dictionary={dictionary} />
+      <AfterOrder dictionary={dictionary} />
       <HomePricing dictionary={dictionary} />
       <Compare dictionary={dictionary} />
 

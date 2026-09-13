@@ -165,23 +165,6 @@
         }
       }
     },
-    "testimonials": {
-      "title": "Ce qu'en disent les parents",
-      "items": [
-        {
-          "quote": "Elle a reconnu son prénom dès la première page et a voulu qu'on le relise trois fois le soir même.",
-          "author": "Camille, maman de Jade (5 ans)"
-        },
-        {
-          "quote": "Le cahier d'activités a occupé tout un trajet en train. Les corrigés à la fin nous ont bien aidés.",
-          "author": "Nicolas, papa de Tom (8 ans)"
-        },
-        {
-          "quote": "J'ai eu le PDF avant la fin de la sieste, et le livre imprimé est arrivé pour l'anniversaire.",
-          "author": "Sarah, maman d'Elias (6 ans)"
-        }
-      ]
-    },
     "scope": {
       "title": "Ce que nous personnalisons, ce que nous ne promettons pas",
       "included": {
@@ -296,6 +279,50 @@
       ],
       "yes": "Inclus",
       "no": "Non inclus"
+    },
+    "after": {
+      "eyebrow": "Après la commande",
+      "title": "Ce qui se passe une fois le formulaire envoyé",
+      "intro": "Aucune surprise : voici le déroulé exact, et ce sur quoi nous nous engageons.",
+      "steps": [
+        {
+          "title": "La création démarre",
+          "body": "Le récit et les illustrations sont composés à partir des informations transmises. Vous n’avez rien à faire, la page de suivi se met à jour seule."
+        },
+        {
+          "title": "Le PDF arrive dans votre espace",
+          "body": "Dès la création terminée, il est téléchargeable depuis votre bibliothèque. Les retéléchargements sont illimités et l’accès reste ouvert."
+        },
+        {
+          "title": "L’impression part ensuite",
+          "body": "Sur les formules imprimées uniquement. Les délais varient selon la destination ; le PDF, lui, reste disponible sans attendre."
+        },
+        {
+          "title": "Vous avez 14 jours",
+          "body": "Si le livre ne correspond pas à ce que vous attendiez, nous remboursons. Sans justification à fournir, et sans renvoyer l’exemplaire."
+        }
+      ]
+    },
+    "guarantees": {
+      "title": "Nos engagements",
+      "items": [
+        {
+          "label": "Prix final",
+          "body": "Livraison comprise sur les formules imprimées. Aucun frais ajouté au paiement."
+        },
+        {
+          "label": "Paiement unique",
+          "body": "Pas d’abonnement, pas de prélèvement automatique, rien à résilier."
+        },
+        {
+          "label": "Accès permanent",
+          "body": "Votre bibliothèque reste ouverte, avec des retéléchargements illimités."
+        },
+        {
+          "label": "14 jours",
+          "body": "Remboursé si le livre ne convient pas."
+        }
+      ]
     }
   },
   "pricing": {

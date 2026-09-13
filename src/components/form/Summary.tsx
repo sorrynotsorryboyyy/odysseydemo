@@ -56,7 +56,7 @@ export function Summary({
       <p className="mt-2 text-ink-muted">{t('summary.intro')}</p>
 
       {plan ? (
-        <div className="mt-6 flex items-center justify-between gap-4 rounded-2xl bg-accent-50 p-4 ring-1 ring-accent-200">
+        <div className="mt-6 flex items-center justify-between gap-4 bg-accent-50 p-4 ring-1 ring-accent-200">
           <div>
             <Badge>{t('summary.plan')}</Badge>
             <p className="mt-2 font-display text-lg font-bold text-ink">

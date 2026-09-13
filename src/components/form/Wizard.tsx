@@ -274,7 +274,7 @@ export function Wizard({ params }: { params: ProductParams }) {
                     key={style}
                     htmlFor={`style-${style}`}
                     className={cn(
-                      'cursor-pointer overflow-hidden rounded-2xl bg-white text-center ring-1 transition-shadow',
+                      'cursor-pointer overflow-hidden bg-white text-center ring-1 transition-shadow',
                       selected
                         ? 'shadow-lifted ring-2 ring-accent-500'
                         : 'shadow-print ring-ink/10 hover:shadow-lifted',
@@ -385,7 +385,7 @@ export function Wizard({ params }: { params: ProductParams }) {
 
             <label
               htmlFor="consent"
-              className="flex cursor-pointer gap-3 rounded-xl bg-cream-50 p-4 ring-1 ring-ink/5"
+              className="flex cursor-pointer gap-3 bg-cream-50 p-4 border border-ink/15"
             >
               <input
                 id="consent"
@@ -408,7 +408,7 @@ export function Wizard({ params }: { params: ProductParams }) {
             {values.photoId ? (
               <label
                 htmlFor="photoConsent"
-                className="flex cursor-pointer gap-3 rounded-xl bg-cream-50 p-4 ring-1 ring-ink/5"
+                className="flex cursor-pointer gap-3 bg-cream-50 p-4 border border-ink/15"
               >
                 <input
                   id="photoConsent"
