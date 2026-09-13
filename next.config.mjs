@@ -5,16 +5,15 @@ const nextConfig = {
 
   experimental: {
     /**
-     * `firebase-admin` est laissé tel quel au lieu d'être recompilé.
+     * `firebase-admin` est laissé tel quel au lieu d'être recompilé : il
+     * charge ses dépendances natives dynamiquement, ce que le regroupement
+     * de Next gère mal.
      *
-     * Une de ses dépendances, `jwks-rsa`, charge `jose` avec `require()`
-     * alors que `jose@6` n'expose que des modules ES. Le regroupement opéré
-     * par Next pour les fonctions serverless rend ce conflit fatal :
-     *   « require() of ES Module … not supported »
-     *
-     * Déclarer le paquet comme externe le laisse résoudre ses propres
-     * dépendances à l'exécution, ce qui évite le conflit. L'erreur
-     * n'apparaît qu'en déploiement, jamais en développement local.
+     * À noter : la version est volontairement figée à 13.x. La 14 tire
+     * `jwks-rsa@4`, qui charge `jose@6` avec `require()` alors que ce
+     * dernier n'expose que des modules ES — fatal en production
+     * (« require() of ES Module … not supported »), invisible en local.
+     * La 13 utilise `jwks-rsa@3` et `jose@4`, tous deux CommonJS.
      */
     serverComponentsExternalPackages: ['firebase-admin'],
   },
