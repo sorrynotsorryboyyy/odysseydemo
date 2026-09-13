@@ -1,8 +1,10 @@
 import Link from 'next/link';
 
+import { AccountMenu } from './AccountMenu';
 import { MobileMenu } from './MobileMenu';
 import { Container, ButtonLink, Icon } from '@/components/ui';
 import { translate, type Dictionary } from '@/i18n/getDictionary';
+import { readSession } from '@/server/lib/session';
 
 import { LocaleSwitcher } from './LocaleSwitcher';
 
@@ -14,8 +16,11 @@ export const navLinks = [
   { href: '/contact', key: 'common.nav.contact' },
 ] as const;
 
-export function Header({ dictionary }: { dictionary: Dictionary }) {
+export async function Header({ dictionary }: { dictionary: Dictionary }) {
   const t = (key: string) => translate(dictionary, key);
+
+  // Composant serveur : la session est lue directement, sans appel réseau.
+  const session = await readSession();
 
   return (
     <header className="sticky top-0 z-40 border-b border-ink/5 bg-cream/85 backdrop-blur-md">
@@ -46,12 +51,26 @@ export function Header({ dictionary }: { dictionary: Dictionary }) {
 
           <div className="hidden items-center gap-2 lg:flex">
             <LocaleSwitcher label={t('common.footer.language')} />
-            <Link
-              href="/compte/connexion"
-              className="rounded-full px-4 py-2 text-sm font-medium text-ink-muted transition-colors hover:bg-white hover:text-ink"
-            >
-              {t('common.nav.login')}
-            </Link>
+
+            {session ? (
+              <AccountMenu
+                email={session.email}
+                labels={{
+                  library: t('common.nav.library'),
+                  settings: t('account.settings.title'),
+                  logout: t('account.settings.logout'),
+                  openMenu: t('common.nav.account'),
+                }}
+              />
+            ) : (
+              <Link
+                href="/compte/connexion"
+                className="rounded-full px-4 py-2 text-sm font-medium text-ink-muted transition-colors hover:bg-white hover:text-ink"
+              >
+                {t('common.nav.login')}
+              </Link>
+            )}
+
             <ButtonLink href="/tarifs" size="sm">
               {t('common.cta.start')}
             </ButtonLink>
@@ -66,7 +85,10 @@ export function Header({ dictionary }: { dictionary: Dictionary }) {
               cta: t('common.cta.start'),
               language: t('common.footer.language'),
               nav: t('common.nav.primary'),
+              settings: t('account.settings.title'),
+              logoutLabel: t('account.settings.logout'),
             }}
+            email={session?.email ?? null}
             links={navLinks.map((link) => ({ href: link.href, label: t(link.key) }))}
           />
         </div>

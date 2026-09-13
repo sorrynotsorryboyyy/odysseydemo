@@ -12,7 +12,8 @@
       "library": "Ma bibliothèque",
       "primary": "Navigation principale",
       "openMenu": "Ouvrir le menu",
-      "closeMenu": "Fermer le menu"
+      "closeMenu": "Fermer le menu",
+      "account": "Mon compte"
     },
     "footer": {
       "tagline": "Des histoires où votre enfant est le héros.",

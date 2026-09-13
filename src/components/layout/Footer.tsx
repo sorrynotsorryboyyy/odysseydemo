@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 import { Container, Icon } from '@/components/ui';
 import { translate, type Dictionary } from '@/i18n/getDictionary';
+import { readSession } from '@/server/lib/session';
 
 const columns = [
   {
@@ -14,9 +15,11 @@ const columns = [
   },
   {
     titleKey: 'common.footer.account',
+    // Le second lien dépend de la session : « Paramètres » une fois
+    // connecté, « Connexion » sinon. Voir `accountLinks` ci-dessous.
     links: [
       { href: '/compte/bibliotheque', key: 'common.nav.library' },
-      { href: '/compte/connexion', key: 'common.nav.login' },
+      { href: '__account__', key: '__account__' },
       { href: '/contact', key: 'common.nav.contact' },
     ],
   },
@@ -30,8 +33,15 @@ const columns = [
   },
 ] as const;
 
-export function Footer({ dictionary }: { dictionary: Dictionary }) {
+export async function Footer({ dictionary }: { dictionary: Dictionary }) {
   const t = (key: string) => translate(dictionary, key);
+
+  const session = await readSession();
+
+  // Proposer « Connexion » à quelqu'un de déjà connecté serait incohérent.
+  const accountLink = session
+    ? { href: '/compte/parametres', label: t('account.settings.title') }
+    : { href: '/compte/connexion', label: t('common.nav.login') };
 
   return (
     <footer className="mt-auto border-t border-ink/5 bg-white">
@@ -56,16 +66,23 @@ export function Footer({ dictionary }: { dictionary: Dictionary }) {
                 {t(column.titleKey)}
               </h2>
               <ul className="mt-4 space-y-2.5">
-                {column.links.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-ink-muted transition-colors hover:text-accent-700"
-                    >
-                      {t(link.key)}
-                    </Link>
-                  </li>
-                ))}
+                {column.links.map((link) => {
+                  const resolved =
+                    link.href === '__account__'
+                      ? accountLink
+                      : { href: link.href, label: t(link.key) };
+
+                  return (
+                    <li key={resolved.href}>
+                      <Link
+                        href={resolved.href}
+                        className="text-sm text-ink-muted transition-colors hover:text-accent-700"
+                      >
+                        {resolved.label}
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </nav>
           ))}

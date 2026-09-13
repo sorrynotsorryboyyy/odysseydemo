@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 import { ButtonLink, Icon } from '@/components/ui';
@@ -16,18 +16,24 @@ interface Labels {
   cta: string;
   language: string;
   nav: string;
+  settings: string;
+  logoutLabel: string;
 }
 
 /** Navigation repliée sous le point de rupture `lg`. */
 export function MobileMenu({
   links,
   labels,
+  email,
 }: {
   links: Array<{ href: string; label: string }>;
   labels: Labels;
+  /** Adresse de l'utilisateur connecté, `null` si la session est fermée. */
+  email: string | null;
 }) {
   const [isOpen, setOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
 
   // Refermer après navigation, sinon le panneau reste ouvert sur la page suivante.
   useEffect(() => {
@@ -51,6 +57,14 @@ export function MobileMenu({
       document.removeEventListener('keydown', onKeyDown);
     };
   }, [isOpen]);
+
+  async function logout() {
+    await fetch('/api/auth/logout', { method: 'POST' });
+    setOpen(false);
+    router.push('/');
+    // Rafraîchit le rendu serveur, sinon l'en-tête garde l'état connecté.
+    router.refresh();
+  }
 
   return (
     <div className="lg:hidden">
@@ -82,22 +96,35 @@ export function MobileMenu({
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link
-                  href="/compte/bibliotheque"
-                  className="block rounded-xl px-4 py-3 text-lg font-medium text-ink transition-colors hover:bg-white"
-                >
-                  {labels.library}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/compte/connexion"
-                  className="block rounded-xl px-4 py-3 text-lg font-medium text-ink transition-colors hover:bg-white"
-                >
-                  {labels.login}
-                </Link>
-              </li>
+              {email ? (
+                <>
+                  <li>
+                    <Link
+                      href="/compte/bibliotheque"
+                      className="block rounded-xl px-4 py-3 text-lg font-medium text-ink transition-colors hover:bg-white"
+                    >
+                      {labels.library}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/compte/parametres"
+                      className="block rounded-xl px-4 py-3 text-lg font-medium text-ink transition-colors hover:bg-white"
+                    >
+                      {labels.settings}
+                    </Link>
+                  </li>
+                </>
+              ) : (
+                <li>
+                  <Link
+                    href="/compte/connexion"
+                    className="block rounded-xl px-4 py-3 text-lg font-medium text-ink transition-colors hover:bg-white"
+                  >
+                    {labels.login}
+                  </Link>
+                </li>
+              )}
             </ul>
           </nav>
 
@@ -105,6 +132,20 @@ export function MobileMenu({
             <ButtonLink href="/tarifs" size="lg" fullWidth>
               {labels.cta}
             </ButtonLink>
+
+            {email ? (
+              <div className="flex items-center justify-between gap-3 rounded-xl bg-white px-4 py-3">
+                <span className="truncate text-sm text-ink-muted">{email}</span>
+                <button
+                  type="button"
+                  onClick={() => void logout()}
+                  className="shrink-0 text-sm font-semibold text-accent-700 hover:underline"
+                >
+                  {labels.logoutLabel}
+                </button>
+              </div>
+            ) : null}
+
             <LocaleSwitcher label={labels.language} />
           </div>
         </div>
