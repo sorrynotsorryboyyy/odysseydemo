@@ -55,26 +55,17 @@
   "home": {
     "hero": {
       "title": "Une histoire personnalisée où votre enfant est le héros",
-      "subtitle": "24 pages illustrées, écrites autour de son prénom, de son âge et de ses passions. En PDF en quelques minutes, ou imprimées et livrées chez vous.",
+      "subtitle": "24 pages illustrées, écrites autour de son prénom, de son âge et de ses passions. En version digitale en quelques minutes, ou imprimées et livrées chez vous.",
       "note": "Prix final affiché, paiement unique, remboursé sous 14 jours.",
       "badge": "Livre personnalisé 24 pages",
       "mockupLabel": "24 pages illustrées"
-    },
-    "proof": {
-      "title": "Ce que comprend chaque commande",
-      "items": [
-        "24 pages illustrées, uniques à votre enfant",
-        "PDF disponible en quelques minutes",
-        "Accès permanent : retéléchargements illimités",
-        "Remboursement sous 14 jours"
-      ]
     },
     "steps": {
       "title": "Comment ça marche",
       "items": {
         "one": {
-          "title": "Vous racontez votre enfant",
-          "body": "Prénom, âge, passions, univers préféré et style d'illustration : quelques minutes suffisent."
+          "title": "Pour qui est ce livre ?",
+          "body": "Prénom, âge, passions et style d'illustration : quelques minutes suffisent."
         },
         "two": {
           "title": "Nous créons l'histoire",
@@ -82,20 +73,20 @@
         },
         "three": {
           "title": "Vous recevez le livre",
-          "body": "Le PDF arrive dans votre espace parent. Sur les formules imprimées, le livre part ensuite en livraison suivie."
+          "body": "La version digitale arrive dans votre espace parent, lisible sur ordinateur, mobile et tablette. Sur les formules imprimées, le livre part ensuite en livraison suivie."
         }
       },
       "eyebrow": "En 3 étapes"
     },
     "formats": {
-      "title": "Deux formats, combinables",
+      "title": "Trois formats, combinables",
       "pdf": {
-        "title": "PDF instantané",
-        "body": "Disponible en quelques minutes dans votre espace parent, retéléchargeable à volonté."
+        "title": "Version digitale",
+        "body": "Disponible en quelques minutes dans votre espace parent. Lisible sur ordinateur, mobile et tablette, sans limite de téléchargement."
       },
       "print": {
         "title": "Livre imprimé",
-        "body": "24 pages couleur sur papier épais, expédiées en livraison suivie. Le PDF reste inclus."
+        "body": "24 pages couleur sur papier épais, expédiées en livraison suivie. La version digitale reste incluse."
       },
       "cahier": {
         "title": "Cahier d'activités",
@@ -163,27 +154,6 @@
         }
       }
     },
-    "scope": {
-      "title": "Ce que nous personnalisons, ce que nous ne promettons pas",
-      "included": {
-        "title": "Ce que nous personnalisons",
-        "items": [
-          "Le prénom et l'âge de votre enfant, héros du récit",
-          "Ses centres d'intérêt et ses passions",
-          "L'univers narratif et les thèmes abordés",
-          "Le style d'illustration et la langue du livre"
-        ]
-      },
-      "excluded": {
-        "title": "Ce que nous ne promettons pas",
-        "items": [
-          "Les illustrations sont artistiques, pas photoréalistes",
-          "La photo sert de référence d'illustration : elle n'est jamais reproduite à l'identique",
-          "Chaque histoire est générée : deux commandes proches donneront des récits différents",
-          "Les délais d'impression varient selon la destination"
-        ]
-      }
-    },
     "pricing": {
       "title": "Nos offres",
       "intro": "Trois formules, un paiement unique.",
@@ -221,100 +191,20 @@
         }
       }
     },
-    "compare": {
-      "eyebrow": "Comparer",
-      "title": "Quelle formule pour quel usage",
-      "intro": "Les trois offres partagent la même histoire personnalisée. Elles diffèrent par ce que vous recevez.",
-      "columns": {
-        "feature": "Ce que vous recevez",
-        "pdf": "PDF Livre",
-        "relie": "Livre Relié",
-        "pack": "Pack Complet"
-      },
-      "rows": [
-        {
-          "feature": "Histoire personnalisée de 24 pages",
-          "pdf": true,
-          "relie": true,
-          "pack": true
-        },
-        {
-          "feature": "PDF téléchargeable immédiatement",
-          "pdf": true,
-          "relie": true,
-          "pack": true
-        },
-        {
-          "feature": "Accès permanent à la bibliothèque",
-          "pdf": true,
-          "relie": true,
-          "pack": true
-        },
-        {
-          "feature": "Livre imprimé sur papier épais",
-          "pdf": false,
-          "relie": true,
-          "pack": true
-        },
-        {
-          "feature": "Livraison suivie comprise",
-          "pdf": false,
-          "relie": true,
-          "pack": true
-        },
-        {
-          "feature": "Cahier d'activités de 50 pages",
-          "pdf": false,
-          "relie": false,
-          "pack": true
-        },
-        {
-          "feature": "Corrigés des activités",
-          "pdf": false,
-          "relie": false,
-          "pack": true
-        }
-      ],
-      "yes": "Inclus",
-      "no": "Non inclus"
-    },
-    "after": {
-      "eyebrow": "Après la commande",
-      "title": "Ce qui se passe une fois le formulaire envoyé",
-      "intro": "Aucune surprise : voici le déroulé exact, et ce sur quoi nous nous engageons.",
-      "steps": [
-        {
-          "title": "La création démarre",
-          "body": "Le récit et les illustrations sont composés à partir des informations transmises. Vous n’avez rien à faire, la page de suivi se met à jour seule."
-        },
-        {
-          "title": "Le PDF arrive dans votre espace",
-          "body": "Dès la création terminée, il est téléchargeable depuis votre bibliothèque. Les retéléchargements sont illimités et l’accès reste ouvert."
-        },
-        {
-          "title": "L’impression part ensuite",
-          "body": "Sur les formules imprimées uniquement. Les délais varient selon la destination ; le PDF, lui, reste disponible sans attendre."
-        },
-        {
-          "title": "Vous avez 14 jours",
-          "body": "Si le livre ne correspond pas à ce que vous attendiez, nous remboursons. Sans justification à fournir, et sans renvoyer l’exemplaire."
-        }
-      ]
-    },
     "guarantees": {
       "title": "Nos engagements",
       "items": [
         {
           "label": "Prix final",
-          "body": "Livraison comprise sur les formules imprimées. Aucun frais ajouté au paiement."
+          "body": "Livraison comprise. Aucun frais ajouté."
         },
         {
           "label": "Paiement unique",
-          "body": "Pas d’abonnement, pas de prélèvement automatique, rien à résilier."
+          "body": "Pas d’abonnement, rien à résilier."
         },
         {
           "label": "Accès permanent",
-          "body": "Votre bibliothèque reste ouverte, avec des retéléchargements illimités."
+          "body": "Retéléchargements illimités."
         },
         {
           "label": "14 jours",
@@ -333,7 +223,7 @@
     "currency": "€ TTC",
     "plans": {
       "pdf": {
-        "name": "PDF Livre",
+        "name": "Version digitale",
         "features": [
           "Histoire personnalisée 24 pages",
           "Téléchargement immédiat",
@@ -344,7 +234,7 @@
         "name": "Livre Relié",
         "features": [
           "Livre imprimé 24 pages",
-          "PDF inclus",
+          "Version digitale incluse",
           "Impression premium",
           "Livraison suivie"
         ]
@@ -355,7 +245,7 @@
           "Livre 24 pages",
           "Cahier d'activités 50 pages",
           "Corrigés",
-          "PDF des deux",
+          "Versions digitales des deux",
           "Livraison suivie"
         ]
       }
@@ -375,7 +265,7 @@
         },
         {
           "title": "Votre bibliothèque reste ouverte",
-          "body": "Les PDF achetés restent téléchargeables sans limite de temps ni de nombre. Un disque dur qui lâche ne vous fait pas perdre le livre."
+          "body": "Les versions digitales achetées restent accessibles sans limite de temps ni de nombre, sur tous vos appareils. Un disque dur qui lâche ne vous fait pas perdre le livre."
         },
         {
           "title": "14 jours pour changer d'avis",
@@ -385,7 +275,7 @@
     },
     "help": {
       "title": "Vous hésitez entre deux formules ?",
-      "body": "Le PDF suffit pour lire sur tablette ou imprimer chez soi. Le Livre Relié a du sens pour un cadeau ou pour un enfant qui manipule ses livres. Le Pack ajoute le cahier d'activités, qui prolonge l'histoire après la lecture.",
+      "body": "La version digitale suffit pour lire sur ordinateur, mobile ou tablette, ou pour imprimer chez soi. Le Livre Relié a du sens pour un cadeau ou pour un enfant qui manipule ses livres. Le Pack ajoute le cahier d'activités, qui prolonge l'histoire après la lecture.",
       "action": "Poser une question"
     }
   },
@@ -398,7 +288,7 @@
         "Le livre personnalisé de 24 pages, imprimé sur papier épais",
         "Un cahier d'activités de 50 pages, construit autour de l'histoire",
         "Les corrigés de toutes les activités",
-        "Les versions PDF du livre et du cahier",
+        "Les versions digitales du livre et du cahier",
         "La livraison suivie"
       ]
     },
@@ -446,12 +336,12 @@
         "answer": "Oui, livraison comprise sur les formules imprimées."
       },
       {
-        "question": "Quand vais-je recevoir le PDF ?",
+        "question": "Quand vais-je recevoir la version digitale ?",
         "answer": "Disponible dans la bibliothèque dès la création terminée, en général quelques minutes."
       },
       {
         "question": "Et l'impression, combien de temps ?",
-        "answer": "Les délais varient selon la destination ; le PDF reste disponible immédiatement."
+        "answer": "Les délais varient selon la destination ; la version digitale reste disponible immédiatement."
       },
       {
         "question": "À quoi ressemble la personnalisation ?",
@@ -479,7 +369,7 @@
       },
       {
         "question": "Puis-je offrir le livre ?",
-        "answer": "Oui. Le livre imprimé est expédié à l'adresse de votre choix, ce qui permet de l'envoyer directement au destinataire. Le PDF reste disponible dans votre espace, vous pouvez donc l'imprimer ou le transmettre séparément."
+        "answer": "Oui. Le livre imprimé est expédié à l'adresse de votre choix, ce qui permet de l'envoyer directement au destinataire. La version digitale reste disponible dans votre espace, vous pouvez donc l'imprimer ou la transmettre séparément."
       },
       {
         "question": "En quelle langue le livre est-il écrit ?",
@@ -525,7 +415,7 @@
         },
         {
           "title": "2. Produits",
-          "body": "Taletto propose des livres d'histoires personnalisés de 24 pages illustrées, en version numérique (PDF) et/ou imprimée, ainsi qu'un cahier d'activités de 50 pages accompagné de ses corrigés. Chaque livre est créé à partir des informations fournies par le client lors de la commande. Les illustrations sont artistiques et ne constituent pas une reproduction photoréaliste. Une photographie éventuellement transmise sert de simple référence visuelle."
+          "body": "Taletto propose des livres d'histoires personnalisés de 24 pages illustrées, en version digitale et/ou imprimée, ainsi qu'un cahier d'activités de 50 pages accompagné de ses corrigés. La version digitale est consultable sur ordinateur, mobile et tablette. Chaque livre est créé à partir des informations fournies par le client lors de la commande. Les illustrations sont artistiques et ne constituent pas une reproduction photoréaliste. Une photographie éventuellement transmise sert de simple référence visuelle."
         },
         {
           "title": "3. Prix",
@@ -537,7 +427,7 @@
         },
         {
           "title": "5. Création et livraison",
-          "body": "La création du livre débute après confirmation du paiement. Le PDF est mis à disposition dans l'espace client dès que la création est terminée, en général en quelques minutes. Pour les formules imprimées, la fabrication et l'expédition sont assurées par un prestataire d'impression ; les délais varient selon la destination et sont communiqués à titre indicatif. Le PDF reste disponible immédiatement, indépendamment du délai d'impression."
+          "body": "La création du livre débute après confirmation du paiement. La version digitale est mise à disposition dans l'espace client dès que la création est terminée, en général en quelques minutes. Pour les formules imprimées, la fabrication et l'expédition sont assurées par un prestataire d'impression ; les délais varient selon la destination et sont communiqués à titre indicatif. La version digitale reste disponible immédiatement, indépendamment du délai d'impression."
         },
         {
           "title": "6. Droit de rétractation",
@@ -609,7 +499,7 @@
       "sections": [
         {
           "title": "Le principe",
-          "body": "Vous disposez de 14 jours à compter de la mise à disposition du PDF, ou de la réception du livre imprimé, pour demander un remboursement. Aucune justification n'est exigée : il suffit que le résultat ne vous convienne pas."
+          "body": "Vous disposez de 14 jours à compter de la mise à disposition de la version digitale, ou de la réception du livre imprimé, pour demander un remboursement. Aucune justification n'est exigée : il suffit que le résultat ne vous convienne pas."
         },
         {
           "title": "Pourquoi cette garantie existe",
@@ -714,7 +604,7 @@
     },
     "confirmation": {
       "title": "Merci, votre commande est enregistrée",
-      "body": "La création de l'histoire a commencé. Le PDF apparaîtra dans votre bibliothèque dès qu'il sera prêt, en général en quelques minutes.",
+      "body": "La création de l'histoire a commencé. La version digitale apparaîtra dans votre bibliothèque dès qu'elle sera prête, en général en quelques minutes.",
       "printNote": "Sur les formules imprimées, le livre part ensuite en livraison suivie.",
       "action": "Voir ma bibliothèque"
     },
@@ -773,9 +663,9 @@
       "failed": "La création a échoué. Notre équipe a été prévenue — contactez-nous si le problème persiste.",
       "downloads": "Téléchargements",
       "kinds": {
-        "book": "Le livre (PDF)",
-        "cahier": "Le cahier d'activités (PDF)",
-        "corriges": "Les corrigés (PDF)"
+        "book": "Le livre (digitale)",
+        "cahier": "Le cahier d'activités (digitale)",
+        "corriges": "Les corrigés (digitale)"
       },
       "noDownloads": "Aucun fichier disponible pour l'instant.",
       "tracking": "Suivre le colis"
@@ -805,11 +695,11 @@
   "meta": {
     "home": {
       "title": "Taletto — Le livre personnalisé où votre enfant est le héros",
-      "description": "24 pages illustrées, écrites autour du prénom, de l'âge et des passions de votre enfant. PDF en quelques minutes ou livre imprimé, à partir de 9 €."
+      "description": "24 pages illustrées, écrites autour du prénom, de l'âge et des passions de votre enfant. Version digitale en quelques minutes ou livre imprimé, à partir de 9 €."
     },
     "pricing": {
       "title": "Tarifs",
-      "description": "Trois offres à partir de 9 € : PDF, livre relié ou pack complet avec cahier d'activités. Prix final, paiement unique, remboursé sous 14 jours."
+      "description": "Trois offres à partir de 9 € : version digitale, livre relié ou pack complet avec cahier d'activités. Prix final, paiement unique, remboursé sous 14 jours."
     },
     "pack": {
       "title": "Le Pack Complet",

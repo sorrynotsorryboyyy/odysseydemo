@@ -121,25 +121,42 @@ interface Guarantee {
 export function Guarantees({ dictionary }: SectionProps) {
   const items = readList<Guarantee>(dictionary, 'home.guarantees.items');
 
+  /**
+   * Une icône par engagement, dans l'ordre du dictionnaire. Le repli sur
+   * `check` évite qu'un cinquième engagement ajouté plus tard casse la
+   * grille.
+   */
+  const marks = [
+    { icon: 'tag', tone: 'warm' },
+    { icon: 'infinity', tone: 'accent' },
+    { icon: 'download', tone: 'sun' },
+    { icon: 'refresh', tone: 'warm' },
+  ] as const;
+
   return (
-    <section
-      aria-labelledby="guarantees-title"
-      className="border-b border-warm-100 bg-white"
-    >
-      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+    <section aria-labelledby="guarantees-title" className="bg-white">
+      <div className="mx-auto w-full max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
         <h2 id="guarantees-title" className="sr-only">
           {translate(dictionary, 'home.guarantees.title')}
         </h2>
 
-        <dl className="grid divide-y divide-warm-100 sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-4 lg:divide-x">
-          {items.map((item) => (
-            <div key={item.label} className="px-0 py-6 sm:px-6 lg:first:pl-0 lg:last:pr-0">
-              <dt className="font-display text-base font-bold text-ink">{item.label}</dt>
-              <dd className="mt-1.5 text-sm leading-relaxed text-ink-muted text-pretty">
-                {item.body}
-              </dd>
-            </div>
-          ))}
+        <dl className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {items.map((item, index) => {
+            const mark = marks[index] ?? { icon: 'check', tone: 'warm' };
+            return (
+              <Reveal key={item.label} delay={index * 80}>
+                <div className="flex h-full flex-col items-center rounded-2xl bg-warm-25 px-5 py-7 text-center">
+                  <IconBubble name={mark.icon} tone={mark.tone} />
+                  <dt className="mt-4 font-display text-base font-bold text-ink">
+                    {item.label}
+                  </dt>
+                  <dd className="mt-1.5 text-sm leading-relaxed text-ink-muted text-pretty">
+                    {item.body}
+                  </dd>
+                </div>
+              </Reveal>
+            );
+          })}
         </dl>
       </div>
     </section>
@@ -392,107 +409,6 @@ export function StyleGallery({ dictionary }: SectionProps) {
 
 /* ------------------------------------------------------------------ */
 
-/** Ce qu'on promet et ce qu'on ne promet pas, face à face. */
-export function Scope({ dictionary }: SectionProps) {
-  const t = (key: string) => translate(dictionary, key);
-  const included = translateList(dictionary, 'home.scope.included.items');
-  const excluded = translateList(dictionary, 'home.scope.excluded.items');
-
-  return (
-    <Section labelledBy="scope-title" tone="white" glow="quiet">
-      <SectionHeading id="scope-title" title={t('home.scope.title')} />
-
-      <div className="grid gap-5 md:grid-cols-2">
-        <Reveal className="rounded-2xl bg-accent-50 p-7 ring-1 ring-accent-100">
-          <IconBubble name="check" tone="accent" />
-          <h3 className="mt-4 font-display text-lg font-bold text-ink">
-            {t('home.scope.included.title')}
-          </h3>
-          <ul className="mt-5 space-y-3">
-            {included.map((item) => (
-              <li key={item} className="flex gap-3">
-                <Icon name="check" className="mt-0.5 h-5 w-5 shrink-0 text-accent-900" />
-                <span className="text-sm leading-relaxed text-ink-muted text-pretty">
-                  {item}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </Reveal>
-
-        {/* Dire ce qu'on ne promet pas est un argument de confiance, pas un
-            aveu : même traitement visuel que la colonne de gauche. */}
-        <Reveal delay={110} className="rounded-2xl bg-cream-100 p-7 ring-1 ring-cream-300">
-          <IconBubble name="shield" tone="ink" />
-          <h3 className="mt-4 font-display text-lg font-bold text-ink">
-            {t('home.scope.excluded.title')}
-          </h3>
-          <ul className="mt-5 space-y-3">
-            {excluded.map((item) => (
-              <li key={item} className="flex gap-3">
-                <span
-                  aria-hidden="true"
-                  className="mt-2.5 h-px w-4 shrink-0 bg-ink-soft"
-                />
-                <span className="text-sm leading-relaxed text-ink-muted text-pretty">
-                  {item}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </Reveal>
-      </div>
-    </Section>
-  );
-}
-
-/* ------------------------------------------------------------------ */
-
-interface AfterStep {
-  title: string;
-  body: string;
-}
-
-/**
- * Ce qui se passe après la commande.
- *
- * Remplace l'ancienne section de témoignages, qui présentait trois avis
- * inventés et une notation cinq étoiles jamais collectée. Chaque
- * affirmation ci-dessous provient de la FAQ ou des CGV.
- */
-export function AfterOrder({ dictionary }: SectionProps) {
-  const t = (key: string) => translate(dictionary, key);
-  const steps = readList<AfterStep>(dictionary, 'home.after.steps');
-
-  return (
-    <Section labelledBy="after-title" tone="paper" size="narrow">
-      <SectionHeading
-        id="after-title"
-        eyebrow={t('home.after.eyebrow')}
-        title={t('home.after.title')}
-        intro={t('home.after.intro')}
-      />
-
-      <ol className="relative border-l border-warm-200 pl-8">
-        {steps.map((step, index) => (
-          <li key={step.title} className="relative pb-9 last:pb-0">
-            <span
-              aria-hidden="true"
-              className="absolute -left-[2.35rem] top-1 flex h-6 w-6 items-center justify-center rounded-md border border-warm-200 bg-white text-[0.7rem] font-bold tabular-nums text-ink"
-            >
-              {index + 1}
-            </span>
-            <h3 className="font-display text-lg font-bold text-ink">{step.title}</h3>
-            <p className="mt-2 leading-relaxed text-ink-muted text-pretty">{step.body}</p>
-          </li>
-        ))}
-      </ol>
-    </Section>
-  );
-}
-
-/* ------------------------------------------------------------------ */
-
 export function HomePricing({ dictionary }: SectionProps) {
   const t = (key: string) => translate(dictionary, key);
 
@@ -505,88 +421,6 @@ export function HomePricing({ dictionary }: SectionProps) {
         intro={t('home.pricing.intro')}
       />
       <PricingTable dictionary={dictionary} headingLevel="h3" />
-    </Section>
-  );
-}
-
-/* ------------------------------------------------------------------ */
-
-interface CompareRow {
-  feature: string;
-  pdf: boolean;
-  relie: boolean;
-  pack: boolean;
-}
-
-/**
- * Comparatif des formules.
- * Un vrai `<table>` : c'est de la donnée tabulaire, les lecteurs d'écran
- * annoncent alors l'en-tête de colonne avec chaque cellule.
- */
-export function Compare({ dictionary }: SectionProps) {
-  const t = (key: string) => translate(dictionary, key);
-  const rows = readList<CompareRow>(dictionary, 'home.compare.rows');
-  const columns = ['pdf', 'relie', 'pack'] as const;
-
-  return (
-    <Section labelledBy="compare-title" tone="paper" size="wide" className="pt-0">
-      <h2
-        id="compare-title"
-        className="font-display text-2xl font-bold text-ink sm:text-3xl"
-      >
-        {t('home.compare.title')}
-      </h2>
-
-      <div className="mt-8 overflow-x-auto border border-warm-100 bg-white">
-        <table className="w-full min-w-[36rem] border-collapse text-left">
-          <caption className="sr-only">{t('home.compare.title')}</caption>
-          <thead>
-            <tr className="border-b border-warm-100">
-              <th scope="col" className="px-5 py-4 font-display text-sm font-bold text-ink">
-                {t('home.compare.columns.feature')}
-              </th>
-              {columns.map((column) => (
-                <th
-                  key={column}
-                  scope="col"
-                  className="px-4 py-4 text-center font-display text-sm font-bold text-ink"
-                >
-                  {t(`home.compare.columns.${column}`)}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((row) => (
-              <tr key={row.feature} className="border-b border-warm-100 last:border-0">
-                <th
-                  scope="row"
-                  className="px-5 py-3.5 text-sm font-normal text-ink-muted text-pretty"
-                >
-                  {row.feature}
-                </th>
-                {columns.map((column) => (
-                  <td key={column} className="px-4 py-3.5 text-center">
-                    {row[column] ? (
-                      <>
-                        <Icon name="check" className="mx-auto h-5 w-5 text-warm-700" />
-                        <span className="sr-only">{t('home.compare.yes')}</span>
-                      </>
-                    ) : (
-                      <>
-                        <span aria-hidden="true" className="text-ink-soft/50">
-                          —
-                        </span>
-                        <span className="sr-only">{t('home.compare.no')}</span>
-                      </>
-                    )}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
     </Section>
   );
 }

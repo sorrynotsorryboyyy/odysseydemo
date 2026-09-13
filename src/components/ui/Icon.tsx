@@ -18,7 +18,9 @@ export type IconName =
   | 'arrow-right'
   | 'x'
   | 'menu'
-  | 'star';
+  | 'star'
+  | 'tag'
+  | 'refresh';
 
 const paths: Record<IconName, string> = {
   check: 'M4 12.5l5 5L20 6.5',
@@ -37,6 +39,10 @@ const paths: Record<IconName, string> = {
   x: 'M6 6l12 12M18 6L6 18',
   menu: 'M4 7h16M4 12h16M4 17h16',
   star: 'M12 3.5l2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.9l6-.8L12 3.5z',
+  // Étiquette de prix : le point est le trou de l'œillet.
+  tag: 'M3 12V5a2 2 0 012-2h7l9 9-9 9-9-9zm5-5.5h.01',
+  // Flèche circulaire : retour, remboursement.
+  refresh: 'M20 12a8 8 0 11-2.3-5.7M20 4v4h-4',
 };
 
 export function Icon({

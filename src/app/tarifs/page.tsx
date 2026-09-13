@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 
 import { FaqList, getFaqItems } from '@/components/marketing/Faq';
 import { PricingTable } from '@/components/marketing/PricingTable';
-import { Compare } from '@/components/marketing/sections';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { ButtonLink, Card, Icon, Section, SectionHeading } from '@/components/ui';
 import { getDictionary, translate } from '@/i18n/getDictionary';
@@ -53,8 +52,6 @@ export default async function PricingPage() {
 
         <p className="mt-8 text-center text-sm text-ink-soft">{t('pricing.note')}</p>
       </Section>
-
-      <Compare dictionary={dictionary} />
 
       <Section labelledBy="guarantees-title" tone="white">
         <SectionHeading id="guarantees-title" title={t('pricing.guarantees.title')} />

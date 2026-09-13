@@ -2,14 +2,11 @@ import type { Metadata } from 'next';
 
 import { FaqList, getFaqItems } from '@/components/marketing/Faq';
 import {
-  AfterOrder,
   AgePicker,
-  Compare,
   FinalCta,
   Guarantees,
   Hero,
   HomePricing,
-  Scope,
   Steps,
   StyleGallery,
   WhatYouGet,
@@ -51,10 +48,7 @@ export default async function HomePage() {
       <Steps dictionary={dictionary} />
       <AgePicker dictionary={dictionary} />
       <StyleGallery dictionary={dictionary} />
-      <Scope dictionary={dictionary} />
-      <AfterOrder dictionary={dictionary} />
       <HomePricing dictionary={dictionary} />
-      <Compare dictionary={dictionary} />
 
       <Section labelledBy="home-faq-title">
         <SectionHeading
