@@ -3,7 +3,7 @@ import { createHash, randomBytes } from 'node:crypto';
 import { cookies } from 'next/headers';
 
 import { env, isProduction } from './env';
-import { unauthorized } from './errors';
+import { notFound, unauthorized } from './errors';
 import { collections, db } from './firebase';
 
 /**
@@ -110,6 +110,18 @@ export async function destroySession(): Promise<void> {
 export async function requireUser(): Promise<SessionUser> {
   const user = await readSession();
   if (!user) throw unauthorized('unauthorized', 'Session absente ou expirée');
+  return user;
+}
+
+/**
+ * Exige une session dont le rôle est `admin`.
+ *
+ * Renvoie 404 plutôt que 403 : signaler « interdit » révélerait qu'une zone
+ * d'administration existe à cette adresse.
+ */
+export async function requireAdmin(): Promise<SessionUser> {
+  const user = await requireUser();
+  if (user.role !== 'admin') throw notFound('not_found');
   return user;
 }
 

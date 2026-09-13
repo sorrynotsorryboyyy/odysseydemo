@@ -12,6 +12,7 @@ interface Labels {
   settings: string;
   logout: string;
   openMenu: string;
+  admin: string;
 }
 
 /**
@@ -21,7 +22,15 @@ interface Labels {
  * de repère : sur un poste partagé, savoir quel compte est actif évite de
  * commander pour le mauvais enfant.
  */
-export function AccountMenu({ email, labels }: { email: string; labels: Labels }) {
+export function AccountMenu({
+  email,
+  labels,
+  isAdmin = false,
+}: {
+  email: string;
+  labels: Labels;
+  isAdmin?: boolean;
+}) {
   const [isOpen, setOpen] = useState(false);
   const [isPending, setPending] = useState(false);
   const router = useRouter();
@@ -115,6 +124,17 @@ export function AccountMenu({ email, labels }: { email: string; labels: Labels }
             <Icon name="shield" className="h-4 w-4 text-accent-700" />
             {labels.settings}
           </Link>
+
+          {isAdmin ? (
+            <Link
+              href="/admin"
+              role="menuitem"
+              className="flex items-center gap-3 border-t border-ink/5 px-4 py-3 text-sm font-medium text-accent-700 transition-colors hover:bg-accent-50"
+            >
+              <Icon name="shield" className="h-4 w-4" />
+              {labels.admin}
+            </Link>
+          ) : null}
 
           <button
             type="button"

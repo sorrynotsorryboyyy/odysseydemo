@@ -13,7 +13,8 @@
       "primary": "Navigation principale",
       "openMenu": "Ouvrir le menu",
       "closeMenu": "Fermer le menu",
-      "account": "Mon compte"
+      "account": "Mon compte",
+      "admin": "Administration"
     },
     "footer": {
       "tagline": "Des histoires où votre enfant est le héros.",

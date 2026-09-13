@@ -60,7 +60,9 @@ export async function Header({ dictionary }: { dictionary: Dictionary }) {
                   settings: t('account.settings.title'),
                   logout: t('account.settings.logout'),
                   openMenu: t('common.nav.account'),
+                  admin: t('common.nav.admin'),
                 }}
+                isAdmin={session.role === 'admin'}
               />
             ) : (
               <Link

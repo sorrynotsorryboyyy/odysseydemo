@@ -9,7 +9,8 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "set:key": "node scripts/set-service-account.mjs",
-    "check": "node --env-file=.env.local scripts/check-keys.mjs"
+    "check": "node --env-file=.env.local scripts/check-keys.mjs",
+    "admin": "node --env-file=.env.local scripts/set-admin.mjs"
   },
   "dependencies": {
     "firebase": "^12.19.0",
