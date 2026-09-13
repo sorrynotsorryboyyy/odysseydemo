@@ -72,10 +72,10 @@ export function OrderStatus({
               aria-valuenow={status.progress}
               aria-valuemin={0}
               aria-valuemax={100}
-              className="mt-4 h-2 overflow-hidden rounded-full bg-ink/10"
+              className="mt-4 h-2 overflow-hidden border border-ink/15 bg-cream-100"
             >
               <div
-                className="h-full rounded-full bg-accent-500 transition-[width] duration-500"
+                className="h-full bg-accent-500 transition-[width] duration-500"
                 style={{ width: `${status.progress ?? 35}%` }}
               />
             </div>

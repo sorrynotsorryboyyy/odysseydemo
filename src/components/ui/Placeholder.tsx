@@ -3,25 +3,43 @@ import { cn } from '@/lib/cn';
 /**
  * Emplacement visuel en attendant les vraies illustrations.
  *
- * Chaque bloc respecte le ratio final et se remplace par une <Image> sans
- * toucher à la mise en page. La graine dérive la teinte du libellé, pour que
- * deux tuiles voisines ne soient jamais identiques.
+ * Motifs imprimés — trames, hachures, quadrillages — plutôt que dégradés :
+ * un aplat tramé se lit comme une réserve d'imprimeur, pas comme une image
+ * ratée. Chaque bloc respecte le ratio final et se remplace par une
+ * `<Image>` sans toucher à la mise en page.
  */
-const palettes = [
-  'from-accent-200 via-accent-100 to-cream-200',
-  'from-warm-200 via-warm-100 to-cream-200',
-  'from-accent-100 via-cream-200 to-warm-200',
-  'from-cream-300 via-accent-100 to-accent-200',
-  'from-warm-100 via-cream-200 to-accent-100',
-  'from-accent-300 via-accent-100 to-warm-100',
+
+/** Teintes d'encre, en aplat franc. */
+const inks = [
+  { fill: '#0f766e', tint: '#ccfbf1' },
+  { fill: '#b23a1c', tint: '#fde3dc' },
+  { fill: '#115e59', tint: '#f0fdfa' },
+  { fill: '#8f2f16', tint: '#fbc7ba' },
 ] as const;
 
-function paletteFor(seed: string): string {
-  let hash = 0;
-  for (let i = 0; i < seed.length; i += 1) {
-    hash = (hash * 31 + seed.charCodeAt(i)) % 9973;
+type PatternKind = 'dots' | 'lines' | 'grid' | 'rings';
+const patterns: PatternKind[] = ['dots', 'lines', 'grid', 'rings'];
+
+/** Dérive un index stable à partir d'une graine textuelle. */
+function hash(seed: string): number {
+  let value = 0;
+  for (let index = 0; index < seed.length; index += 1) {
+    value = (value * 31 + seed.charCodeAt(index)) % 9973;
   }
-  return palettes[hash % palettes.length];
+  return value;
+}
+
+/** Motif SVG encodé en URI, utilisable comme fond CSS. */
+function patternUrl(kind: PatternKind, color: string): string {
+  const shapes: Record<PatternKind, string> = {
+    dots: `<circle cx="8" cy="8" r="2.2" fill="${color}"/>`,
+    lines: `<path d="M0 16 L16 0" stroke="${color}" stroke-width="2"/>`,
+    grid: `<path d="M0 0 H16 M0 0 V16" stroke="${color}" stroke-width="1.2" fill="none"/>`,
+    rings: `<circle cx="8" cy="8" r="5.5" stroke="${color}" stroke-width="1.6" fill="none"/>`,
+  };
+
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">${shapes[kind]}</svg>`;
+  return `url("data:image/svg+xml,${encodeURIComponent(svg)}")`;
 }
 
 export function Placeholder({
@@ -29,7 +47,7 @@ export function Placeholder({
   ratio = 'square',
   className,
   label,
-  rounded = 'rounded-2xl',
+  rounded = '',
 }: {
   seed?: string;
   ratio?: 'square' | 'book' | 'wide' | 'portrait';
@@ -44,24 +62,37 @@ export function Placeholder({
     portrait: 'aspect-[4/5]',
   } as const;
 
+  const index = hash(seed);
+  const ink = inks[index % inks.length]!;
+  const pattern = patterns[Math.floor(index / 7) % patterns.length]!;
+
   return (
     <div
       // Décoratif : le sens est porté par le texte voisin.
       role="presentation"
       className={cn(
-        'relative overflow-hidden bg-gradient-to-br',
-        paletteFor(seed),
+        'relative overflow-hidden border border-ink/20',
         ratios[ratio],
         rounded,
         className,
       )}
+      style={{ backgroundColor: ink.tint }}
     >
-      {/* Formes douces, pour éviter un aplat plat. */}
-      <span className="absolute -right-6 -top-8 h-24 w-24 rounded-full bg-white/40 blur-xl" />
-      <span className="absolute bottom-[-2rem] left-[-1rem] h-28 w-28 rounded-full bg-white/30 blur-2xl" />
+      <span
+        aria-hidden="true"
+        className="absolute inset-0"
+        style={{ backgroundImage: patternUrl(pattern, ink.fill), opacity: 0.55 }}
+      />
+
+      {/* Filet intérieur : cadre de composition, comme une maquette. */}
+      <span
+        aria-hidden="true"
+        className="absolute inset-3 border border-dashed"
+        style={{ borderColor: `${ink.fill}44` }}
+      />
 
       {label ? (
-        <span className="absolute inset-x-0 bottom-0 p-3 text-center text-xs font-medium text-ink/70">
+        <span className="absolute inset-x-0 bottom-0 bg-white/85 px-3 py-2 text-center text-xs font-medium uppercase tracking-[0.1em] text-ink">
           {label}
         </span>
       ) : null}
@@ -69,7 +100,7 @@ export function Placeholder({
   );
 }
 
-/** Pastille ronde pour les avatars de témoignage. */
+/** Pastille ronde pour les avatars — le cercle a ici un sens. */
 export function AvatarPlaceholder({
   seed,
   initial,
@@ -79,14 +110,16 @@ export function AvatarPlaceholder({
   initial: string;
   className?: string;
 }) {
+  const ink = inks[hash(seed) % inks.length]!;
+
   return (
     <span
       role="presentation"
       className={cn(
-        'inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br font-display text-lg font-bold text-ink/70',
-        paletteFor(seed),
+        'inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border font-display text-base font-bold',
         className,
       )}
+      style={{ backgroundColor: ink.tint, borderColor: ink.fill, color: ink.fill }}
     >
       {initial}
     </span>

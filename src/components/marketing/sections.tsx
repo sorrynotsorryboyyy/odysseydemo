@@ -1,3 +1,4 @@
+import { BookCover } from './BookCover';
 import { PricingTable } from './PricingTable';
 import {
   AvatarPlaceholder,
@@ -26,37 +27,29 @@ export function Hero({ dictionary }: SectionProps) {
   const t = (key: string) => translate(dictionary, key);
 
   return (
-    <section
-      aria-labelledby="hero-title"
-      className="relative overflow-hidden bg-gradient-to-b from-accent-50 via-cream to-cream"
-    >
-      {/* Halos décoratifs, sous le contenu. */}
-      <span
-        aria-hidden="true"
-        className="pointer-events-none absolute -left-24 top-10 h-64 w-64 rounded-full bg-accent-200/40 blur-3xl"
-      />
-      <span
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-20 top-40 h-72 w-72 rounded-full bg-warm-200/40 blur-3xl"
-      />
-
+    <section aria-labelledby="hero-title" className="border-b border-ink/10 bg-paper">
       <div className="relative mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
-          <div className="text-center lg:text-left">
-            <Badge className="animate-fade-up">{t('home.hero.badge')}</Badge>
+        <div className="grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            {/* Sur-titre en petites capitales, précédé d'un filet : codes de
+                page de titre plutôt que badge arrondi. */}
+            <p className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-accent-700">
+              <span aria-hidden="true" className="h-px w-10 bg-accent-700" />
+              {t('home.hero.badge')}
+            </p>
 
             <h1
               id="hero-title"
-              className="mt-5 font-display text-4xl font-bold leading-[1.1] text-ink sm:text-5xl lg:text-6xl"
+              className="mt-6 font-display text-[2.75rem] font-bold leading-[0.98] tracking-tight text-ink sm:text-6xl lg:text-[4.25rem]"
             >
               {t('home.hero.title')}
             </h1>
 
-            <p className="mx-auto mt-6 max-w-xl text-lg text-ink-muted text-pretty lg:mx-0">
+            <p className="mt-7 max-w-xl border-l-2 border-accent-700 pl-5 text-lg leading-relaxed text-ink-muted text-pretty">
               {t('home.hero.subtitle')}
             </p>
 
-            <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href="/tarifs" size="lg">
                 {t('common.cta.start')}
                 <Icon name="arrow-right" className="h-5 w-5" />
@@ -66,23 +59,16 @@ export function Hero({ dictionary }: SectionProps) {
               </ButtonLink>
             </div>
 
-            <p className="mt-6 text-sm text-ink-soft">{t('home.hero.note')}</p>
+            <p className="mt-7 border-t border-ink/10 pt-4 text-sm text-ink-soft">
+              {t('home.hero.note')}
+            </p>
           </div>
 
-          {/* Mise en scène du livre : deux couvertures décalées. */}
-          <div className="relative mx-auto w-full max-w-sm lg:max-w-md">
-            <Placeholder
-              seed="hero-book"
-              ratio="book"
-              className="rotate-3 shadow-lift"
-              label={t('home.hero.mockupLabel')}
-            />
-            <Placeholder
-              seed="hero-book-back"
-              ratio="book"
-              className="absolute -bottom-6 -left-6 w-2/5 -rotate-6 shadow-lift"
-            />
-          </div>
+          <BookCover
+            title={t('home.hero.bookTitle')}
+            childName={t('home.hero.bookChild')}
+            pagesLabel={t('home.hero.mockupLabel')}
+          />
         </div>
       </div>
     </section>
@@ -211,7 +197,7 @@ export function AgePicker({ dictionary }: SectionProps) {
                 seed={`age-${range}`}
                 ratio="square"
                 className="mx-auto w-20"
-                rounded="rounded-full"
+                rounded=""
               />
               <p className="mt-4 font-display text-2xl font-bold text-accent-700">
                 {t(`home.ages.items.${range}.label`)}
@@ -245,7 +231,7 @@ export function StyleGallery({ dictionary }: SectionProps) {
       <ul className="grid grid-cols-2 gap-5 md:grid-cols-3">
         {illustrationStyles.map((style) => (
           <li key={style}>
-            <figure className="group overflow-hidden rounded-2xl bg-cream-50 shadow-soft ring-1 ring-ink/5 transition-shadow hover:shadow-lift">
+            <figure className="group overflow-hidden rounded-2xl bg-cream-50 shadow-print ring-1 ring-ink/5 transition-shadow hover:shadow-lifted">
               <Placeholder seed={`style-${style}`} ratio="wide" rounded="rounded-none" />
               <figcaption className="p-4 text-center font-medium text-ink">
                 {t(`home.styles.items.${style}`)}
@@ -402,13 +388,19 @@ export function FinalCta({ dictionary }: SectionProps) {
   return (
     <Section labelledBy="final-cta-title" size="narrow">
       <div className="relative overflow-hidden rounded-3xl bg-ink px-6 py-14 text-center sm:px-12">
+        {/* Trame imprimee plutot que halo flou : la texture se lit, elle
+            ne diffuse pas. */}
         <span
           aria-hidden="true"
-          className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-accent-500/25 blur-3xl"
+          className="pointer-events-none absolute inset-0 opacity-[0.07]"
+          style={{
+            backgroundImage:
+              'url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2720%27 height=%2720%27%3E%3Ccircle cx=%2710%27 cy=%2710%27 r=%272.5%27 fill=%27%23faf8f0%27/%3E%3C/svg%3E")',
+          }}
         />
         <span
           aria-hidden="true"
-          className="pointer-events-none absolute -bottom-20 -left-10 h-56 w-56 rounded-full bg-warm-500/20 blur-3xl"
+          className="pointer-events-none absolute inset-5 border border-cream/20"
         />
 
         <div className="relative">

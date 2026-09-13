@@ -74,7 +74,7 @@ export function AccountMenu({ email, labels }: { email: string; labels: Labels }
         aria-expanded={isOpen}
         aria-haspopup="menu"
         aria-label={labels.openMenu}
-        className="flex min-h-[2.75rem] items-center gap-2 rounded-full bg-white px-3 py-2 text-sm font-medium text-ink shadow-soft ring-1 ring-inset ring-ink/10 transition-colors hover:ring-ink/20"
+        className="flex min-h-[2.75rem] items-center gap-2 border border-ink/20 bg-white px-3 py-2 text-sm font-medium text-ink shadow-print ring-1 ring-inset ring-ink/10 transition-colors hover:ring-ink/20"
       >
         <span className="flex h-7 w-7 items-center justify-center rounded-full bg-accent-500 font-display text-sm font-bold text-ink">
           {initial}
@@ -92,7 +92,7 @@ export function AccountMenu({ email, labels }: { email: string; labels: Labels }
       {isOpen ? (
         <div
           role="menu"
-          className="absolute right-0 top-full z-50 mt-2 w-64 overflow-hidden rounded-2xl bg-white shadow-lift ring-1 ring-ink/10"
+          className="absolute right-0 top-full z-50 mt-2 w-64 overflow-hidden rounded-2xl bg-white shadow-lifted ring-1 ring-ink/10"
         >
           <p className="border-b border-ink/5 px-4 py-3 text-sm text-ink-soft">
             <span className="block truncate font-medium text-ink">{email}</span>

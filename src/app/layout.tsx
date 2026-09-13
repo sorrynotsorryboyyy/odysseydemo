@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Fraunces, Inter } from 'next/font/google';
+import { Fraunces, Archivo } from 'next/font/google';
 import type { ReactNode } from 'react';
 
 import { Footer } from '@/components/layout/Footer';
@@ -10,8 +10,14 @@ import { TranslationsProvider } from '@/i18n/TranslationsProvider';
 
 import './globals.css';
 
-// Polices self-hosted par next/font : aucun appel réseau tiers au runtime.
-const sans = Inter({
+/**
+ * Polices self-hosted par next/font : aucun appel réseau tiers au runtime.
+ *
+ * Archivo plutôt qu'Inter : une grotesque au dessin plus ferme, moins
+ * omniprésente sur le web, et dont la largeur légèrement resserrée
+ * s'accorde au registre imprimerie.
+ */
+const sans = Archivo({
   subsets: ['latin'],
   variable: '--font-sans',
   display: 'swap',

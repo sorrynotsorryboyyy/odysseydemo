@@ -81,7 +81,7 @@ export function Summary({
               <button
                 type="button"
                 onClick={() => onEdit(row.step)}
-                className="shrink-0 rounded-full px-3 py-1 text-sm font-semibold text-accent-700 transition-colors hover:bg-accent-50"
+                className="shrink-0 border border-accent-700/30 px-2.5 py-1 text-sm font-semibold text-accent-700 transition-colors hover:bg-accent-50"
               >
                 {t('summary.edit')}
               </button>

@@ -40,7 +40,7 @@ export async function Header({ dictionary }: { dictionary: Dictionary }) {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="rounded-full px-4 py-2 text-sm font-medium text-ink-muted transition-colors hover:bg-white hover:text-ink"
+                    className="px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:bg-white hover:text-ink"
                   >
                     {t(link.key)}
                   </Link>
@@ -65,7 +65,7 @@ export async function Header({ dictionary }: { dictionary: Dictionary }) {
             ) : (
               <Link
                 href="/compte/connexion"
-                className="rounded-full px-4 py-2 text-sm font-medium text-ink-muted transition-colors hover:bg-white hover:text-ink"
+                className="px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:bg-white hover:text-ink"
               >
                 {t('common.nav.login')}
               </Link>

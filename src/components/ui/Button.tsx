@@ -14,13 +14,14 @@ type Size = 'sm' | 'md' | 'lg';
  */
 const variants: Record<Variant, string> = {
   primary:
-    'bg-accent-500 text-ink shadow-glow hover:bg-accent-400 active:bg-accent-600',
+    'bg-accent-500 text-ink border border-ink shadow-ink hover:-translate-x-px hover:-translate-y-px hover:shadow-[4px_4px_0_0_rgb(26_26_26)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none',
   secondary:
-    'bg-white text-ink ring-1 ring-inset ring-ink/10 shadow-soft hover:bg-cream-50 hover:ring-ink/20',
-  ghost: 'text-accent-700 hover:bg-accent-50',
-  inverse: 'bg-cream text-ink hover:bg-white',
+    'bg-white text-ink border border-ink/25 shadow-print hover:border-ink hover:shadow-lifteded active:translate-x-0.5 active:translate-y-0.5 active:shadow-none',
+  ghost: 'text-accent-700 border border-transparent hover:border-ink/20 hover:bg-accent-50',
+  inverse: 'bg-cream text-ink border border-ink/20 hover:bg-white',
   // Action destructive : crème sur rouge foncé (contraste 6.08).
-  danger: 'bg-danger-700 text-cream hover:bg-danger-800 active:bg-danger-900',
+  danger:
+    'bg-danger-700 text-cream border border-danger-900 shadow-print hover:bg-danger-800 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none',
 };
 
 // Cibles tactiles d'au moins 44 px de haut.
@@ -30,8 +31,13 @@ const sizes: Record<Size, string> = {
   lg: 'min-h-[3.5rem] px-8 py-4 text-lg',
 };
 
+/**
+ * L'ombre portee se decale au clic : le bouton s'enfonce, comme une touche.
+ * La transition ne porte que sur `transform` et `box-shadow`, les deux
+ * proprietes les moins couteuses a animer.
+ */
 const base =
-  'inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-60';
+  'inline-flex items-center justify-center gap-2 font-semibold tracking-tight transition-[transform,box-shadow,background-color,border-color] duration-150 disabled:cursor-not-allowed disabled:opacity-60 disabled:shadow-none';
 
 export function Button({
   variant = 'primary',

@@ -22,7 +22,7 @@ export function FaqList({ items }: { items: FaqItem[] }) {
       {items.map((item) => (
         <details
           key={item.question}
-          className="group rounded-2xl bg-white px-5 shadow-soft ring-1 ring-ink/5 transition-shadow open:shadow-lift"
+          className="group rounded-2xl bg-white px-5 shadow-print ring-1 ring-ink/5 transition-shadow open:shadow-lifted"
         >
           <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 font-display text-lg font-bold text-ink marker:content-none">
             {item.question}

@@ -68,11 +68,11 @@ export default async function PackPage() {
           </div>
 
           <div className="relative mx-auto w-full max-w-sm">
-            <Placeholder seed="pack-book" ratio="book" className="rotate-2 shadow-lift" />
+            <Placeholder seed="pack-book" ratio="book" className="rotate-2 shadow-lifted" />
             <Placeholder
               seed="pack-cahier"
               ratio="book"
-              className="absolute -bottom-6 -right-6 w-2/5 -rotate-6 shadow-lift"
+              className="absolute -bottom-6 -right-6 w-2/5 -rotate-6 shadow-lifted"
             />
           </div>
         </div>
@@ -96,7 +96,7 @@ export default async function PackPage() {
 
       <Section labelledBy="pack-cahier-title">
         <div className="grid items-center gap-10 md:grid-cols-2">
-          <Placeholder seed="cahier-spread" ratio="wide" className="shadow-soft" />
+          <Placeholder seed="cahier-spread" ratio="wide" className="shadow-print" />
           <div>
             <h2
               id="pack-cahier-title"

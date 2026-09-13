@@ -17,9 +17,12 @@
     @apply font-display tracking-tight text-balance;
   }
 
-  /* Focus visible et généreux : la navigation clavier doit rester lisible. */
+  /* Focus marqué par un contour net plutôt qu'un anneau diffus : plus
+     lisible, et cohérent avec le registre imprimé. */
   :focus-visible {
-    @apply outline-none ring-2 ring-accent-600 ring-offset-2 ring-offset-cream rounded-sm;
+    @apply outline-none;
+    outline: 2px solid #0f766e;
+    outline-offset: 2px;
   }
 }
 
@@ -30,7 +33,7 @@
   }
 
   .skip-link:focus {
-    @apply not-sr-only fixed left-4 top-4 z-50 rounded-xl bg-ink px-4 py-3 text-cream shadow-lift;
+    @apply not-sr-only fixed left-4 top-4 z-50 border border-ink bg-ink px-4 py-3 text-cream;
   }
 }
 

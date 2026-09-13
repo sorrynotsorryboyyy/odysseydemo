@@ -19,6 +19,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Fond « papier » : legerement plus chaud que le blanc, il donne aux
+        // sections alternees une respiration sans recourir a un degrade.
+        paper: '#f4f1e6',
         cream: {
           DEFAULT: '#faf8f0',
           50: '#fdfcf8',
@@ -29,7 +32,7 @@ const config: Config = {
         ink: {
           DEFAULT: '#1a1a1a',
           muted: '#52525b',
-          soft: '#71717a',
+          soft: '#6b6b74',
         },
         // Sarcelle : couleur d'identité de la marque.
         accent: {
@@ -73,16 +76,32 @@ const config: Config = {
         display: ['var(--font-display)', 'Georgia', 'serif'],
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
       },
+      /**
+       * Registre editorial : l'angle vif est la regle. Les quelques pixels
+       * conserves evitent seulement l'arete qui parait accidentelle a
+       * l'ecran. `rounded-full` reste disponible, mais uniquement la ou le
+       * cercle a un sens : pastilles d'avatar, puces numerotees.
+       */
       borderRadius: {
-        lg: '0.75rem',
-        xl: '1rem',
-        '2xl': '1.5rem',
-        '3xl': '2rem',
+        none: '0',
+        sm: '1px',
+        DEFAULT: '2px',
+        md: '2px',
+        lg: '3px',
+        xl: '4px',
+        '2xl': '4px',
+        '3xl': '6px',
       },
+      /**
+       * La structure vient du trait, pas du flou. Les ombres sont portees
+       * et nettes, comme un carton pose sur une table.
+       */
       boxShadow: {
-        soft: '0 2px 12px -2px rgb(26 26 26 / 0.06), 0 4px 24px -4px rgb(26 26 26 / 0.05)',
-        lift: '0 8px 28px -6px rgb(26 26 26 / 0.12), 0 2px 8px -2px rgb(26 26 26 / 0.06)',
-        glow: '0 10px 32px -8px rgb(20 184 166 / 0.35)',
+        edge: '0 1px 0 0 rgb(26 26 26 / 0.08)',
+        print: '3px 3px 0 0 rgb(26 26 26 / 0.10)',
+        lifted: '5px 5px 0 0 rgb(26 26 26 / 0.14)',
+        ink: '3px 3px 0 0 rgb(26 26 26)',
+        accent: '3px 3px 0 0 rgb(15 118 110)',
       },
       maxWidth: {
         prose: '68ch',
@@ -92,6 +111,11 @@ const config: Config = {
           from: { opacity: '0', transform: 'translateY(0.5rem)' },
           to: { opacity: '1', transform: 'translateY(0)' },
         },
+      },
+      // Profondeur du livre 3D : suffisante pour lire l'objet, assez faible
+      // pour eviter la deformation en fish-eye.
+      perspective: {
+        book: '1400px',
       },
       animation: {
         'fade-up': 'fade-up 0.4s ease-out both',

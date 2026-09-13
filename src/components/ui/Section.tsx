@@ -17,13 +17,16 @@ export function Section({
   containerClassName?: string;
   size?: 'default' | 'narrow' | 'wide';
   labelledBy?: string;
-  tone?: 'transparent' | 'white' | 'ink' | 'accent';
+  tone?: 'transparent' | 'white' | 'ink' | 'accent' | 'paper';
 }) {
+  // Les sections se distinguent par un aplat et un filet, pas par un
+  // degrade : la rupture doit etre nette, comme un changement de cahier.
   const tones = {
     transparent: '',
-    white: 'bg-white',
-    ink: 'bg-ink text-cream',
-    accent: 'bg-accent-50',
+    white: 'border-y border-ink/10 bg-white',
+    ink: 'border-y border-ink bg-ink text-cream',
+    accent: 'border-y border-accent-700/20 bg-accent-50',
+    paper: 'border-y border-ink/10 bg-paper',
   } as const;
 
   return (
@@ -57,8 +60,15 @@ export function SectionHeading({
   return (
     <div className={cn('mb-10 sm:mb-14', centered && 'text-center')}>
       {eyebrow ? (
-        <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent-700">
+        <p
+          className={cn(
+            'mb-4 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-accent-700',
+            centered ? 'justify-center' : 'justify-start',
+          )}
+        >
+          {centered ? <span aria-hidden="true" className="h-px w-8 bg-accent-700/40" /> : null}
           {eyebrow}
+          <span aria-hidden="true" className="h-px w-8 bg-accent-700/40" />
         </p>
       ) : null}
 

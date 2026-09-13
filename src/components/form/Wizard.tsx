@@ -276,8 +276,8 @@ export function Wizard({ params }: { params: ProductParams }) {
                     className={cn(
                       'cursor-pointer overflow-hidden rounded-2xl bg-white text-center ring-1 transition-shadow',
                       selected
-                        ? 'shadow-lift ring-2 ring-accent-500'
-                        : 'shadow-soft ring-ink/10 hover:shadow-lift',
+                        ? 'shadow-lifted ring-2 ring-accent-500'
+                        : 'shadow-print ring-ink/10 hover:shadow-lifted',
                     )}
                   >
                     <input
@@ -491,10 +491,10 @@ function ProgressBar({
         aria-valuemin={1}
         aria-valuemax={total}
         aria-label={stepLabel}
-        className="mt-3 h-2 overflow-hidden rounded-full bg-ink/10"
+        className="mt-3 h-2 overflow-hidden border border-ink/15 bg-cream-100"
       >
         <div
-          className="h-full rounded-full bg-accent-500 transition-[width] duration-300"
+          className="h-full bg-accent-500 transition-[width] duration-300"
           style={{ width: `${percent}%` }}
         />
       </div>
