@@ -20,20 +20,23 @@ export function Section({
   tone?: 'transparent' | 'white' | 'paper' | 'soft' | 'coral' | 'ink';
 }) {
   /**
-   * Les fonds sont translucides : le champ coloré posé derrière la page se
-   * voit au travers, sans que chaque section le redécoupe. L'alternance
-   * blanc / corail garde son rythme, la différence de fond suffit à marquer
-   * la rupture.
+   * Toutes les surfaces sont translucides : le champ coloré posé derrière la
+   * page se voit au travers, sans que chaque section le redécoupe.
+   *
+   * Aucun ton n'est complètement transparent. Sur deux halos empilés le fond
+   * atteint #fbc9bc, où `warm-700` tombe à 4.03 — sous le seuil AA. Un voile
+   * blanc, même léger, ramène les sur-titres au-dessus de 4.5 tout en
+   * laissant passer la couleur.
    *
    * `coral` est l'aplat soutenu, réservé à un seul moment par page : au-delà
-   * il cesse d'être un accent. Le texte y reste encre (11.59 sur warm-200).
+   * il cesse d'être un accent. Le texte y reste encre.
    */
   const tones = {
-    transparent: '',
-    white: 'bg-white/75',
+    transparent: 'bg-white/35',
+    white: 'bg-white/70',
     paper: 'bg-white/45',
-    soft: 'bg-warm-50/50',
-    coral: 'bg-warm-200/70',
+    soft: 'bg-warm-50/55',
+    coral: 'bg-warm-200/65',
     ink: 'bg-ink text-cream',
   } as const;
 
@@ -41,7 +44,7 @@ export function Section({
     <section
       aria-labelledby={labelledBy}
       className={cn(
-        'py-14 sm:py-20',
+        'py-12 sm:py-16',
         tones[tone],
         className,
       )}
@@ -79,7 +82,7 @@ export function SectionHeading({
   onColor?: boolean;
 }) {
   return (
-    <div className={cn('mb-10 sm:mb-14', centered && 'text-center')}>
+    <div className={cn('mb-8 sm:mb-10', centered && 'text-center')}>
       {eyebrow ? (
         <p
           className={cn(

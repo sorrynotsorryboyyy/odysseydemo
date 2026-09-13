@@ -29,13 +29,18 @@ const C = {
   'danger-700': '#b91c1c',
   'danger-900': '#7f1d1d',
   /**
-   * Fonds effectifs sous les sections translucides, halo le plus saturé
-   * compris : le champ coloré se voit à travers `bg-white/75` et consorts,
-   * donc le texte ne repose jamais sur du blanc pur.
+   * Fonds effectifs, halos compris. Le champ coloré se voit à travers les
+   * surfaces translucides : le texte ne repose jamais sur du blanc pur.
+   *
+   * Pire cas = deux halos empilés sur la base crème (#fbc9bc), puis le
+   * voile de la surface par-dessus.
    */
-  'sur-blanc-75': '#fffaf8',
-  'sur-blanc-45': '#fef3f0',
-  'sur-coral-70': '#fcd1c6',
+  'halo-max': '#fbc9bc',
+  'sur-voile-35': '#fcd9d0',
+  'sur-blanc-70': '#fdefeb',
+  'sur-blanc-45': '#fde1da',
+  'sur-carte-80': '#fef8f6',
+  'sur-coral-65': '#fbc8bb',
 };
 
 /** Couples effectivement rendus : [texte, fond, où]. */
@@ -59,12 +64,16 @@ const PAIRS = [
   ['danger-900', 'danger-50', "message d'erreur"],
   ['ink', 'cream-200', 'badge neutre'],
   ['cream', 'ink', 'texte sur aplat encre'],
-  ['ink', 'sur-blanc-75', 'texte sur section claire, halo compris'],
-  ['ink-muted', 'sur-blanc-75', 'texte secondaire, halo compris'],
-  ['warm-700', 'sur-blanc-75', 'sur-titre, halo compris'],
-  ['ink', 'sur-blanc-45', 'texte sur section pâle, halo compris'],
-  ['warm-700', 'sur-blanc-45', 'sur-titre sur section pâle, halo compris'],
-  ['ink', 'sur-coral-70', 'texte sur aplat corail, halo compris'],
+  ['ink', 'sur-voile-35', 'texte sur section transparente, halo max'],
+  ['warm-700', 'sur-voile-35', 'sur-titre sur section transparente, halo max'],
+  ['ink', 'sur-blanc-70', 'texte sur section claire, halo max'],
+  ['ink-muted', 'sur-blanc-70', 'texte secondaire, halo max'],
+  ['warm-700', 'sur-blanc-70', 'sur-titre, halo max'],
+  ['ink', 'sur-blanc-45', 'texte sur section pâle, halo max'],
+  ['warm-700', 'sur-blanc-45', 'sur-titre sur section pâle, halo max'],
+  ['ink', 'sur-carte-80', 'texte sur carte, halo max'],
+  ['ink-muted', 'sur-carte-80', 'texte secondaire sur carte, halo max'],
+  ['ink', 'sur-coral-65', 'texte sur aplat corail, halo max'],
 ];
 
 /** Seuil AA : 4.5 pour le texte courant, 3.0 pour le grand texte. */

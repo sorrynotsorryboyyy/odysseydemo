@@ -22,7 +22,7 @@ export function Card({
       className={cn(
         // La carte se détache par l'ombre, pas par un cerne : sur fond pâle
         // le blanc suffit à la séparer du fond.
-        'rounded-xl bg-white p-6 shadow-card',
+        'rounded-xl bg-white/80 p-6 shadow-card',
         interactive &&
           'transition-[transform,box-shadow] duration-200 hover:-translate-y-1 hover:shadow-card-hover',
         className,

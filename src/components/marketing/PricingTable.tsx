@@ -45,7 +45,7 @@ export function PricingTable({
                 'flex h-full flex-col overflow-hidden rounded-2xl transition-transform duration-200 hover:-translate-y-1',
                 featured
                   ? 'bg-warm-700 text-white shadow-float ring-2 ring-warm-800'
-                  : 'bg-white shadow-card',
+                  : 'bg-white/85 shadow-card',
               )}
             >
               {/* Bandeau de tête : la couleur identifie l'offre. */}

@@ -48,8 +48,8 @@ export function Hero({ dictionary }: SectionProps) {
 
   return (
     <section aria-labelledby="hero-title">
-      <div className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-        <div className="grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
+      <div className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <Reveal>
             <p className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-warm-700">
               <span aria-hidden="true" className="h-px w-10 bg-warm-700" />
@@ -58,18 +58,18 @@ export function Hero({ dictionary }: SectionProps) {
 
             <h1
               id="hero-title"
-              className="mt-6 font-display text-[2.75rem] font-bold leading-[0.98] tracking-tight text-ink sm:text-6xl lg:text-[4.25rem]"
+              className="mt-5 font-display text-[2.75rem] font-bold leading-[0.98] tracking-tight text-ink sm:text-6xl lg:text-[4.25rem]"
             >
               {t('home.hero.title')}
             </h1>
 
-            <p className="mt-7 max-w-xl border-l-2 border-warm-700 pl-5 text-lg leading-relaxed text-ink-muted text-pretty">
+            <p className="mt-6 max-w-xl border-l-2 border-warm-700 pl-5 text-lg leading-relaxed text-ink-muted text-pretty">
               {t('home.hero.subtitle')}
             </p>
 
             {/* Un seul appel à l'action dominant ; le second est secondaire
                 par sa forme autant que par sa place. */}
-            <div className="mt-9 flex flex-wrap items-center gap-5">
+            <div className="mt-7 flex flex-wrap items-center gap-4">
               <ButtonLink href="/tarifs" size="lg">
                 {t('common.cta.start')}
                 <Icon name="arrow-right" className="h-5 w-5" />
@@ -79,7 +79,7 @@ export function Hero({ dictionary }: SectionProps) {
               </ButtonLink>
             </div>
 
-            <p className="mt-7 border-t border-warm-100 pt-4 text-sm text-ink-soft">
+            <p className="mt-6 border-t border-warm-100 pt-4 text-sm text-ink-soft">
               {t('home.hero.note')}
             </p>
           </Reveal>
@@ -129,7 +129,7 @@ export function Guarantees({ dictionary }: SectionProps) {
 
   return (
     <section aria-labelledby="guarantees-title">
-      <div className="mx-auto w-full max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
         <h2 id="guarantees-title" className="sr-only">
           {translate(dictionary, 'home.guarantees.title')}
         </h2>
@@ -208,10 +208,10 @@ export function WhatYouGet({ dictionary }: SectionProps) {
 
       {/* Quatre repères en grille plutôt qu'en liste : chacun tient sur une
           icône et deux lignes. */}
-      <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {inside.map((item, index) => (
           <Reveal as="li" key={item} delay={index * 90}>
-            <div className="flex h-full flex-col rounded-xl bg-white p-6 shadow-card">
+            <div className="flex h-full flex-col rounded-xl bg-white/80 p-6 shadow-card">
               <IconBubble name={insideIcons[item]} tone={insideTones[item]} />
               <h3 className="mt-4 font-display text-lg font-bold text-ink">
                 {t(`home.inside.items.${item}.title`)}
@@ -225,12 +225,12 @@ export function WhatYouGet({ dictionary }: SectionProps) {
       </ul>
 
       {/* Trois formats, trois pastilles colorées. */}
-      <div className="mt-16">
+      <div className="mt-12">
         <h3 className="text-center font-display text-xl font-bold text-ink">
           {t('home.formats.title')}
         </h3>
 
-        <div className="mt-8 grid gap-6 sm:grid-cols-3">
+        <div className="mt-6 grid gap-5 sm:grid-cols-3">
           {formats.map((format, index) => (
             <Reveal key={format} delay={index * 90}>
               <div className="flex h-full flex-col items-center rounded-xl bg-warm-25 p-7 text-center">
@@ -272,7 +272,7 @@ export function Steps({ dictionary }: SectionProps) {
         title={t('home.steps.title')}
       />
 
-      <ol className="relative grid gap-8 md:grid-cols-3">
+      <ol className="relative grid gap-5 md:grid-cols-3">
         {/* Filet de liaison, seulement là où les étapes sont alignées. */}
         <span
           aria-hidden="true"
@@ -281,7 +281,7 @@ export function Steps({ dictionary }: SectionProps) {
 
         {steps.map((step, index) => (
           <Reveal as="li" key={step} delay={index * 120} className="relative">
-            <div className="flex h-full flex-col items-center rounded-2xl bg-white p-8 text-center shadow-card">
+            <div className="flex h-full flex-col items-center rounded-2xl bg-white/80 p-8 text-center shadow-card">
               {/* Le chiffre porte la couleur : c'est le repère qu'on suit. */}
               <span
                 className={cn(
@@ -322,7 +322,7 @@ export function AgePicker({ dictionary }: SectionProps) {
 
   return (
     <Section labelledBy="ages-title" tone="white">
-      <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+      <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-warm-700">
             {t('home.ages.eyebrow')}
@@ -429,7 +429,7 @@ export function FinalCta({ dictionary }: SectionProps) {
       aria-labelledby="final-cta-title"
       className="relative isolate overflow-hidden bg-warm-700"
     >
-      <div className="relative mx-auto w-full max-w-3xl px-4 py-20 text-center sm:px-6">
+      <div className="relative mx-auto w-full max-w-3xl px-4 py-16 text-center sm:px-6">
         {/* Trame imprimée plutôt que halo flou : la texture se lit. */}
         <span
           aria-hidden="true"
