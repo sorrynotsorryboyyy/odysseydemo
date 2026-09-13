@@ -10,7 +10,7 @@ export const dynamic = 'force-dynamic';
 /** Ligne d'un tableau de définition, pour les champs simples. */
 function Row({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex gap-4 border-b border-ink/8 py-3 last:border-0">
+    <div className="flex gap-4 border-b border-ink/10 py-3 last:border-0">
       <dt className="w-44 shrink-0 text-sm font-medium text-ink-soft">{label}</dt>
       <dd className="text-sm text-ink text-pretty">{value || '—'}</dd>
     </div>

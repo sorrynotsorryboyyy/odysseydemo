@@ -33,7 +33,7 @@ export function LocaleSwitcher({ label }: { label: string }) {
         value={locale}
         disabled={isPending}
         onChange={(event) => onChange(event.target.value as Locale)}
-        className="form-select min-h-[2.75rem] border border-ink/20 bg-white py-2 pl-3 pr-9 text-sm font-medium text-ink shadow-print ring-1 ring-inset ring-ink/10 transition-colors hover:ring-ink/20 disabled:opacity-60"
+        className="form-select min-h-[2.75rem] border-2 border-ink bg-white py-2 pl-3 pr-9 text-sm font-medium text-ink shadow-ink-sm ring-1 ring-inset ring-ink/10 transition-colors hover:ring-ink/20 disabled:opacity-60"
       >
         {locales.map((code) => (
           <option key={code} value={code}>

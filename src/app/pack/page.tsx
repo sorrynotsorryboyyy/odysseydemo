@@ -6,7 +6,7 @@ import {
   ButtonLink,
   Card,
   Icon,
-  Placeholder,
+  ImageSlot,
   Section,
   SectionHeading,
 } from '@/components/ui';
@@ -68,11 +68,15 @@ export default async function PackPage() {
           </div>
 
           <div className="relative mx-auto w-full max-w-sm">
-            <Placeholder seed="pack-book" ratio="book" className="rotate-2 shadow-lifted" />
-            <Placeholder
-              seed="pack-cahier"
+            <ImageSlot
               ratio="book"
-              className="absolute -bottom-6 -right-6 w-2/5 -rotate-6 shadow-lifted"
+              label={t('pack.visuals.cover')}
+              className="rotate-2 shadow-ink"
+            />
+            <ImageSlot
+              ratio="book"
+              label={t('pack.visuals.cahier')}
+              className="absolute -bottom-6 -right-6 w-2/5 -rotate-6 shadow-ink"
             />
           </div>
         </div>
@@ -85,7 +89,7 @@ export default async function PackPage() {
           {translateList(dictionary, 'pack.contents.items').map((item) => (
             <li
               key={item}
-              className="flex gap-3 rounded-2xl bg-cream-50 p-4 border border-ink/15"
+              className="flex gap-3 rounded-2xl bg-cream-50 p-4 border-2 border-ink"
             >
               <Icon name="check" className="mt-0.5 h-5 w-5 text-accent-700" />
               <span className="text-ink text-pretty">{item}</span>
@@ -96,7 +100,11 @@ export default async function PackPage() {
 
       <Section labelledBy="pack-cahier-title">
         <div className="grid items-center gap-10 md:grid-cols-2">
-          <Placeholder seed="cahier-spread" ratio="wide" className="shadow-print" />
+          <ImageSlot
+            ratio="wide"
+            label={t('pack.visuals.spread')}
+            className="shadow-ink-sm"
+          />
           <div>
             <h2
               id="pack-cahier-title"

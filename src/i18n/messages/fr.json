@@ -433,6 +433,11 @@
           "body": "Le cahier n'est pas un bonus de quelques feuillets. Il tient un trajet, un après-midi de pluie, ou plusieurs soirées à petites doses."
         }
       ]
+    },
+    "visuals": {
+      "cover": "Couverture du livre",
+      "cahier": "Cahier d'activités",
+      "spread": "Double page intérieure"
     }
   },
   "faq": {

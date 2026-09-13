@@ -11,7 +11,7 @@ import { cn } from '@/lib/cn';
  * registre imprime.
  */
 export const controlClass =
-  'block w-full rounded-lg border-2 border-ink bg-white px-3 py-2.5 text-ink placeholder:text-ink-soft/70 transition-colors focus:border-accent-600 focus:outline-none disabled:opacity-60';
+  'block w-full rounded-lg border-2 border-ink bg-white px-3 py-2.5 text-ink placeholder:text-ink-soft transition-colors focus:border-accent-600 focus:outline-none disabled:opacity-60';
 
 /**
  * Enveloppe label + aide + erreur.

@@ -71,7 +71,7 @@ export function Placeholder({
       // Décoratif : le sens est porté par le texte voisin.
       role="presentation"
       className={cn(
-        'relative overflow-hidden border border-ink/20',
+        'relative overflow-hidden border-2 border-ink',
         ratios[ratio],
         rounded,
         className,

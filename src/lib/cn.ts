@@ -8,6 +8,19 @@
  * dernière classe déclarée l'emporte, comme on s'y attend.
  */
 
+/**
+ * Styles de trait : un axe à part entière, ni largeur ni couleur.
+ * Tailwind les nomme sans valeur numérique, d'où l'énumération.
+ */
+const BORDER_STYLES = new Set([
+  'border-solid',
+  'border-dashed',
+  'border-dotted',
+  'border-double',
+  'border-hidden',
+  'border-none',
+]);
+
 /** Préfixes dont une seule occurrence doit survivre. */
 const GROUPS = [
   'bg',
@@ -58,10 +71,21 @@ function groupOf(className: string): string | null {
   for (const group of GROUPS) {
     if (base === group || base.startsWith(`${group}-`)) {
       // `ring-ink/5` (couleur) vs `ring-2` (épaisseur) : deux axes distincts,
-      // qui ne doivent pas s'éliminer l'un l'autre. Idem pour `border`.
+      // qui ne doivent pas s'éliminer l'un l'autre. Idem pour `border`, qui
+      // en compte un troisième — le style de trait : `border-2 border-dashed
+      // border-ink/40` doit survivre en entier, sinon le trait tireté d'un
+      // emplacement vide se rend en trait plein et se lit comme une image.
       if (group === 'ring' || group === 'border') {
-        const isWidth = new RegExp(`^${group}(-\\d+)?$`).test(base);
-        return `${variant}${group}-${isWidth ? 'width' : 'color'}`;
+        if (group === 'border' && BORDER_STYLES.has(base)) {
+          return `${variant}border-style`;
+        }
+        // Le côté fait partie de l'axe : `border-b-2` (épaisseur du bas) et
+        // `border-b-ink` (sa couleur) sont indépendants, et tous deux
+        // indépendants de `border-2` qui vise les quatre côtés.
+        const side = group === 'border' ? /^border-([xytrbl])-/.exec(base)?.[1] : undefined;
+        const scope = side ? `${group}-${side}` : group;
+        const isWidth = new RegExp(`^${scope}(-\\d+)?$`).test(base);
+        return `${variant}${scope}-${isWidth ? 'width' : 'color'}`;
       }
       return `${variant}${group}`;
     }

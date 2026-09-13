@@ -21,9 +21,9 @@ export function Card({
       aria-labelledby={labelledBy}
       className={cn(
         // La structure vient du trait et de l'ombre portee, jamais du flou.
-        'border border-ink/15 bg-white p-6 shadow-print',
+        'border-2 border-ink bg-white p-6 shadow-ink-sm',
         interactive &&
-          'transition-[transform,box-shadow] duration-150 hover:-translate-x-px hover:-translate-y-px hover:shadow-lifteded',
+          'transition-[transform,box-shadow] duration-150 hover:-translate-x-px hover:-translate-y-px hover:shadow-ink',
         className,
       )}
     >

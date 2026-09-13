@@ -41,7 +41,7 @@ export function BookCover({
                 {[92, 100, 86, 96, 74].map((width, index) => (
                   <span
                     key={index}
-                    className="block h-1.5 bg-ink/12"
+                    className="block h-1.5 bg-ink/10"
                     style={{ width: `${width}%` }}
                   />
                 ))}

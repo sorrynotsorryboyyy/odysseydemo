@@ -76,7 +76,7 @@ export default async function AdminOrders({
         />
         <button
           type="submit"
-          className="border border-ink bg-white px-4 py-2 text-sm font-semibold text-ink shadow-print"
+          className="border border-ink bg-white px-4 py-2 text-sm font-semibold text-ink shadow-ink-sm"
         >
           Rechercher
         </button>
@@ -87,7 +87,7 @@ export default async function AdminOrders({
           <p className="text-ink-muted">Aucune commande ne correspond.</p>
         </Card>
       ) : (
-        <div className="overflow-x-auto border border-ink/15 bg-white">
+        <div className="overflow-x-auto border-2 border-ink bg-white">
           <table className="w-full min-w-[44rem] border-collapse text-left text-sm">
             <thead className="border-b border-ink/15 bg-cream-50">
               <tr>
@@ -101,7 +101,7 @@ export default async function AdminOrders({
             </thead>
             <tbody>
               {orders.map((order) => (
-                <tr key={order.id} className="border-b border-ink/8 last:border-0">
+                <tr key={order.id} className="border-b border-ink/10 last:border-0">
                   <td className="px-4 py-3 font-medium text-ink">
                     {order.childFirstName}
                   </td>

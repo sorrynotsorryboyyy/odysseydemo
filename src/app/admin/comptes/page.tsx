@@ -25,14 +25,14 @@ export default async function AdminUsers() {
           Le rôle se change en ligne de commande, jamais depuis cette page : une
           promotion accessible par le web serait une porte de plus à défendre.
         </p>
-        <pre className="mt-3 overflow-x-auto border border-ink/15 bg-white px-4 py-3 font-mono text-xs text-ink">
+        <pre className="mt-3 overflow-x-auto border-2 border-ink bg-white px-4 py-3 font-mono text-xs text-ink">
 {`npm run admin -- adresse@exemple.fr
 npm run admin -- adresse@exemple.fr --revoke
 npm run admin -- --list`}
         </pre>
       </Card>
 
-      <div className="overflow-x-auto border border-ink/15 bg-white">
+      <div className="overflow-x-auto border-2 border-ink bg-white">
         <table className="w-full min-w-[32rem] border-collapse text-left text-sm">
           <thead className="border-b border-ink/15 bg-cream-50">
             <tr>
@@ -43,7 +43,7 @@ npm run admin -- --list`}
           </thead>
           <tbody>
             {users.map((user) => (
-              <tr key={user.id} className="border-b border-ink/8 last:border-0">
+              <tr key={user.id} className="border-b border-ink/10 last:border-0">
                 <td className="px-4 py-3 font-medium text-ink">{user.email}</td>
                 <td className="px-4 py-3">
                   {user.role === 'admin' ? (

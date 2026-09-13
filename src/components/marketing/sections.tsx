@@ -472,7 +472,7 @@ export function Compare({ dictionary }: SectionProps) {
         {t('home.compare.title')}
       </h2>
 
-      <div className="mt-8 overflow-x-auto border border-ink/15 bg-white">
+      <div className="mt-8 overflow-x-auto border-2 border-ink bg-white">
         <table className="w-full min-w-[36rem] border-collapse text-left">
           <caption className="sr-only">{t('home.compare.title')}</caption>
           <thead>

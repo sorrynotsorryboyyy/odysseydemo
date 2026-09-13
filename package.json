@@ -10,7 +10,9 @@
     "typecheck": "tsc --noEmit",
     "set:key": "node scripts/set-service-account.mjs",
     "check": "node --env-file=.env.local scripts/check-keys.mjs",
-    "admin": "node --env-file=.env.local scripts/set-admin.mjs"
+    "admin": "node --env-file=.env.local scripts/set-admin.mjs",
+    "check:classes": "node scripts/check-classes.mjs",
+    "verify": "npm run typecheck && npm run lint && npm run build && npm run check:classes"
   },
   "dependencies": {
     "firebase": "^12.19.0",
