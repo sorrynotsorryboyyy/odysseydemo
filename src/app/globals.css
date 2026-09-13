@@ -8,7 +8,8 @@
   }
 
   body {
-    @apply bg-cream text-ink font-sans antialiased;
+    /* Le fond est peint par ColorField, posé derrière la page. */
+    @apply text-ink font-sans antialiased;
   }
 
   h1,

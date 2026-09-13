@@ -23,7 +23,7 @@ export async function Header({ dictionary }: { dictionary: Dictionary }) {
   const session = await readSession();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-warm-100 bg-cream/85 backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-warm-100 bg-white/70 backdrop-blur-xl">
       <Container size="wide">
         <div className="flex h-16 items-center justify-between gap-4 sm:h-20">
           <Link

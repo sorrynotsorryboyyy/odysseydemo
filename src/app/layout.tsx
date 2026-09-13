@@ -4,6 +4,7 @@ import type { ReactNode } from 'react';
 
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
+import { ColorField } from '@/components/ui';
 import { hrefLangCodes, locales } from '@/i18n/config';
 import { getDictionary, getLocale, translate } from '@/i18n/getDictionary';
 import { TranslationsProvider } from '@/i18n/TranslationsProvider';
@@ -97,6 +98,10 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   return (
     <html lang={locale} className={`${sans.variable} ${display.variable}`}>
       <body className="flex min-h-screen flex-col">
+        {/* Champ coloré unique, derrière toute la page : un halo par section
+            se ferait couper à chaque frontière. */}
+        <ColorField />
+
         <TranslationsProvider locale={locale} dictionary={dictionary}>
           <a className="skip-link" href="#contenu">
             {translate(dictionary, 'common.skipToContent')}

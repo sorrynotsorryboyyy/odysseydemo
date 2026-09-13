@@ -2,7 +2,6 @@ import { BookCover } from './BookCover';
 import { PricingTable } from './PricingTable';
 import {
   ButtonLink,
-  ColorField,
   Icon,
   IconBubble,
   ImageSlot,
@@ -48,13 +47,8 @@ export function Hero({ dictionary }: SectionProps) {
   const t = (key: string) => translate(dictionary, key);
 
   return (
-    <section
-      aria-labelledby="hero-title"
-      className="relative isolate overflow-hidden bg-white"
-    >
-      <ColorField palette="duo" />
-
-      <div className="relative mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+    <section aria-labelledby="hero-title">
+      <div className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
         <div className="grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
           <Reveal>
             <p className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-warm-700">
@@ -76,7 +70,7 @@ export function Hero({ dictionary }: SectionProps) {
             {/* Un seul appel à l'action dominant ; le second est secondaire
                 par sa forme autant que par sa place. */}
             <div className="mt-9 flex flex-wrap items-center gap-5">
-              <ButtonLink href="/tarifs" size="lg" variant="inverse">
+              <ButtonLink href="/tarifs" size="lg">
                 {t('common.cta.start')}
                 <Icon name="arrow-right" className="h-5 w-5" />
               </ButtonLink>
@@ -134,7 +128,7 @@ export function Guarantees({ dictionary }: SectionProps) {
   ] as const;
 
   return (
-    <section aria-labelledby="guarantees-title" className="bg-white">
+    <section aria-labelledby="guarantees-title">
       <div className="mx-auto w-full max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
         <h2 id="guarantees-title" className="sr-only">
           {translate(dictionary, 'home.guarantees.title')}
@@ -145,7 +139,7 @@ export function Guarantees({ dictionary }: SectionProps) {
             const mark = marks[index] ?? { icon: 'check', tone: 'warm' };
             return (
               <Reveal key={item.label} delay={index * 80}>
-                <div className="flex h-full flex-col items-center rounded-2xl bg-warm-25 px-5 py-7 text-center">
+                <div className="flex h-full flex-col items-center rounded-2xl bg-white/70 px-5 py-7 text-center shadow-card">
                   <IconBubble name={mark.icon} tone={mark.tone} />
                   <dt className="mt-4 font-display text-base font-bold text-ink">
                     {item.label}
@@ -271,7 +265,7 @@ export function Steps({ dictionary }: SectionProps) {
   ] as const;
 
   return (
-    <Section labelledBy="steps-title" tone="paper" glow="warm">
+    <Section labelledBy="steps-title" tone="paper">
       <SectionHeading
         id="steps-title"
         eyebrow={t('home.steps.eyebrow')}
@@ -327,7 +321,7 @@ export function AgePicker({ dictionary }: SectionProps) {
   ] as const;
 
   return (
-    <Section labelledBy="ages-title" tone="white" glow="duo">
+    <Section labelledBy="ages-title" tone="white">
       <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-warm-700">

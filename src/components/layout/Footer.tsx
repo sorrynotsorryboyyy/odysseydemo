@@ -44,7 +44,7 @@ export async function Footer({ dictionary }: { dictionary: Dictionary }) {
     : { href: '/compte/connexion', label: t('common.nav.login') };
 
   return (
-    <footer className="mt-auto border-t border-warm-100 bg-white">
+    <footer className="mt-auto border-t border-warm-100 bg-white/70 backdrop-blur-xl">
       <Container size="wide">
         <div className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
           <div>

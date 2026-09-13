@@ -1,33 +1,35 @@
 import { cn } from '@/lib/cn';
 
 /**
- * Fond coloré vivant : deux ou trois halos qui dérivent lentement.
+ * Champ coloré continu, posé derrière toute une page.
  *
- * Purement décoratif, donc `aria-hidden` et jamais dans le flux. Les halos
- * sont des `radial-gradient` en opacité faible : sur un fond blanc ils
- * donnent une couleur d'ambiance sans jamais concurrencer le texte, et le
- * contraste des couples texte/fond reste celui du fond de base.
+ * Un halo par section serait coupé net à chaque frontière — c'est ce que
+ * produisait la version précédente, avec une ligne horizontale visible là où
+ * deux `overflow-hidden` se touchaient. Le champ est donc unique, en
+ * `fixed`, et ne connaît pas le découpage en sections.
  *
- * Les durées sont très longues (26 à 38 s) — un mouvement de fond doit se
- * sentir sans se regarder. `prefers-reduced-motion` les fige globalement
- * depuis `globals.css`.
+ * `fixed` plutôt qu'`absolute` : la couleur reste stable pendant qu'on fait
+ * défiler, au lieu de défiler avec le contenu. C'est aussi ce qui évite de
+ * peindre une zone aussi haute que la page entière.
+ *
+ * Purement décoratif, donc `aria-hidden` et hors du flux. Les halos sont
+ * très dilués : sur le blanc ils donnent une ambiance sans jamais changer
+ * le contraste du texte, qui reste celui du fond de base.
  */
 
 const palettes = {
-  /** Corail dominant : accueil, pages produit. */
+  /** Corail dominant, une pointe de sarcelle : registre par défaut. */
   warm: [
-    'bg-warm-200/55',
-    'bg-warm-100/70',
-    'bg-sun-200/40',
+    { tone: 'bg-warm-200/40', at: 'left-[-20%] top-[-10%] h-[45rem] w-[45rem]', drift: 'animate-drift' },
+    { tone: 'bg-sun-200/30', at: 'right-[-15%] top-[20%] h-[38rem] w-[38rem]', drift: 'animate-drift-slow' },
+    { tone: 'bg-accent-200/25', at: 'bottom-[-15%] left-[15%] h-[40rem] w-[40rem]', drift: 'animate-drift' },
+    { tone: 'bg-warm-100/50', at: 'bottom-[5%] right-[5%] h-[32rem] w-[32rem]', drift: 'animate-drift-slow' },
   ],
-  /** Corail et sarcelle : sections de découverte. */
-  duo: [
-    'bg-warm-200/50',
-    'bg-accent-200/40',
-    'bg-sun-200/35',
+  /** Très discret : pages de lecture dense, formulaires. */
+  quiet: [
+    { tone: 'bg-warm-100/45', at: 'left-[-15%] top-[-5%] h-[38rem] w-[38rem]', drift: 'animate-drift' },
+    { tone: 'bg-warm-50/60', at: 'bottom-[-10%] right-[-10%] h-[34rem] w-[34rem]', drift: 'animate-drift-slow' },
   ],
-  /** Très discret : pages de lecture dense. */
-  quiet: ['bg-warm-100/60', 'bg-warm-50/80'],
 } as const;
 
 export function ColorField({
@@ -37,28 +39,22 @@ export function ColorField({
   palette?: keyof typeof palettes;
   className?: string;
 }) {
-  const blobs = palettes[palette];
-
-  // Positions et tailles fixes : une disposition aléatoire changerait à
-  // chaque rendu et empêcherait de juger la composition.
-  const layout = [
-    'left-[-12%] top-[-18%] h-[34rem] w-[34rem] animate-drift',
-    'right-[-14%] top-[8%] h-[28rem] w-[28rem] animate-drift-slow',
-    'bottom-[-20%] left-[28%] h-[26rem] w-[26rem] animate-drift',
-  ];
-
   return (
     <div
       aria-hidden="true"
-      className={cn('pointer-events-none absolute inset-0 overflow-hidden', className)}
+      className={cn(
+        'pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-white',
+        className,
+      )}
     >
-      {blobs.map((tone, index) => (
+      {palettes[palette].map((blob, index) => (
         <span
           key={index}
           className={cn(
-            'absolute rounded-full blur-3xl will-change-transform',
-            tone,
-            layout[index],
+            'absolute rounded-full blur-[100px] will-change-transform',
+            blob.tone,
+            blob.at,
+            blob.drift,
           )}
         />
       ))}

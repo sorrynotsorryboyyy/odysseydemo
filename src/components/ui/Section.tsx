@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react';
 
-import { ColorField } from './ColorField';
 import { Container } from './Container';
 import { cn } from '@/lib/cn';
 
@@ -12,7 +11,6 @@ export function Section({
   size = 'default',
   labelledBy,
   tone = 'transparent',
-  glow = false,
 }: {
   children: ReactNode;
   className?: string;
@@ -20,23 +18,22 @@ export function Section({
   size?: 'default' | 'narrow' | 'wide';
   labelledBy?: string;
   tone?: 'transparent' | 'white' | 'paper' | 'soft' | 'coral' | 'ink';
-  /** Halos colorés dérivant en fond. `true` vaut la palette corail. */
-  glow?: boolean | 'warm' | 'duo' | 'quiet';
 }) {
   /**
-   * Deux surfaces portent la page : le blanc, où l'on lit, et le corail
-   * très pâle, qui marque les respirations. L'alternance des deux donne le
-   * rythme — sans filet de séparation, la différence de fond suffit.
+   * Les fonds sont translucides : le champ coloré posé derrière la page se
+   * voit au travers, sans que chaque section le redécoupe. L'alternance
+   * blanc / corail garde son rythme, la différence de fond suffit à marquer
+   * la rupture.
    *
    * `coral` est l'aplat soutenu, réservé à un seul moment par page : au-delà
    * il cesse d'être un accent. Le texte y reste encre (11.59 sur warm-200).
    */
   const tones = {
     transparent: '',
-    white: 'bg-white',
-    paper: 'bg-warm-25',
-    soft: 'bg-warm-50',
-    coral: 'bg-warm-200',
+    white: 'bg-white/75',
+    paper: 'bg-white/45',
+    soft: 'bg-warm-50/50',
+    coral: 'bg-warm-200/70',
     ink: 'bg-ink text-cream',
   } as const;
 
@@ -46,11 +43,9 @@ export function Section({
       className={cn(
         'py-14 sm:py-20',
         tones[tone],
-        glow && 'relative isolate overflow-hidden',
         className,
       )}
     >
-      {glow ? <ColorField palette={glow === true ? 'warm' : glow} /> : null}
       <Container size={size} className={containerClassName}>
         {children}
       </Container>

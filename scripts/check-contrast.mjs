@@ -28,6 +28,14 @@ const C = {
   'danger-50': '#fef2f2',
   'danger-700': '#b91c1c',
   'danger-900': '#7f1d1d',
+  /**
+   * Fonds effectifs sous les sections translucides, halo le plus saturé
+   * compris : le champ coloré se voit à travers `bg-white/75` et consorts,
+   * donc le texte ne repose jamais sur du blanc pur.
+   */
+  'sur-blanc-75': '#fffaf8',
+  'sur-blanc-45': '#fef3f0',
+  'sur-coral-70': '#fcd1c6',
 };
 
 /** Couples effectivement rendus : [texte, fond, où]. */
@@ -51,6 +59,12 @@ const PAIRS = [
   ['danger-900', 'danger-50', "message d'erreur"],
   ['ink', 'cream-200', 'badge neutre'],
   ['cream', 'ink', 'texte sur aplat encre'],
+  ['ink', 'sur-blanc-75', 'texte sur section claire, halo compris'],
+  ['ink-muted', 'sur-blanc-75', 'texte secondaire, halo compris'],
+  ['warm-700', 'sur-blanc-75', 'sur-titre, halo compris'],
+  ['ink', 'sur-blanc-45', 'texte sur section pâle, halo compris'],
+  ['warm-700', 'sur-blanc-45', 'sur-titre sur section pâle, halo compris'],
+  ['ink', 'sur-coral-70', 'texte sur aplat corail, halo compris'],
 ];
 
 /** Seuil AA : 4.5 pour le texte courant, 3.0 pour le grand texte. */
