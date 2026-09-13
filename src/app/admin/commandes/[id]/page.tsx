@@ -10,7 +10,7 @@ export const dynamic = 'force-dynamic';
 /** Ligne d'un tableau de définition, pour les champs simples. */
 function Row({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex gap-4 border-b border-ink/10 py-3 last:border-0">
+    <div className="flex gap-4 border-b border-warm-100 py-3 last:border-0">
       <dt className="w-44 shrink-0 text-sm font-medium text-ink-soft">{label}</dt>
       <dd className="text-sm text-ink text-pretty">{value || '—'}</dd>
     </div>
@@ -31,7 +31,7 @@ export default async function AdminOrderDetail({
     <div className="space-y-8">
       <Link
         href="/admin/commandes"
-        className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent-700 hover:underline"
+        className="inline-flex items-center gap-1.5 text-sm font-semibold text-warm-700 hover:underline"
       >
         <Icon name="arrow-right" className="h-4 w-4 rotate-180" />
         Commandes

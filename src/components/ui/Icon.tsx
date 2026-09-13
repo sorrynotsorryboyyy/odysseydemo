@@ -76,7 +76,7 @@ export function IconBubble({
   className?: string;
 }) {
   const tones = {
-    accent: 'bg-accent-100 text-accent-700',
+    accent: 'bg-accent-100 text-warm-700',
     warm: 'bg-warm-100 text-warm-700',
     ink: 'bg-ink/5 text-ink',
   } as const;

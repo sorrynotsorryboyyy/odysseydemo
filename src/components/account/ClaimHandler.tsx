@@ -69,7 +69,7 @@ export function ClaimHandler({ token }: { token?: string }) {
 
       <p className="text-sm text-ink-muted">
         {t('help')}{' '}
-        <Link href="/contact" className="font-semibold text-accent-700 hover:underline">
+        <Link href="/contact" className="font-semibold text-warm-700 hover:underline">
           {t('..common.nav.contact')}
         </Link>
       </p>

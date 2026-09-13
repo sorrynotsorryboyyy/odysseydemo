@@ -5,6 +5,7 @@ import {
   Icon,
   ImageSlot,
   StyleImage,
+  hasStyleImage,
   Section,
   SectionHeading,
 } from '@/components/ui';
@@ -47,8 +48,8 @@ export function Hero({ dictionary }: SectionProps) {
       <div className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
         <div className="grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
-            <p className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-accent-700">
-              <span aria-hidden="true" className="h-px w-10 bg-accent-700" />
+            <p className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-warm-700">
+              <span aria-hidden="true" className="h-px w-10 bg-warm-700" />
               {t('home.hero.badge')}
             </p>
 
@@ -59,7 +60,7 @@ export function Hero({ dictionary }: SectionProps) {
               {t('home.hero.title')}
             </h1>
 
-            <p className="mt-7 max-w-xl border-l-2 border-accent-700 pl-5 text-lg leading-relaxed text-ink-muted text-pretty">
+            <p className="mt-7 max-w-xl border-l-2 border-warm-700 pl-5 text-lg leading-relaxed text-ink-muted text-pretty">
               {t('home.hero.subtitle')}
             </p>
 
@@ -75,7 +76,7 @@ export function Hero({ dictionary }: SectionProps) {
               </ButtonLink>
             </div>
 
-            <p className="mt-7 border-t border-ink/10 pt-4 text-sm text-ink-soft">
+            <p className="mt-7 border-t border-warm-100 pt-4 text-sm text-ink-soft">
               {t('home.hero.note')}
             </p>
           </div>
@@ -107,14 +108,14 @@ export function Guarantees({ dictionary }: SectionProps) {
   return (
     <section
       aria-labelledby="guarantees-title"
-      className="border-b-2 border-ink bg-white"
+      className="border-b border-warm-100 bg-white"
     >
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <h2 id="guarantees-title" className="sr-only">
           {translate(dictionary, 'home.guarantees.title')}
         </h2>
 
-        <dl className="grid divide-y divide-ink/10 sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-4 lg:divide-x">
+        <dl className="grid divide-y divide-warm-100 sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-4 lg:divide-x">
           {items.map((item) => (
             <div key={item.label} className="px-0 py-6 sm:px-6 lg:first:pl-0 lg:last:pr-0">
               <dt className="font-display text-base font-bold text-ink">{item.label}</dt>
@@ -147,7 +148,7 @@ export function WhatYouGet({ dictionary }: SectionProps) {
     <Section labelledBy="inside-title" tone="white">
       <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
         <div className="lg:sticky lg:top-28">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-700">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-warm-700">
             {t('home.inside.eyebrow')}
           </p>
           <h2
@@ -160,17 +161,19 @@ export function WhatYouGet({ dictionary }: SectionProps) {
 
           <ImageSlot
             ratio="wide"
+            src="/images/style-ligne-claire.png"
             label={t('home.imageSlot.spread')}
-            className="mt-8 hidden lg:flex"
+            sizes="(max-width: 1024px) 0px, 40vw"
+            className="mt-8 hidden lg:block"
           />
         </div>
 
         {/* Liste définitionnelle : la hiérarchie vient du texte, pas d'un
             cadre autour de chaque élément. */}
-        <dl className="divide-y divide-ink/10 border-y border-ink/10">
+        <dl className="divide-y divide-warm-100 border-y border-warm-100">
           {inside.map((item, index) => (
             <div key={item} className="flex gap-6 py-7 first:pt-0 last:pb-0">
-              <span className="font-display text-sm font-bold tabular-nums text-accent-700">
+              <span className="font-display text-sm font-bold tabular-nums text-warm-700">
                 {String(index + 1).padStart(2, '0')}
               </span>
               <div>
@@ -186,7 +189,7 @@ export function WhatYouGet({ dictionary }: SectionProps) {
         </dl>
       </div>
 
-      <div className="mt-16 border-t border-ink/10 pt-10">
+      <div className="mt-16 border-t border-warm-100 pt-10">
         <h3 className="font-display text-xl font-bold text-ink">
           {t('home.formats.title')}
         </h3>
@@ -216,12 +219,11 @@ export function Steps({ dictionary }: SectionProps) {
   const steps = ['one', 'two', 'three'] as const;
 
   return (
-    <Section labelledBy="steps-title" tone="teal">
+    <Section labelledBy="steps-title" tone="paper">
       <SectionHeading
         id="steps-title"
         eyebrow={t('home.steps.eyebrow')}
         title={t('home.steps.title')}
-        onColor
       />
 
       <ol className="relative grid gap-10 md:grid-cols-3 md:gap-8">
@@ -233,7 +235,7 @@ export function Steps({ dictionary }: SectionProps) {
 
         {steps.map((step, index) => (
           <li key={step} className="relative">
-            <span className="relative flex h-11 w-11 items-center justify-center rounded-lg border-2 border-ink bg-white font-display text-lg font-bold text-ink shadow-ink-sm">
+            <span className="relative flex h-11 w-11 items-center justify-center rounded-lg border border-warm-100 bg-white font-display text-lg font-bold text-ink shadow-card">
               {index + 1}
             </span>
             <h3 className="mt-5 font-display text-xl font-bold text-ink">
@@ -259,7 +261,7 @@ export function AgePicker({ dictionary }: SectionProps) {
     <Section labelledBy="ages-title" tone="white">
       <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
         <div>
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-700">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-warm-700">
             {t('home.ages.eyebrow')}
           </p>
           <h2
@@ -273,11 +275,11 @@ export function AgePicker({ dictionary }: SectionProps) {
 
         <ul className="grid gap-x-8 gap-y-8 sm:grid-cols-2">
           {ageRanges.map((range) => (
-            <li key={range} className="border-t-2 border-ink pt-4">
+            <li key={range} className="border-t border-warm-200 pt-4">
               <p className="font-display text-2xl font-bold tabular-nums text-ink">
                 {t(`home.ages.items.${range}.label`)}
               </p>
-              <h3 className="mt-1 text-sm font-bold uppercase tracking-[0.1em] text-accent-700">
+              <h3 className="mt-1 text-sm font-bold uppercase tracking-[0.1em] text-warm-700">
                 {t(`home.ages.items.${range}.title`)}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-ink-muted text-pretty">
@@ -307,8 +309,13 @@ export function StyleGallery({ dictionary }: SectionProps) {
         onColor
       />
 
+      {/* Les styles illustrés passent devant : la galerie s'ouvre sur du
+          contenu réel, les emplacements encore vides finissent la grille.
+          Les six restent affichés — tous sont commandables. */}
       <ul className="grid grid-cols-2 gap-5 md:grid-cols-3">
-        {illustrationStyles.map((style) => (
+        {[...illustrationStyles]
+          .sort((a, b) => Number(hasStyleImage(b)) - Number(hasStyleImage(a)))
+          .map((style) => (
           <li key={style}>
             <figure>
               <StyleImage style={style} label={t(`home.styles.items.${style}`)} />
@@ -332,18 +339,18 @@ export function Scope({ dictionary }: SectionProps) {
   const excluded = translateList(dictionary, 'home.scope.excluded.items');
 
   return (
-    <Section labelledBy="scope-title" tone="paper">
+    <Section labelledBy="scope-title" tone="white">
       <SectionHeading id="scope-title" title={t('home.scope.title')} />
 
       <div className="grid gap-5 md:grid-cols-2">
-        <div className="rounded-xl border-2 border-ink bg-white p-7 shadow-ink-sm">
+        <div className="rounded-xl border border-warm-100 bg-white p-7 shadow-card">
           <h3 className="font-display text-lg font-bold text-ink">
             {t('home.scope.included.title')}
           </h3>
           <ul className="mt-5 space-y-3">
             {included.map((item) => (
               <li key={item} className="flex gap-3">
-                <Icon name="check" className="mt-0.5 h-5 w-5 shrink-0 text-accent-700" />
+                <Icon name="check" className="mt-0.5 h-5 w-5 shrink-0 text-warm-700" />
                 <span className="text-sm leading-relaxed text-ink-muted text-pretty">
                   {item}
                 </span>
@@ -354,7 +361,7 @@ export function Scope({ dictionary }: SectionProps) {
 
         {/* Dire ce qu'on ne promet pas est un argument de confiance, pas un
             aveu : même traitement visuel que la colonne de gauche. */}
-        <div className="rounded-xl border-2 border-ink bg-cream-100 p-7 shadow-ink-sm">
+        <div className="rounded-xl border border-warm-100 bg-cream-100 p-7 shadow-card">
           <h3 className="font-display text-lg font-bold text-ink">
             {t('home.scope.excluded.title')}
           </h3>
@@ -396,7 +403,7 @@ export function AfterOrder({ dictionary }: SectionProps) {
   const steps = readList<AfterStep>(dictionary, 'home.after.steps');
 
   return (
-    <Section labelledBy="after-title" tone="white" size="narrow">
+    <Section labelledBy="after-title" tone="paper" size="narrow">
       <SectionHeading
         id="after-title"
         eyebrow={t('home.after.eyebrow')}
@@ -404,12 +411,12 @@ export function AfterOrder({ dictionary }: SectionProps) {
         intro={t('home.after.intro')}
       />
 
-      <ol className="relative border-l border-ink/20 pl-8">
+      <ol className="relative border-l border-warm-200 pl-8">
         {steps.map((step, index) => (
           <li key={step.title} className="relative pb-9 last:pb-0">
             <span
               aria-hidden="true"
-              className="absolute -left-[2.35rem] top-1 flex h-6 w-6 items-center justify-center rounded-md border border-ink bg-white text-[0.7rem] font-bold tabular-nums text-ink"
+              className="absolute -left-[2.35rem] top-1 flex h-6 w-6 items-center justify-center rounded-md border border-warm-200 bg-white text-[0.7rem] font-bold tabular-nums text-ink"
             >
               {index + 1}
             </span>
@@ -428,7 +435,7 @@ export function HomePricing({ dictionary }: SectionProps) {
   const t = (key: string) => translate(dictionary, key);
 
   return (
-    <Section labelledBy="home-pricing-title" tone="paper" size="wide">
+    <Section labelledBy="home-pricing-title" tone="white" size="wide">
       <SectionHeading
         id="home-pricing-title"
         eyebrow={t('home.pricing.eyebrow')}
@@ -468,11 +475,11 @@ export function Compare({ dictionary }: SectionProps) {
         {t('home.compare.title')}
       </h2>
 
-      <div className="mt-8 overflow-x-auto border-2 border-ink bg-white">
+      <div className="mt-8 overflow-x-auto border border-warm-100 bg-white">
         <table className="w-full min-w-[36rem] border-collapse text-left">
           <caption className="sr-only">{t('home.compare.title')}</caption>
           <thead>
-            <tr className="border-b border-ink">
+            <tr className="border-b border-warm-100">
               <th scope="col" className="px-5 py-4 font-display text-sm font-bold text-ink">
                 {t('home.compare.columns.feature')}
               </th>
@@ -489,7 +496,7 @@ export function Compare({ dictionary }: SectionProps) {
           </thead>
           <tbody>
             {rows.map((row) => (
-              <tr key={row.feature} className="border-b border-ink/10 last:border-0">
+              <tr key={row.feature} className="border-b border-warm-100 last:border-0">
                 <th
                   scope="row"
                   className="px-5 py-3.5 text-sm font-normal text-ink-muted text-pretty"
@@ -500,7 +507,7 @@ export function Compare({ dictionary }: SectionProps) {
                   <td key={column} className="px-4 py-3.5 text-center">
                     {row[column] ? (
                       <>
-                        <Icon name="check" className="mx-auto h-5 w-5 text-accent-700" />
+                        <Icon name="check" className="mx-auto h-5 w-5 text-warm-700" />
                         <span className="sr-only">{t('home.compare.yes')}</span>
                       </>
                     ) : (

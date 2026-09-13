@@ -7,22 +7,22 @@ type Variant = 'primary' | 'secondary' | 'ghost' | 'inverse' | 'danger';
 type Size = 'sm' | 'md' | 'lg';
 
 /**
- * Le variant `primary` porte du texte encre sur la sarcelle : encre/#14b8a6
- * donne 6.99 de contraste, bien au-dessus du seuil AA.
+ * Le variant `primary` porte du blanc sur corail fonce (warm-700) : 5.97 de
+ * contraste. Attention a warm-600, qui ne porte aucun texte lisible — ni
+ * blanc (4.14) ni encre (4.21), il tombe dans le creux entre les deux.
  * `danger` utilise le rouge hors marque — un signal d'alerte doit être
  * compris sans apprentissage.
  */
 const variants: Record<Variant, string> = {
   primary:
-    'bg-accent-500 text-ink border-2 border-ink shadow-ink hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-ink-lg active:translate-x-0.5 active:translate-y-0.5 active:shadow-none',
+    'bg-warm-700 text-white shadow-card hover:bg-warm-800 hover:shadow-card-hover active:translate-y-px',
   secondary:
-    'bg-white text-ink border-2 border-ink shadow-ink-sm hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-ink active:translate-x-0.5 active:translate-y-0.5 active:shadow-none',
+    'bg-white text-warm-700 border-2 border-warm-200 hover:border-warm-700 hover:bg-warm-25 active:translate-y-px',
   ghost:
-    'text-ink border-2 border-transparent underline decoration-accent-600 decoration-2 underline-offset-4 hover:decoration-ink',
-  inverse: 'bg-cream text-ink border-2 border-ink hover:bg-white',
-  // Action destructive : crème sur rouge foncé (contraste 6.08).
-  danger:
-    'bg-danger-700 text-cream border-2 border-ink shadow-ink-sm hover:bg-danger-800 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none',
+    'text-warm-700 underline decoration-warm-300 decoration-2 underline-offset-4 hover:decoration-warm-700',
+  inverse: 'bg-white text-warm-700 shadow-card hover:bg-warm-25',
+  // Action destructive : blanc sur rouge foncé (contraste 7.06).
+  danger: 'bg-danger-700 text-white hover:bg-danger-800 active:translate-y-px',
 };
 
 // Cibles tactiles d'au moins 44 px de haut.
@@ -33,12 +33,11 @@ const sizes: Record<Size, string> = {
 };
 
 /**
- * L'ombre portee se decale au clic : le bouton s'enfonce, comme une touche.
- * La transition ne porte que sur `transform` et `box-shadow`, les deux
- * proprietes les moins couteuses a animer.
+ * Bouton franchement arrondi, plein, sans cerne : la couleur porte l'action.
+ * La transition ne touche que des proprietes peu couteuses a animer.
  */
 const base =
-  'inline-flex items-center justify-center gap-2 rounded-lg font-bold tracking-tight transition-[transform,box-shadow,background-color,border-color] duration-150 disabled:cursor-not-allowed disabled:opacity-60 disabled:shadow-none';
+  'inline-flex items-center justify-center gap-2 rounded-pill font-bold tracking-tight transition-[transform,box-shadow,background-color,border-color] duration-200 disabled:cursor-not-allowed disabled:opacity-60 disabled:shadow-none';
 
 export function Button({
   variant = 'primary',

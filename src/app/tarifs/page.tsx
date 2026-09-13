@@ -62,7 +62,7 @@ export default async function PricingPage() {
         <div className="grid gap-6 sm:grid-cols-2">
           {guarantees.map((guarantee) => (
             <article key={guarantee.title} className="flex gap-4">
-              <Icon name="check" className="mt-1 h-5 w-5 shrink-0 text-accent-700" />
+              <Icon name="check" className="mt-1 h-5 w-5 shrink-0 text-warm-700" />
               <div>
                 <h3 className="font-display text-lg font-bold text-ink">
                   {guarantee.title}

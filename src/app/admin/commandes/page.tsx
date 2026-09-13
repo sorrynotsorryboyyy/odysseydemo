@@ -44,7 +44,7 @@ export default async function AdminOrders({
           className={`border px-3 py-1.5 text-sm font-medium transition-colors ${
             !status
               ? 'border-ink bg-ink text-cream'
-              : 'border-ink/20 bg-white text-ink hover:border-ink'
+              : 'border-warm-200 bg-white text-ink hover:border-warm-700'
           }`}
         >
           Toutes
@@ -57,7 +57,7 @@ export default async function AdminOrders({
             className={`border px-3 py-1.5 text-sm font-medium transition-colors ${
               status === value
                 ? 'border-ink bg-ink text-cream'
-                : 'border-ink/20 bg-white text-ink hover:border-ink'
+                : 'border-warm-200 bg-white text-ink hover:border-warm-700'
             }`}
           >
             {statusLabels[value]}
@@ -72,11 +72,11 @@ export default async function AdminOrders({
           name="q"
           defaultValue={searchParams.q ?? ''}
           placeholder="Prénom de l’enfant ou identifiant"
-          className="w-full max-w-sm border border-ink/25 border-b-2 border-b-ink/40 bg-white px-3 py-2 text-ink focus:border-accent-700 focus:outline-none"
+          className="w-full max-w-sm border border-warm-200 border-b-2 border-b-ink/40 bg-white px-3 py-2 text-ink focus:border-warm-700 focus:outline-none"
         />
         <button
           type="submit"
-          className="border border-ink bg-white px-4 py-2 text-sm font-semibold text-ink shadow-ink-sm"
+          className="border border-warm-200 bg-white px-4 py-2 text-sm font-semibold text-ink shadow-card"
         >
           Rechercher
         </button>
@@ -87,9 +87,9 @@ export default async function AdminOrders({
           <p className="text-ink-muted">Aucune commande ne correspond.</p>
         </Card>
       ) : (
-        <div className="overflow-x-auto border-2 border-ink bg-white">
+        <div className="overflow-x-auto border border-warm-100 bg-white">
           <table className="w-full min-w-[44rem] border-collapse text-left text-sm">
-            <thead className="border-b border-ink/15 bg-cream-50">
+            <thead className="border-b border-warm-100 bg-cream-50">
               <tr>
                 <th scope="col" className="px-4 py-3 font-bold text-ink">Enfant</th>
                 <th scope="col" className="px-4 py-3 font-bold text-ink">Offre</th>
@@ -101,7 +101,7 @@ export default async function AdminOrders({
             </thead>
             <tbody>
               {orders.map((order) => (
-                <tr key={order.id} className="border-b border-ink/10 last:border-0">
+                <tr key={order.id} className="border-b border-warm-100 last:border-0">
                   <td className="px-4 py-3 font-medium text-ink">
                     {order.childFirstName}
                   </td>
@@ -124,7 +124,7 @@ export default async function AdminOrders({
                   <td className="px-4 py-3 text-right">
                     <Link
                       href={`/admin/commandes/${order.id}`}
-                      className="inline-flex items-center gap-1 font-semibold text-accent-700 hover:underline"
+                      className="inline-flex items-center gap-1 font-semibold text-warm-700 hover:underline"
                     >
                       Détail
                       <Icon name="arrow-right" className="h-4 w-4" />

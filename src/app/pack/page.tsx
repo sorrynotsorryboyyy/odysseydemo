@@ -70,13 +70,15 @@ export default async function PackPage() {
           <div className="relative mx-auto w-full max-w-sm">
             <ImageSlot
               ratio="book"
+              src="/images/coverhero.png"
               label={t('pack.visuals.cover')}
-              className="rotate-2 shadow-ink"
+              sizes="(max-width: 768px) 70vw, 24rem"
+              className="rotate-2"
             />
             <ImageSlot
               ratio="book"
               label={t('pack.visuals.cahier')}
-              className="absolute -bottom-6 -right-6 w-2/5 -rotate-6 shadow-ink"
+              className="absolute -bottom-6 -right-6 w-2/5 -rotate-6 shadow-card"
             />
           </div>
         </div>
@@ -89,9 +91,9 @@ export default async function PackPage() {
           {translateList(dictionary, 'pack.contents.items').map((item) => (
             <li
               key={item}
-              className="flex gap-3 rounded-2xl bg-cream-50 p-4 border-2 border-ink"
+              className="flex gap-3 rounded-2xl bg-cream-50 p-4 border border-warm-100"
             >
-              <Icon name="check" className="mt-0.5 h-5 w-5 text-accent-700" />
+              <Icon name="check" className="mt-0.5 h-5 w-5 text-warm-700" />
               <span className="text-ink text-pretty">{item}</span>
             </li>
           ))}
@@ -102,8 +104,9 @@ export default async function PackPage() {
         <div className="grid items-center gap-10 md:grid-cols-2">
           <ImageSlot
             ratio="wide"
+            src="/images/style-papier-decoupe.png"
             label={t('pack.visuals.spread')}
-            className="shadow-ink-sm"
+            sizes="(max-width: 768px) 90vw, 45vw"
           />
           <div>
             <h2
@@ -123,7 +126,7 @@ export default async function PackPage() {
         <div className="grid gap-6 sm:grid-cols-2">
           {whyItems.map((item) => (
             <article key={item.title} className="flex gap-4">
-              <Icon name="check" className="mt-1 h-5 w-5 shrink-0 text-accent-700" />
+              <Icon name="check" className="mt-1 h-5 w-5 shrink-0 text-warm-700" />
               <div>
                 <h3 className="font-display text-lg font-bold text-ink">{item.title}</h3>
                 <p className="mt-1 text-ink-muted text-pretty">{item.body}</p>

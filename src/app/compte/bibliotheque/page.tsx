@@ -141,7 +141,7 @@ export default async function LibraryPage() {
                 <div className="mt-auto pt-6">
                   <Link
                     href={`/compte/commande/${order.id}`}
-                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent-700 hover:underline"
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-warm-700 hover:underline"
                   >
                     {t('account.library.viewOrder')}
                     <Icon name="arrow-right" className="h-4 w-4" />

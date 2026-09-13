@@ -83,9 +83,9 @@ export function AccountMenu({
         aria-expanded={isOpen}
         aria-haspopup="menu"
         aria-label={labels.openMenu}
-        className="flex min-h-[2.75rem] items-center gap-2 border-2 border-ink bg-white px-3 py-2 text-sm font-medium text-ink shadow-ink-sm ring-1 ring-inset ring-ink/10 transition-colors hover:ring-ink/20"
+        className="flex min-h-[2.75rem] items-center gap-2 border border-warm-100 bg-white px-3 py-2 text-sm font-medium text-ink shadow-card ring-1 ring-inset ring-ink/10 transition-colors hover:ring-ink/20"
       >
-        <span className="flex h-7 w-7 items-center justify-center rounded-full bg-accent-500 font-display text-sm font-bold text-ink">
+        <span className="flex h-7 w-7 items-center justify-center rounded-full bg-warm-700 font-display text-sm font-bold text-ink">
           {initial}
         </span>
         <span className="hidden max-w-[12rem] truncate xl:inline">{email}</span>
@@ -101,9 +101,9 @@ export function AccountMenu({
       {isOpen ? (
         <div
           role="menu"
-          className="absolute right-0 top-full z-50 mt-2 w-64 overflow-hidden bg-white shadow-ink border-2 border-ink"
+          className="absolute right-0 top-full z-50 mt-2 w-64 overflow-hidden bg-white shadow-card border border-warm-100"
         >
-          <p className="border-b border-ink/5 px-4 py-3 text-sm text-ink-soft">
+          <p className="border-b border-warm-100 px-4 py-3 text-sm text-ink-soft">
             <span className="block truncate font-medium text-ink">{email}</span>
           </p>
 
@@ -112,7 +112,7 @@ export function AccountMenu({
             role="menuitem"
             className="flex items-center gap-3 px-4 py-3 text-sm font-medium text-ink transition-colors hover:bg-cream-50"
           >
-            <Icon name="book" className="h-4 w-4 text-accent-700" />
+            <Icon name="book" className="h-4 w-4 text-warm-700" />
             {labels.library}
           </Link>
 
@@ -121,7 +121,7 @@ export function AccountMenu({
             role="menuitem"
             className="flex items-center gap-3 px-4 py-3 text-sm font-medium text-ink transition-colors hover:bg-cream-50"
           >
-            <Icon name="shield" className="h-4 w-4 text-accent-700" />
+            <Icon name="shield" className="h-4 w-4 text-warm-700" />
             {labels.settings}
           </Link>
 
@@ -129,7 +129,7 @@ export function AccountMenu({
             <Link
               href="/admin"
               role="menuitem"
-              className="flex items-center gap-3 border-t border-ink/5 px-4 py-3 text-sm font-medium text-accent-700 transition-colors hover:bg-accent-50"
+              className="flex items-center gap-3 border-t border-warm-100 px-4 py-3 text-sm font-medium text-warm-700 transition-colors hover:bg-accent-50"
             >
               <Icon name="shield" className="h-4 w-4" />
               {labels.admin}
@@ -141,7 +141,7 @@ export function AccountMenu({
             role="menuitem"
             onClick={() => void logout()}
             disabled={isPending}
-            className="flex w-full items-center gap-3 border-t border-ink/5 px-4 py-3 text-left text-sm font-medium text-ink-muted transition-colors hover:bg-cream-50 disabled:opacity-60"
+            className="flex w-full items-center gap-3 border-t border-warm-100 px-4 py-3 text-left text-sm font-medium text-ink-muted transition-colors hover:bg-cream-50 disabled:opacity-60"
           >
             <Icon name="x" className="h-4 w-4" />
             {labels.logout}

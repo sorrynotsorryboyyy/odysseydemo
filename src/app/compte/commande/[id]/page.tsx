@@ -48,7 +48,7 @@ export default async function OrderPage({ params }: { params: { id: string } }) 
   const backLink = (
     <Link
       href="/compte/bibliotheque"
-      className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent-700 hover:underline"
+      className="inline-flex items-center gap-1.5 text-sm font-semibold text-warm-700 hover:underline"
     >
       <Icon name="arrow-right" className="h-4 w-4 rotate-180" />
       {t('common.nav.library')}

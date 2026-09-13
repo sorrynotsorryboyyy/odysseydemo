@@ -29,7 +29,7 @@ export function PricingTable({
             className={cn(
               'flex h-full flex-col',
               plan.featured
-                ? 'bg-ink text-cream shadow-ink ring-2 ring-accent-500'
+                ? 'bg-ink text-cream shadow-card ring-2 ring-warm-700'
                 : 'bg-white',
             )}
           >
@@ -74,7 +74,7 @@ export function PricingTable({
                       name="check"
                       className={cn(
                         'mt-0.5 h-5 w-5',
-                        plan.featured ? 'text-accent-400' : 'text-accent-700',
+                        plan.featured ? 'text-accent-400' : 'text-warm-700',
                       )}
                     />
                     <span

@@ -72,10 +72,10 @@ export function OrderStatus({
               aria-valuenow={status.progress}
               aria-valuemin={0}
               aria-valuemax={100}
-              className="mt-4 h-2 overflow-hidden border border-ink/15 bg-cream-100"
+              className="mt-4 h-2 overflow-hidden border border-warm-100 bg-cream-100"
             >
               <div
-                className="h-full bg-accent-500 transition-[width] duration-500"
+                className="h-full bg-warm-700 transition-[width] duration-500"
                 style={{ width: `${status.progress ?? 35}%` }}
               />
             </div>
@@ -112,10 +112,10 @@ function Downloads({ orderId, kinds }: { orderId: string; kinds: ArtifactKind[] 
               {/* Téléchargement direct : le proxy relaie le PDF en flux. */}
               <a
                 href={`/api/orders/${orderId}/download/${kind}`}
-                className="flex items-center justify-between gap-3 bg-cream-50 px-4 py-3 font-medium text-ink border-2 border-ink transition-colors hover:bg-accent-50"
+                className="flex items-center justify-between gap-3 bg-cream-50 px-4 py-3 font-medium text-ink border border-warm-100 transition-colors hover:bg-accent-50"
               >
                 {t(`kinds.${kind}`)}
-                <Icon name="download" className="h-5 w-5 text-accent-700" />
+                <Icon name="download" className="h-5 w-5 text-warm-700" />
               </a>
             </li>
           ))}

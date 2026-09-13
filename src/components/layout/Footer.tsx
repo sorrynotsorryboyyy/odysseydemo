@@ -44,12 +44,12 @@ export async function Footer({ dictionary }: { dictionary: Dictionary }) {
     : { href: '/compte/connexion', label: t('common.nav.login') };
 
   return (
-    <footer className="mt-auto border-t border-ink/5 bg-white">
+    <footer className="mt-auto border-t border-warm-100 bg-white">
       <Container size="wide">
         <div className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <p className="flex items-center gap-2 font-display text-xl font-bold text-ink">
-              <Icon name="sparkle" filled className="h-5 w-5 text-accent-500" />
+              <Icon name="sparkle" filled className="h-5 w-5 text-warm-700" />
               {t('common.brand')}
             </p>
             <p className="mt-3 max-w-xs text-sm text-ink-muted text-pretty">
@@ -76,7 +76,7 @@ export async function Footer({ dictionary }: { dictionary: Dictionary }) {
                     <li key={resolved.href}>
                       <Link
                         href={resolved.href}
-                        className="text-sm text-ink-muted transition-colors hover:text-accent-700"
+                        className="text-sm text-ink-muted transition-colors hover:text-warm-700"
                       >
                         {resolved.label}
                       </Link>
@@ -88,7 +88,7 @@ export async function Footer({ dictionary }: { dictionary: Dictionary }) {
           ))}
         </div>
 
-        <div className="border-t border-ink/5 py-6">
+        <div className="border-t border-warm-100 py-6">
           <p className="text-sm text-ink-soft">
             © {new Date().getFullYear()} {t('common.brand')}. {t('common.footer.rights')}
           </p>

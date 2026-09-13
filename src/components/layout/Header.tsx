@@ -23,14 +23,14 @@ export async function Header({ dictionary }: { dictionary: Dictionary }) {
   const session = await readSession();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-ink/5 bg-cream/85 backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-warm-100 bg-cream/85 backdrop-blur-md">
       <Container size="wide">
         <div className="flex h-16 items-center justify-between gap-4 sm:h-20">
           <Link
             href="/"
             className="flex items-center gap-2 font-display text-xl font-bold text-ink sm:text-2xl"
           >
-            <Icon name="sparkle" filled className="h-6 w-6 text-accent-500" />
+            <Icon name="sparkle" filled className="h-6 w-6 text-warm-700" />
             {t('common.brand')}
           </Link>
 

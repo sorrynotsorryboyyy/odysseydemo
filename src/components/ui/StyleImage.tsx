@@ -19,13 +19,18 @@ const available: Record<string, string> = {
   'papier-decoupe': '/images/style-papier-decoupe.png',
 };
 
+/** Un style a-t-il son illustration ? Sert à ordonner la galerie. */
+export function hasStyleImage(style: string): boolean {
+  return style in available;
+}
+
 export function StyleImage({ style, label }: { style: string; label: string }) {
   const source = available[style];
 
   if (!source) return <ImageSlot ratio="wide" label={label} />;
 
   return (
-    <div className="relative aspect-[3/2] overflow-hidden rounded-lg border-2 border-ink">
+    <div className="relative aspect-[3/2] overflow-hidden rounded-lg border border-warm-100">
       <Image
         src={source}
         // Décoratif : la légende voisine porte déjà le nom du style.

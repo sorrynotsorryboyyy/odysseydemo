@@ -276,8 +276,8 @@ export function Wizard({ params }: { params: ProductParams }) {
                     className={cn(
                       'cursor-pointer overflow-hidden bg-white text-center ring-1 transition-shadow',
                       selected
-                        ? 'shadow-ink ring-2 ring-accent-500'
-                        : 'shadow-ink-sm ring-ink/10 hover:shadow-ink',
+                        ? 'shadow-card ring-2 ring-warm-700'
+                        : 'shadow-card ring-ink/10 hover:shadow-card',
                     )}
                   >
                     <input
@@ -296,7 +296,7 @@ export function Wizard({ params }: { params: ProductParams }) {
                     />
                     <span className="flex items-center justify-center gap-1.5 p-3 text-sm font-medium text-ink">
                       {selected ? (
-                        <Icon name="check" className="h-4 w-4 text-accent-700" />
+                        <Icon name="check" className="h-4 w-4 text-warm-700" />
                       ) : null}
                       {t(`..home.styles.items.${style}`)}
                     </span>
@@ -385,7 +385,7 @@ export function Wizard({ params }: { params: ProductParams }) {
 
             <label
               htmlFor="consent"
-              className="flex cursor-pointer gap-3 bg-cream-50 p-4 border-2 border-ink"
+              className="flex cursor-pointer gap-3 bg-cream-50 p-4 border border-warm-100"
             >
               <input
                 id="consent"
@@ -394,7 +394,7 @@ export function Wizard({ params }: { params: ProductParams }) {
                 onChange={(event) =>
                   set('consent', event.target.checked ? true : undefined)
                 }
-                className="form-checkbox mt-0.5 h-5 w-5 rounded border-ink/20 text-accent-700 focus:ring-accent-600"
+                className="form-checkbox mt-0.5 h-5 w-5 rounded border-warm-200 text-warm-700 focus:ring-accent-600"
               />
               <span className="text-sm text-ink text-pretty">{t('consent.checkbox')}</span>
             </label>
@@ -408,14 +408,14 @@ export function Wizard({ params }: { params: ProductParams }) {
             {values.photoId ? (
               <label
                 htmlFor="photoConsent"
-                className="flex cursor-pointer gap-3 bg-cream-50 p-4 border-2 border-ink"
+                className="flex cursor-pointer gap-3 bg-cream-50 p-4 border border-warm-100"
               >
                 <input
                   id="photoConsent"
                   type="checkbox"
                   checked={values.photoConsent ?? false}
                   onChange={(event) => set('photoConsent', event.target.checked)}
-                  className="form-checkbox mt-0.5 h-5 w-5 rounded border-ink/20 text-accent-700 focus:ring-accent-600"
+                  className="form-checkbox mt-0.5 h-5 w-5 rounded border-warm-200 text-warm-700 focus:ring-accent-600"
                 />
                 <span className="text-sm text-ink text-pretty">
                   {t('consent.photoCheckbox')}
@@ -491,10 +491,10 @@ function ProgressBar({
         aria-valuemin={1}
         aria-valuemax={total}
         aria-label={stepLabel}
-        className="mt-3 h-2 overflow-hidden border border-ink/15 bg-cream-100"
+        className="mt-3 h-2 overflow-hidden border border-warm-100 bg-cream-100"
       >
         <div
-          className="h-full bg-accent-500 transition-[width] duration-300"
+          className="h-full bg-warm-700 transition-[width] duration-300"
           style={{ width: `${percent}%` }}
         />
       </div>

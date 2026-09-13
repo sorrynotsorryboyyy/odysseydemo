@@ -82,7 +82,7 @@ export function MobileMenu({
       {isOpen ? (
         <div
           id="mobile-menu"
-          className="fixed inset-x-0 bottom-0 top-16 z-40 overflow-y-auto border-t border-ink/5 bg-cream px-4 py-6 sm:top-20"
+          className="fixed inset-x-0 bottom-0 top-16 z-40 overflow-y-auto border-t border-warm-100 bg-cream px-4 py-6 sm:top-20"
         >
           <nav aria-label={labels.nav}>
             <ul className="space-y-1">
@@ -128,7 +128,7 @@ export function MobileMenu({
             </ul>
           </nav>
 
-          <div className="mt-6 space-y-4 border-t border-ink/10 pt-6">
+          <div className="mt-6 space-y-4 border-t border-warm-100 pt-6">
             <ButtonLink href="/tarifs" size="lg" fullWidth>
               {labels.cta}
             </ButtonLink>
@@ -139,7 +139,7 @@ export function MobileMenu({
                 <button
                   type="button"
                   onClick={() => void logout()}
-                  className="shrink-0 text-sm font-semibold text-accent-700 hover:underline"
+                  className="shrink-0 text-sm font-semibold text-warm-700 hover:underline"
                 >
                   {labels.logoutLabel}
                 </button>

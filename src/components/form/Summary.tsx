@@ -72,7 +72,7 @@ export function Summary({
         </div>
       ) : null}
 
-      <dl className="mt-6 divide-y divide-ink/5 border-y border-ink/5">
+      <dl className="mt-6 divide-y divide-warm-100 border-y border-warm-100">
         {rows.map((row) => (
           <div key={row.label} className="flex gap-4 py-4">
             <dt className="w-28 shrink-0 text-sm font-semibold text-ink">{row.label}</dt>
@@ -81,7 +81,7 @@ export function Summary({
               <button
                 type="button"
                 onClick={() => onEdit(row.step)}
-                className="shrink-0 border border-accent-700/30 px-2.5 py-1 text-sm font-semibold text-accent-700 transition-colors hover:bg-accent-50"
+                className="shrink-0 border border-warm-700/30 px-2.5 py-1 text-sm font-semibold text-warm-700 transition-colors hover:bg-accent-50"
               >
                 {t('summary.edit')}
               </button>
@@ -93,7 +93,7 @@ export function Summary({
       {plan ? (
         <p className="mt-6 flex items-center justify-between font-display text-lg font-bold text-ink">
           <span className="flex items-center gap-2">
-            <Icon name="check" className="h-5 w-5 text-accent-700" />
+            <Icon name="check" className="h-5 w-5 text-warm-700" />
             {t('summary.total')}
           </span>
           <span>

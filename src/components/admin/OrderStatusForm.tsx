@@ -65,7 +65,7 @@ export function OrderStatusForm({
             setStatus(event.target.value);
             setState('idle');
           }}
-          className="block w-full border border-ink/25 border-b-2 border-b-ink/40 bg-white px-3 py-2.5 text-ink focus:border-accent-700 focus:outline-none"
+          className="block w-full border border-warm-200 border-b-2 border-b-ink/40 bg-white px-3 py-2.5 text-ink focus:border-warm-700 focus:outline-none"
         >
           {statuses.map((option) => (
             <option key={option.value} value={option.value}>

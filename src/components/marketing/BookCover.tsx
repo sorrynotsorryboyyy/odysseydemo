@@ -32,7 +32,7 @@ export function BookCover({ pagesLabel }: { pagesLabel: string }) {
       >
         <div className="relative aspect-[3/4] [transform-style:preserve-3d] transition-transform duration-700 ease-out [transform:rotateY(-14deg)_rotateX(4deg)] group-hover:[transform:rotateY(-22deg)_rotateX(2deg)]">
           {/* --- Pages intérieures, révélées à l'ouverture --- */}
-          <div className="absolute inset-0 border-2 border-ink bg-cream-50 p-6">
+          <div className="absolute inset-0 rounded-lg border border-warm-100 bg-white p-6">
             <div className="flex h-full flex-col justify-between">
               <div className="space-y-2.5">
                 {/* Lignes de texte simulées : le rythme d'une page, sans
@@ -46,7 +46,7 @@ export function BookCover({ pagesLabel }: { pagesLabel: string }) {
                 ))}
               </div>
 
-              <div className="border-2 border-dashed border-ink/40 p-4 text-center">
+              <div className="rounded-lg border-2 border-dashed border-warm-200 p-4 text-center">
                 <span className="font-display text-sm font-bold text-ink-muted">
                   {pagesLabel}
                 </span>
@@ -58,7 +58,7 @@ export function BookCover({ pagesLabel }: { pagesLabel: string }) {
               Le pivot est placé sur le dos peint dans l'image (~4 % de sa
               largeur), pas sur le bord : c'est là qu'est la charnière. */}
           <div className="absolute inset-0 [transform-origin:4%_50%] [transform-style:preserve-3d] transition-transform duration-700 ease-out [transform:rotateY(0deg)] group-hover:[transform:rotateY(-34deg)]">
-            <div className="relative h-full w-full overflow-hidden border-2 border-ink shadow-ink [backface-visibility:hidden]">
+            <div className="relative h-full w-full overflow-hidden rounded-lg shadow-float [backface-visibility:hidden]">
               <Image
                 src={COVER_SRC}
                 alt=""

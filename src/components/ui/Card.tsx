@@ -20,10 +20,11 @@ export function Card({
     <Tag
       aria-labelledby={labelledBy}
       className={cn(
-        // La structure vient du trait et de l'ombre portee, jamais du flou.
-        'border-2 border-ink bg-white p-6 shadow-ink-sm',
+        // La carte se détache par l'ombre, pas par un cerne : sur fond pâle
+        // le blanc suffit à la séparer du fond.
+        'rounded-xl bg-white p-6 shadow-card',
         interactive &&
-          'transition-[transform,box-shadow] duration-150 hover:-translate-x-px hover:-translate-y-px hover:shadow-ink',
+          'transition-[transform,box-shadow] duration-200 hover:-translate-y-1 hover:shadow-card-hover',
         className,
       )}
     >
@@ -41,16 +42,17 @@ export function Badge({
   tone?: 'accent' | 'warm' | 'neutral';
   className?: string;
 }) {
+  // Pastille pleine, sans cerne : la couleur seule porte la distinction.
   const tones = {
-    accent: 'bg-accent-200 text-ink border-ink',
-    warm: 'bg-warm-200 text-ink border-ink',
-    neutral: 'bg-cream-200 text-ink border-ink',
+    accent: 'bg-accent-100 text-accent-900',
+    warm: 'bg-warm-100 text-warm-900',
+    neutral: 'bg-cream-200 text-ink',
   } as const;
 
   return (
     <span
       className={cn(
-        'inline-flex items-center rounded-md border-2 px-2.5 py-1 text-xs font-bold uppercase tracking-[0.1em]',
+        'inline-flex items-center rounded-pill px-3 py-1 text-xs font-bold uppercase tracking-[0.1em]',
         tones[tone],
         className,
       )}

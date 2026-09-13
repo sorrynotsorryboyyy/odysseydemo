@@ -17,33 +17,23 @@ export function Section({
   containerClassName?: string;
   size?: 'default' | 'narrow' | 'wide';
   labelledBy?: string;
-  tone?: 'transparent' | 'white' | 'paper' | 'sun' | 'teal' | 'coral' | 'ink';
+  tone?: 'transparent' | 'white' | 'paper' | 'soft' | 'coral' | 'ink';
 }) {
-  // Les sections se distinguent par un aplat et un filet, pas par un
-  // degrade : la rupture doit etre nette, comme un changement de cahier.
   /**
-   * Aplats de section. La couleur remplace les images absentes : elle donne
-   * le rythme de la page et distingue les moments du parcours.
+   * Deux surfaces portent la page : le blanc, où l'on lit, et le corail
+   * très pâle, qui marque les respirations. L'alternance des deux donne le
+   * rythme — sans filet de séparation, la différence de fond suffit.
    *
-   * Contrastes vérifiés avec le texte qu'ils portent — encre sur les fonds
-   * clairs, crème sur le bleu nuit.
-   */
-  /**
-   * Aplats moyens plutôt que teintes pâles : la couleur doit se lire comme
-   * un choix, pas comme un lavis. Le texte reste encre sur tous les fonds
-   * clairs, ce qui garde les contrastes très au-dessus du seuil AA.
-   *
-   * Les sections colorées sont séparées par un trait franc : c'est la
-   * rupture nette du dessin au trait, pas un dégradé.
+   * `coral` est l'aplat soutenu, réservé à un seul moment par page : au-delà
+   * il cesse d'être un accent. Le texte y reste encre (11.59 sur warm-200).
    */
   const tones = {
     transparent: '',
     white: 'bg-white',
-    paper: 'bg-cream-100',
-    teal: 'border-y-2 border-ink bg-accent-200',
-    coral: 'border-y-2 border-ink bg-warm-200',
-    sun: 'border-y-2 border-ink bg-sun-200',
-    ink: 'border-y-2 border-ink bg-ink text-cream',
+    paper: 'bg-warm-25',
+    soft: 'bg-warm-50',
+    coral: 'bg-warm-200',
+    ink: 'bg-ink text-cream',
   } as const;
 
   return (
@@ -89,7 +79,7 @@ export function SectionHeading({
         <p
           className={cn(
             'mb-4 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em]',
-            onDark ? 'text-sun-300' : onColor ? 'text-ink' : 'text-accent-700',
+            onDark ? 'text-warm-300' : onColor ? 'text-ink' : 'text-warm-700',
             centered ? 'justify-center' : 'justify-start',
           )}
         >
@@ -98,7 +88,7 @@ export function SectionHeading({
               aria-hidden="true"
               className={cn(
                 'h-0.5 w-8',
-                onDark ? 'bg-sun-300/50' : onColor ? 'bg-ink' : 'bg-accent-700/40',
+                onDark ? 'bg-warm-300/60' : onColor ? 'bg-ink' : 'bg-warm-700/40',
               )}
             />
           ) : null}
@@ -107,7 +97,7 @@ export function SectionHeading({
             aria-hidden="true"
             className={cn(
               'h-0.5 w-8',
-              onDark ? 'bg-sun-300/50' : onColor ? 'bg-ink' : 'bg-accent-700/40',
+              onDark ? 'bg-warm-300/60' : onColor ? 'bg-ink' : 'bg-warm-700/40',
             )}
           />
         </p>

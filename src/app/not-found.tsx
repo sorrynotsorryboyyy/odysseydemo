@@ -8,7 +8,7 @@ export default async function NotFound() {
   return (
     <Section size="narrow" labelledBy="not-found-title">
       <Card className="text-center">
-        <p className="font-display text-6xl font-bold text-accent-700">404</p>
+        <p className="font-display text-6xl font-bold text-warm-700">404</p>
 
         <h1
           id="not-found-title"

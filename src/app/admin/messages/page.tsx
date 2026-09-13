@@ -50,14 +50,14 @@ export default async function AdminMessages() {
                 </div>
               </div>
 
-              <p className="mt-4 border-l-2 border-ink/15 pl-4 text-sm text-ink-muted text-pretty">
+              <p className="mt-4 border-l-2 border-warm-100 pl-4 text-sm text-ink-muted text-pretty">
                 {message.message}
               </p>
 
               <div className="mt-4">
                 <a
                   href={`mailto:${message.email}?subject=${encodeURIComponent(`Re : ${message.subject}`)}`}
-                  className="text-sm font-semibold text-accent-700 hover:underline"
+                  className="text-sm font-semibold text-warm-700 hover:underline"
                 >
                   Répondre par e-mail
                 </a>

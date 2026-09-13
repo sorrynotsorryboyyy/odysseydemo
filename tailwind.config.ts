@@ -85,8 +85,13 @@ const config: Config = {
           800: '#991b1b',
           900: '#7f1d1d',
         },
-        // Corail : complémentaire chaud, pour équilibrer la sarcelle.
+        /**
+         * Corail : couleur principale de la marque, employée en grands
+         * aplats avec le blanc. Les tons 25 à 100 servent de fonds de
+         * section et de blocs ; 500 et au-delà portent les actions.
+         */
         warm: {
+          25: '#fffaf8',
           50: '#fef3f0',
           100: '#fde3dc',
           200: '#fbc7ba',
@@ -104,47 +109,37 @@ const config: Config = {
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
       },
       /**
-       * Registre album : des formes tenues, ni sévères ni molles. Au-delà
-       * de 24px un bloc devient une pastille, ce qui est le marqueur
-       * générique qu'on cherche à éviter.
-       */
-      /**
-       * Le trait dessine la forme ; l'arrondi l'adoucit juste assez pour
-       * que le registre reste celui d'un album, pas d'un formulaire.
+       * Formes franchement arrondies, registre e-commerce jeunesse : la
+       * douceur vient du rayon, plus du trait. On s'arrête à 20px — au-delà
+       * un bloc devient une pastille, marqueur générique qu'on évite.
        */
       borderRadius: {
         none: '0',
-        sm: '2px',
-        DEFAULT: '4px',
-        md: '6px',
-        lg: '8px',
-        xl: '12px',
-        '2xl': '16px',
-        '3xl': '20px',
+        sm: '4px',
+        DEFAULT: '8px',
+        md: '10px',
+        lg: '12px',
+        xl: '16px',
+        '2xl': '20px',
+        '3xl': '24px',
+        pill: '999px',
       },
       /**
-       * Ombres teintées de l'aplat voisin plutôt que grises : une ombre
-       * neutre sur un fond coloré se lit comme de la saleté.
-       */
-      /**
-       * Registre ligne claire : le cerne noir porte la forme, l'ombre ne
-       * fait que décoller l'élément du fond. Décalée et sans flou, elle
-       * reste dans le langage du dessin au trait.
+       * La carte se détache par une ombre douce et basse, pas par un cerne :
+       * c'est ce qui donne au registre sa légèreté. Le relief reste discret
+       * — une ombre trop marquée sur fond pâle se lit comme de la saleté.
        */
       boxShadow: {
-        edge: '0 1px 0 0 rgb(26 26 26 / 0.08)',
-        ink: '4px 4px 0 0 rgb(26 26 26)',
-        'ink-sm': '2px 2px 0 0 rgb(26 26 26)',
-        'ink-lg': '7px 7px 0 0 rgb(26 26 26)',
-        teal: '4px 4px 0 0 rgb(15 118 110)',
-        coral: '4px 4px 0 0 rgb(178 58 28)',
+        edge: '0 1px 0 0 rgb(26 26 26 / 0.06)',
+        card: '0 4px 20px 0 rgb(26 26 26 / 0.08)',
+        'card-hover': '0 10px 30px 0 rgb(26 26 26 / 0.13)',
+        float: '0 16px 44px 0 rgb(26 26 26 / 0.16)',
       },
       borderWidth: {
-        // Le cerne de la ligne claire : assez présent pour se lire, assez
-        // fin pour ne pas écraser une page de texte.
+        // Le filet de 2px sert à cerner un bloc pâle sur fond blanc, là où
+        // l'ombre ne suffit pas à séparer deux surfaces claires.
         DEFAULT: '1px',
         2: '2px',
-        3: '3px',
       },
       maxWidth: {
         prose: '68ch',
