@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 
+import { ColorField } from './ColorField';
 import { Container } from './Container';
 import { cn } from '@/lib/cn';
 
@@ -11,6 +12,7 @@ export function Section({
   size = 'default',
   labelledBy,
   tone = 'transparent',
+  glow = false,
 }: {
   children: ReactNode;
   className?: string;
@@ -18,6 +20,8 @@ export function Section({
   size?: 'default' | 'narrow' | 'wide';
   labelledBy?: string;
   tone?: 'transparent' | 'white' | 'paper' | 'soft' | 'coral' | 'ink';
+  /** Halos colorés dérivant en fond. `true` vaut la palette corail. */
+  glow?: boolean | 'warm' | 'duo' | 'quiet';
 }) {
   /**
    * Deux surfaces portent la page : le blanc, où l'on lit, et le corail
@@ -39,8 +43,14 @@ export function Section({
   return (
     <section
       aria-labelledby={labelledBy}
-      className={cn('py-14 sm:py-20', tones[tone], className)}
+      className={cn(
+        'py-14 sm:py-20',
+        tones[tone],
+        glow && 'relative isolate overflow-hidden',
+        className,
+      )}
     >
+      {glow ? <ColorField palette={glow === true ? 'warm' : glow} /> : null}
       <Container size={size} className={containerClassName}>
         {children}
       </Container>

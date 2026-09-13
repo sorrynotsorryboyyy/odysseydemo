@@ -146,8 +146,23 @@ const config: Config = {
       },
       keyframes: {
         'fade-up': {
-          from: { opacity: '0', transform: 'translateY(0.5rem)' },
+          from: { opacity: '0', transform: 'translateY(1.25rem)' },
           to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        /** Respiration du livre : une amplitude faible, sinon ça tangue. */
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-0.75rem)' },
+        },
+        /** Halos de fond : dérive lente, jamais un mouvement qu'on suit. */
+        drift: {
+          '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
+          '33%': { transform: 'translate(3%, -4%) scale(1.06)' },
+          '66%': { transform: 'translate(-3%, 3%) scale(0.96)' },
+        },
+        'draw-line': {
+          from: { transform: 'scaleX(0)' },
+          to: { transform: 'scaleX(1)' },
         },
       },
       // Profondeur du livre 3D : suffisante pour lire l'objet, assez faible
@@ -156,7 +171,13 @@ const config: Config = {
         book: '1400px',
       },
       animation: {
-        'fade-up': 'fade-up 0.4s ease-out both',
+        'fade-up': 'fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both',
+        // Durées très longues : un mouvement de fond doit se sentir, pas se
+        // regarder. En dessous de 20s l'œil se met à le suivre.
+        float: 'float 7s ease-in-out infinite',
+        drift: 'drift 26s ease-in-out infinite',
+        'drift-slow': 'drift 38s ease-in-out infinite reverse',
+        'draw-line': 'draw-line 0.7s cubic-bezier(0.22, 1, 0.36, 1) both',
       },
     },
   },

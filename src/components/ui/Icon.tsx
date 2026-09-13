@@ -72,19 +72,22 @@ export function IconBubble({
   className,
 }: {
   name: IconName;
-  tone?: 'accent' | 'warm' | 'ink';
+  tone?: 'accent' | 'warm' | 'sun' | 'ink';
   className?: string;
 }) {
+  // Pastille ronde, couleur pleine : le contraste du glyphe sur son fond
+  // est vérifié (corail 4.89, sarcelle 5.30).
   const tones = {
-    accent: 'bg-accent-100 text-warm-700',
+    accent: 'bg-accent-100 text-accent-900',
     warm: 'bg-warm-100 text-warm-700',
-    ink: 'bg-ink/5 text-ink',
+    sun: 'bg-sun-100 text-sun-900',
+    ink: 'bg-ink text-white',
   } as const;
 
   return (
     <span
       className={cn(
-        'inline-flex h-12 w-12 items-center justify-center',
+        'inline-flex h-12 w-12 items-center justify-center rounded-2xl',
         tones[tone],
         className,
       )}

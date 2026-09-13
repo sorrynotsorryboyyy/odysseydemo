@@ -1,9 +1,11 @@
 export { Button, ButtonLink } from './Button';
 export { Badge, Card } from './Card';
+export { ColorField } from './ColorField';
 export { Container } from './Container';
 export { controlClass, Field, Notice } from './Field';
 export { Icon, IconBubble, type IconName } from './Icon';
 export { ImageSlot } from './ImageSlot';
 export { hasStyleImage, StyleImage } from './StyleImage';
 export { AvatarPlaceholder, Placeholder } from './Placeholder';
+export { Reveal } from './Reveal';
 export { Section, SectionHeading } from './Section';
