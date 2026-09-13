@@ -4,6 +4,7 @@ import {
   ButtonLink,
   Icon,
   ImageSlot,
+  StyleImage,
   Section,
   SectionHeading,
 } from '@/components/ui';
@@ -312,7 +313,7 @@ export function StyleGallery({ dictionary }: SectionProps) {
         {illustrationStyles.map((style) => (
           <li key={style} className="bg-white">
             <figure>
-              <ImageSlot ratio="wide" label={t(`home.styles.items.${style}`)} />
+              <StyleImage style={style} label={t(`home.styles.items.${style}`)} />
               <figcaption className="border-t border-ink/10 px-4 py-3 text-center text-sm font-medium text-ink">
                 {t(`home.styles.items.${style}`)}
               </figcaption>
