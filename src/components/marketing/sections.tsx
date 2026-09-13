@@ -3,7 +3,7 @@ import { PricingTable } from './PricingTable';
 import {
   ButtonLink,
   Icon,
-  Placeholder,
+  Illustration,
   Section,
   SectionHeading,
 } from '@/components/ui';
@@ -42,7 +42,7 @@ export function Hero({ dictionary }: SectionProps) {
   const t = (key: string) => translate(dictionary, key);
 
   return (
-    <section aria-labelledby="hero-title" className="border-b border-ink/10 bg-paper">
+    <section aria-labelledby="hero-title" className="bg-sun-100">
       <div className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
         <div className="grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
@@ -147,7 +147,7 @@ export function WhatYouGet({ dictionary }: SectionProps) {
   const formats = ['pdf', 'print', 'cahier'] as const;
 
   return (
-    <Section labelledBy="inside-title" tone="paper">
+    <Section labelledBy="inside-title" tone="white">
       <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
         <div className="lg:sticky lg:top-28">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-700">
@@ -161,10 +161,11 @@ export function WhatYouGet({ dictionary }: SectionProps) {
           </h2>
           <p className="mt-5 text-ink-muted text-pretty">{t('home.inside.intro')}</p>
 
-          <Placeholder
-            seed="inside-spread"
-            ratio="wide"
-            className="mt-8 hidden lg:block"
+          <Illustration
+            name="hero"
+            alt=""
+            ratio="hero"
+            className="mt-8 hidden rounded-2xl lg:block"
           />
         </div>
 
@@ -219,7 +220,7 @@ export function Steps({ dictionary }: SectionProps) {
   const steps = ['one', 'two', 'three'] as const;
 
   return (
-    <Section labelledBy="steps-title" tone="white">
+    <Section labelledBy="steps-title" tone="teal">
       <SectionHeading
         id="steps-title"
         eyebrow={t('home.steps.eyebrow')}
@@ -235,7 +236,13 @@ export function Steps({ dictionary }: SectionProps) {
 
         {steps.map((step, index) => (
           <li key={step} className="relative">
-            <span className="relative flex h-10 w-10 items-center justify-center border border-ink bg-white font-display text-base font-bold text-ink">
+            <Illustration
+              name={`etape-${index + 1}`}
+              alt=""
+              ratio="square"
+              className="mb-5 w-24 rounded-xl"
+            />
+            <span className="relative flex h-10 w-10 items-center justify-center rounded-lg border-2 border-ink bg-white font-display text-base font-bold text-ink">
               {index + 1}
             </span>
             <h3 className="mt-5 font-display text-xl font-bold text-ink">
@@ -258,7 +265,7 @@ export function AgePicker({ dictionary }: SectionProps) {
   const t = (key: string) => translate(dictionary, key);
 
   return (
-    <Section labelledBy="ages-title" tone="paper">
+    <Section labelledBy="ages-title" tone="white">
       <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-700">
@@ -276,6 +283,12 @@ export function AgePicker({ dictionary }: SectionProps) {
         <ul className="grid gap-x-8 gap-y-8 sm:grid-cols-2">
           {ageRanges.map((range) => (
             <li key={range} className="border-t-2 border-ink pt-4">
+              <Illustration
+                name={`age-${range}`}
+                alt=""
+                ratio="square"
+                className="mb-3 w-16 rounded-lg"
+              />
               <p className="font-display text-2xl font-bold tabular-nums text-ink">
                 {t(`home.ages.items.${range}.label`)}
               </p>
@@ -300,7 +313,7 @@ export function StyleGallery({ dictionary }: SectionProps) {
   const t = (key: string) => translate(dictionary, key);
 
   return (
-    <Section labelledBy="styles-title" tone="white" size="wide">
+    <Section labelledBy="styles-title" tone="coral" size="wide">
       <SectionHeading
         id="styles-title"
         eyebrow={t('home.styles.eyebrow')}
@@ -312,7 +325,7 @@ export function StyleGallery({ dictionary }: SectionProps) {
         {illustrationStyles.map((style) => (
           <li key={style} className="bg-white">
             <figure>
-              <Placeholder seed={`style-${style}`} ratio="wide" className="border-0" />
+              <Illustration name={`style-${style}`} alt="" ratio="wide" />
               <figcaption className="border-t border-ink/10 px-4 py-3 text-center text-sm font-medium text-ink">
                 {t(`home.styles.items.${style}`)}
               </figcaption>
@@ -333,7 +346,7 @@ export function Scope({ dictionary }: SectionProps) {
   const excluded = translateList(dictionary, 'home.scope.excluded.items');
 
   return (
-    <Section labelledBy="scope-title" tone="paper">
+    <Section labelledBy="scope-title" tone="white">
       <SectionHeading id="scope-title" title={t('home.scope.title')} />
 
       <div className="grid gap-px border border-ink/15 bg-ink/15 md:grid-cols-2">
@@ -397,25 +410,28 @@ export function AfterOrder({ dictionary }: SectionProps) {
   const steps = readList<AfterStep>(dictionary, 'home.after.steps');
 
   return (
-    <Section labelledBy="after-title" tone="white" size="narrow">
+    <Section labelledBy="after-title" tone="night" size="narrow">
       <SectionHeading
         id="after-title"
         eyebrow={t('home.after.eyebrow')}
         title={t('home.after.title')}
         intro={t('home.after.intro')}
+        onDark
       />
 
-      <ol className="relative border-l border-ink/20 pl-8">
+      {/* Fond bleu nuit : les textes passent en crème (contraste 9.74) et
+          les repères en jaune, seule couleur qui tient sur ce fond. */}
+      <ol className="relative border-l border-cream/25 pl-8">
         {steps.map((step, index) => (
           <li key={step.title} className="relative pb-9 last:pb-0">
             <span
               aria-hidden="true"
-              className="absolute -left-[2.35rem] top-1 flex h-6 w-6 items-center justify-center border border-ink bg-white text-[0.7rem] font-bold tabular-nums text-ink"
+              className="absolute -left-[2.35rem] top-1 flex h-6 w-6 items-center justify-center rounded-md bg-sun-500 text-[0.7rem] font-bold tabular-nums text-ink"
             >
               {index + 1}
             </span>
-            <h3 className="font-display text-lg font-bold text-ink">{step.title}</h3>
-            <p className="mt-2 leading-relaxed text-ink-muted text-pretty">{step.body}</p>
+            <h3 className="font-display text-lg font-bold text-cream">{step.title}</h3>
+            <p className="mt-2 leading-relaxed text-cream/80 text-pretty">{step.body}</p>
           </li>
         ))}
       </ol>

@@ -47,6 +47,33 @@ const config: Config = {
           800: '#115e59',
           900: '#134e4a',
         },
+        /**
+         * Jaune : aplat clair. Texte encre dessus (contraste 10.43).
+         * Sert les sections de découverte, jamais un message d'état.
+         */
+        sun: {
+          50: '#fffbeb',
+          100: '#fef3c7',
+          200: '#fde68a',
+          300: '#fcd34d',
+          500: '#fbbf24',
+          700: '#b45309',
+          800: '#92400e',
+          900: '#78350f',
+        },
+        /**
+         * Bleu nuit : aplat sombre. Texte crème dessus (contraste 9.74).
+         * Donne du poids aux sections d'engagement.
+         */
+        night: {
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          500: '#3b82f6',
+          700: '#1d4ed8',
+          800: '#1e40af',
+          900: '#1e3a8a',
+        },
         // Rouge : réservé aux erreurs et actions destructives. Hors marque,
         // parce qu'un signal d'alerte doit être compris sans apprentissage.
         danger: {
@@ -77,31 +104,32 @@ const config: Config = {
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
       },
       /**
-       * Registre editorial : l'angle vif est la regle. Les quelques pixels
-       * conserves evitent seulement l'arete qui parait accidentelle a
-       * l'ecran. `rounded-full` reste disponible, mais uniquement la ou le
-       * cercle a un sens : pastilles d'avatar, puces numerotees.
+       * Registre album : des formes tenues, ni sévères ni molles. Au-delà
+       * de 24px un bloc devient une pastille, ce qui est le marqueur
+       * générique qu'on cherche à éviter.
        */
       borderRadius: {
         none: '0',
-        sm: '1px',
-        DEFAULT: '2px',
-        md: '2px',
-        lg: '3px',
-        xl: '4px',
-        '2xl': '4px',
-        '3xl': '6px',
+        sm: '3px',
+        DEFAULT: '6px',
+        md: '8px',
+        lg: '10px',
+        xl: '14px',
+        '2xl': '18px',
+        '3xl': '24px',
       },
       /**
-       * La structure vient du trait, pas du flou. Les ombres sont portees
-       * et nettes, comme un carton pose sur une table.
+       * Ombres teintées de l'aplat voisin plutôt que grises : une ombre
+       * neutre sur un fond coloré se lit comme de la saleté.
        */
       boxShadow: {
         edge: '0 1px 0 0 rgb(26 26 26 / 0.08)',
-        print: '3px 3px 0 0 rgb(26 26 26 / 0.10)',
-        lifted: '5px 5px 0 0 rgb(26 26 26 / 0.14)',
-        ink: '3px 3px 0 0 rgb(26 26 26)',
-        accent: '3px 3px 0 0 rgb(15 118 110)',
+        print: '4px 4px 0 0 rgb(26 26 26 / 0.12)',
+        lifted: '7px 7px 0 0 rgb(26 26 26 / 0.16)',
+        ink: '4px 4px 0 0 rgb(26 26 26)',
+        teal: '4px 4px 0 0 rgb(15 118 110)',
+        coral: '4px 4px 0 0 rgb(178 58 28)',
+        night: '4px 4px 0 0 rgb(30 58 138)',
       },
       maxWidth: {
         prose: '68ch',

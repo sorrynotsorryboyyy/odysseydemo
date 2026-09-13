@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img" aria-label="Un enfant lit un livre ouvert d'où s'échappent des formes">
+  <rect width="1200" height="900" fill="#fef3c7"/>
+  <circle cx="960" cy="200" r="120" fill="#fbbf24"/>
+  <path d="M0 720 Q300 640 600 700 T1200 660 L1200 900 L0 900 Z" fill="#14b8a6"/>
+  <path d="M0 800 Q360 750 720 790 T1200 770 L1200 900 L0 900 Z" fill="#0f766e"/>
+  <g transform="translate(600 470)">
+    <path d="M-260 0 L0 -60 L0 200 L-260 260 Z" fill="#faf8f0" stroke="#1a1a1a" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M260 0 L0 -60 L0 200 L260 260 Z" fill="#faf8f0" stroke="#1a1a1a" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M-210 40 H-60 M-210 90 H-40 M-210 140 H-90" stroke="#1a1a1a" stroke-opacity="0.35" stroke-width="9" stroke-linecap="round"/>
+    <path d="M60 40 H210 M40 90 H210 M90 140 H210" stroke="#1a1a1a" stroke-opacity="0.35" stroke-width="9" stroke-linecap="round"/>
+  </g>
+  <g fill="#f2643f">
+    <path d="M420 250 l26 62 62 8 -46 44 12 64 -54 -32 -54 32 12 -64 -46 -44 62 -8 Z"/>
+    <circle cx="760" cy="330" r="26"/>
+    <circle cx="330" cy="430" r="18"/>
+  </g>
+  <g transform="translate(880 600)">
+    <circle cx="0" cy="-60" r="52" fill="#1a1a1a"/>
+    <path d="M-56 0 Q0 -34 56 0 L56 150 L-56 150 Z" fill="#1e3a8a"/>
+  </g>
+</svg>
