@@ -12,6 +12,28 @@ import { env, firebaseConfigured } from './env';
  * touchent réellement à Firestore échouent, avec un message explicite.
  */
 
+/**
+ * Lit la clé de compte de service.
+ *
+ * Tolère les formes que produisent les interfaces de déploiement : valeur
+ * entourée de guillemets (copiée depuis un fichier .env), ou clé privée
+ * portant de vrais sauts de ligne au lieu de `
+` littéraux.
+ */
+function parseServiceAccount(raw: string): Record<string, string> {
+  let value = raw.trim();
+
+  // Guillemets englobants : Vercel les prendrait pour du contenu.
+  if (
+    (value.startsWith("'") && value.endsWith("'")) ||
+    (value.startsWith('"') && value.endsWith('"'))
+  ) {
+    value = value.slice(1, -1);
+  }
+
+  return JSON.parse(value) as Record<string, string>;
+}
+
 let app: App | null = null;
 
 function getApp(): App {
@@ -31,9 +53,22 @@ function getApp(): App {
 
   let credentials: Record<string, string>;
   try {
-    credentials = JSON.parse(env.FIREBASE_SERVICE_ACCOUNT) as Record<string, string>;
-  } catch {
-    throw new Error('FIREBASE_SERVICE_ACCOUNT n’est pas un JSON valide.');
+    credentials = parseServiceAccount(env.FIREBASE_SERVICE_ACCOUNT);
+  } catch (error) {
+    // Message explicite : une variable mal collee dans une interface de
+    // deploiement produit sinon un 500 muet, tres long a diagnostiquer.
+    throw new Error(
+      `FIREBASE_SERVICE_ACCOUNT illisible : ${(error as Error).message}`,
+    );
+  }
+
+  for (const field of ['project_id', 'client_email', 'private_key'] as const) {
+    if (!credentials[field]) {
+      throw new Error(
+        `FIREBASE_SERVICE_ACCOUNT incomplet : champ "${field}" absent. ` +
+          'Utiliser le fichier JSON complet, pas la seule cle privee.',
+      );
+    }
   }
 
   app = initializeApp({
