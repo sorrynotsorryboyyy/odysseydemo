@@ -323,6 +323,9 @@
           "body": "Remboursé si le livre ne convient pas."
         }
       ]
+    },
+    "imageSlot": {
+      "spread": "Double page du livre"
     }
   },
   "pricing": {
