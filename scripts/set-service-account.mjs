@@ -65,7 +65,10 @@ const envPath = resolve('.env.local');
 let env = existsSync(envPath) ? readFileSync(envPath, 'utf8') : '';
 
 function setVar(key, value) {
-  const line = `${key}=${JSON.stringify(value)}`;
+  // Guillemets SIMPLES : le parseur `--env-file` de Node ne gère pas les
+  // guillemets doubles échappés dans une valeur — il s'arrête au premier `\"`
+  // et ne lit que deux caractères. Un JSON compacté n'en contient aucun.
+  const line = `${key}='${value}'`;
   const pattern = new RegExp(`^${key}=.*$`, 'm');
   env = pattern.test(env) ? env.replace(pattern, line) : `${env.trimEnd()}\n${line}\n`;
 }
